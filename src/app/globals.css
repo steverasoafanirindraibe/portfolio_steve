@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@font-face {
+  font-family: 'Stack Sans Notch';
+  src: url('./fonts/StackSansNotch/StackSansNotch-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Stack Sans Notch', sans-serif;
+}
+
+@keyframes moveHorizontalFast {
+  0%, 100% {
+    transform: translateX(-30%);
+
+  }
+  50% {
+    transform: translateX(60%);
+
+  }
+}
+@keyframes moveHorizontalMedium {
+  0%, 100% {
+
+    transform: translateX(50%)
+  }
+  50% {
+
+    transform: translateX(-10%)
+  }
+}
+
+@keyframes moveHorizontalSlow {
+  0%, 100% {
+
+    transform: translateX(60%)
+  }
+  50% {
+
+    transform: translateX(-65%)
+  }
+}
+
+
+.animate-moveHorizontalFast {
+  animation: moveHorizontalFast 8s ease-in-out infinite;
+}
+.animate-moveHorizontalSlow {
+  animation: moveHorizontalSlow 12s ease-in-out infinite;
+}
+.animate-moveHorizontalMedium {
+  animation: moveHorizontalMedium 10s ease-in-out infinite;
+}
+
+.clignoter {
+  animation: clignoter 1s step-end infinite;
+}
+
+@keyframes clignoter {
+  0%, 100%{
+    visibility: visible;
+  } 
+  50% {
+    visibility: hidden;
+  }
+}
+
+.profil {
+  animation: bounce 4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(-220px, -220px) scale(.5) ;
+    /* animation-timing-function: e; */
+  }
+  50% {
+    transform: scale(1.1);
+    /* animation-timing-function: ease-in; */
+  }
+
+  75% {
+    transform: scale(1.2) ;
+    box-shadow: 10px 10px 20px rgba(0, 204, 255, 0.158);
+  }
+  85% {
+    transform: translate(-7px, -7px);
+  }
+  90% {
+    transform: translate(3px, 3px);
+  }
+
+}
+
+/* Scrollbar globale pour tout le site */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #14b8a6 #000000;
+}
+
+/* Webkit browsers */
+::-webkit-scrollbar {
+  width: 100px;
+  /* height: 10px; */
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14b8a6;
+}
