@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+<<<<<<< HEAD
     "framer-motion": "^12.23.24",
+=======
+>>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
     "next": "15.1.6",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",

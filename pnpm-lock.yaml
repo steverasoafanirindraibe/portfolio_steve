@@ -11,9 +11,12 @@ importers:
       axios:
         specifier: ^1.7.9
         version: 1.10.0
+<<<<<<< HEAD
       framer-motion:
         specifier: ^12.23.24
         version: 12.23.24(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+=======
+>>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
       next:
         specifier: 15.1.6
         version: 15.1.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1031,6 +1034,7 @@ packages:
     resolution: {integrity: sha512-qsITQPfmvMOSAdeyZ+12I1c+CKSstAFAwu+97zrnWAbIr5u8wfsExUzCesVLC8NgHuRUqNN4Zy6UPWUTRGslcA==}
     engines: {node: '>= 6'}
 
+<<<<<<< HEAD
   framer-motion@12.23.24:
     resolution: {integrity: sha512-HMi5HRoRCTou+3fb3h9oTLyJGBxHfW+HnNE25tAXOvVx/IvwMHK0cx7IR4a2ZU6sh3IX1Z+4ts32PcYBOqka8w==}
     peerDependencies:
@@ -1045,6 +1049,8 @@ packages:
       react-dom:
         optional: true
 
+=======
+>>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1380,12 +1386,15 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+<<<<<<< HEAD
   motion-dom@12.23.23:
     resolution: {integrity: sha512-n5yolOs0TQQBRUFImrRfs/+6X4p3Q4n1dUEqt/H58Vx7OW6RF+foWEgmTVDhIWJIMXOuNNL0apKH2S16en9eiA==}
 
   motion-utils@12.23.6:
     resolution: {integrity: sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==}
 
+=======
+>>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -3059,6 +3068,7 @@ snapshots:
       hasown: 2.0.2
       mime-types: 2.1.35
 
+<<<<<<< HEAD
   framer-motion@12.23.24(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       motion-dom: 12.23.23
@@ -3068,6 +3078,8 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
+=======
+>>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
   fsevents@2.3.3:
     optional: true
 
@@ -3407,12 +3419,15 @@ snapshots:
 
   minipass@7.1.2: {}
 
+<<<<<<< HEAD
   motion-dom@12.23.23:
     dependencies:
       motion-utils: 12.23.6
 
   motion-utils@12.23.6: {}
 
+=======
+>>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
   ms@2.1.3: {}
 
   mz@2.7.0:
