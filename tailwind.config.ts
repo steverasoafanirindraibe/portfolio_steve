@@ -8,7 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-<<<<<<< HEAD
       boxShadow: {
         'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'glow-teal': '0 0 20px rgba(20, 184, 166, 0.5)',
@@ -20,8 +19,7 @@ export default {
         sans: ['var(--font-stack-sans-notch)', 'sans-serif'],
         'stack-sans': ['var(--font-stack-sans-notch)', 'sans-serif'],
       },
-=======
->>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

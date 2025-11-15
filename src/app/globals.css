@@ -7,7 +7,6 @@
   --foreground: #171717;
 }
 
-<<<<<<< HEAD
 @font-face {
   font-family: 'Stack Sans Notch';
   src: url('./fonts/StackSansNotch/StackSansNotch-VariableFont_wght.ttf') format('truetype');
@@ -16,8 +15,6 @@
   font-display: swap;
 }
 
-=======
->>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -28,11 +25,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-<<<<<<< HEAD
   font-family: 'Stack Sans Notch', sans-serif;
-=======
-  font-family: Arial, Helvetica, sans-serif;
->>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
 }
 
 @keyframes moveHorizontalFast {
@@ -118,7 +111,7 @@ body {
   }
 
 }
-<<<<<<< HEAD
+
 
 /* Scrollbar globale pour tout le site */
 html {
@@ -144,5 +137,3 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #14b8a6;
 }
-=======
->>>>>>> b5063a7a396de0b3f896a0364576c283c172e6b0
