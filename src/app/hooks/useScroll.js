@@ -1,23 +1,25 @@
-'use client';
+"use client"
 import { useState, useEffect } from 'react';
 
-export function useScroll() {
+export const useScroll = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const updateScrollProgress = () => {
+      const scrollPx = document.documentElement.scrollTop;
+      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = winHeightPx > 0 ? scrollPx / winHeightPx : 0;
       
-      // Calcul du pourcentage de scroll (0 à 1)
-      const progress = Math.min(scrollY / documentHeight, 1);
-      setScrollProgress(progress);
+      // Limite la progression à 21% et normalise entre 0 et 1
+      const limitedProgress = Math.min(scrolled, 0.21) / 0.21;
+      
+      setScrollProgress(limitedProgress);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', updateScrollProgress);
+    
+    return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
 
   return scrollProgress;
-}
+};

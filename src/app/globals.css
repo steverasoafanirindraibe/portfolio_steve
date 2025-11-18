@@ -137,3 +137,30 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #14b8a6;
 }
+
+.footer {
+  background-color: #ffffff;
+}
+
+.footer-section {
+    position: relative; 
+    overflow: hidden; 
+    z-index: 1; 
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgb(10, 26, 22), rgba(187, 125, 32, 0.027)),
+        url('/images/image-1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* filter: blur(7px);  */
+    z-index: -1;
+}
