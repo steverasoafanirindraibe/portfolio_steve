@@ -138,6 +138,13 @@ html {
   background: #14b8a6;
 }
 
+.skills-monitor{
+  background-image: url('/images/image-monitor.svg');
+  background-position: center;
+  background-size: cover;
+}
+
+
 .footer {
   background-color: #ffffff;
 }

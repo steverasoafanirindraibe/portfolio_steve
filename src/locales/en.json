@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "FullStack Developer",
+    "contact": "@Contact", 
+    "download": "Download Resume"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Passionate developer specialized in creating modern and high-performance web applications. I master both front-end and back-end technologies to deliver complete and innovative solutions."
+  },
+  "projects": {
+    "title": "Portfolio",
+    "subtitle": "Showcase of my latest experiences",
+    "project": "Internship Project",
+    "date": "Jun 16 - Jul 12, 2024",
+    "description": "Web application for training and human resources management for EMIT Business Hub. Complete solution with intuitive interface and robust backend.",
+    "viewCode": "View Code",
+    "viewProject": "View Project"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Presentation of my competencies",
+    "explorer": "Explorer",
+    "terminal": "Terminal", 
+    "vscode": "VS Code",
+    "softSkills": {
+      "teamwork": "Teamwork",
+      "communication": "Communication",
+      "systemDesign": "System Design",
+      "algorithms": "Algorithms",
+      "adaptability": "Adaptability",
+      "problemSolving": "Problem Solving"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Feel free to contact me, I will respond as soon as possible.",
+    "location": "Remote Worldwide"
+  },
+  "alerts": {
+    "copySuccess": "Copied successfully",
+    "codeSecured": "Code is secured"
+  },
+  "sections": {
+    "uiux": "UI/UX",
+    "academic": "Academic Training", 
+    "networks": "Networks",
+    "ai": "Artificial Intelligence"
+  },
+  "descriptions": {
+    "uiux": "Design of intuitive user interfaces and optimized user experiences for modern web applications.",
+    "academic": "Strong academic background in computer science with specialization in web development and emerging technologies.",
+    "networks": "Mastery of network architectures and communication protocols for distributed applications.",
+    "ai": "Exploration of artificial intelligence technologies and their integration into innovative applications."
+  }
+}

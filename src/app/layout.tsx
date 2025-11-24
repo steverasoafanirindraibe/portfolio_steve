@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ModernAlert from './components/ModernAlert';
+import ModernAlert from '../components/ModernAlert';
 
 
 

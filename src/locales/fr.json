@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Développeur FullStack",
+    "contact": "@Contact",
+    "download": "Télécharger CV"
+  },
+  "about": {
+    "title": "À Propos",
+    "description": "Développeur passionné spécialisé dans la création d'applications web modernes et performantes. Je maîtrise les technologies front-end et back-end pour livrer des solutions complètes et innovantes."
+  },
+  "projects": {
+    "title": "Portfolio",
+    "subtitle": "Présentation de mes dernières expériences",
+    "project": "Projet de stage",
+    "date": "16 Juin - 12 Juil. 2024",
+    "description": "Application web de gestion des formations et ressources humaines pour EMIT Business Hub. Solution complète avec interface intuitive et backend robuste.",
+    "viewCode": "Voir le code",
+    "viewProject": "Voir le projet"
+  },
+  "skills": {
+    "title": "Compétences",
+    "subtitle": "Présentation de mes compétences",
+    "explorer": "Explorer",
+    "terminal": "Terminal",
+    "vscode": "VS Code",
+    "softSkills": {
+      "teamwork": "Travail en équipe",
+      "communication": "Communication",
+      "systemDesign": "Conception de S.I",
+      "algorithms": "Algorithmes",
+      "adaptability": "Adaptabilité",
+      "problemSolving": "Résolution de problèmes"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.",
+    "location": "Remote Worldwide"
+  },
+  "alerts": {
+    "copySuccess": "Copié avec succès",
+    "codeSecured": "Le code est sécurisé"
+  },
+  "sections": {
+    "uiux": "UI/UX",
+    "academic": "Formation Académique",
+    "networks": "Réseaux",
+    "ai": "Intelligence Artificielle"
+  },
+  "descriptions": {
+    "uiux": "Conception d'interfaces utilisateur intuitives et d'expériences utilisateur optimisées pour des applications web modernes.",
+    "academic": "Parcours académique solide en informatique avec spécialisation en développement web et technologies émergentes.",
+    "networks": "Maîtrise des architectures réseau et des protocoles de communication pour des applications distribuées.",
+    "ai": "Exploration des technologies d'intelligence artificielle et leur intégration dans des applications innovantes."
+  }
+}
