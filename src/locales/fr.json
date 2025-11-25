@@ -6,23 +6,55 @@
   },
   "about": {
     "title": "À Propos",
-    "description": "Développeur passionné spécialisé dans la création d'applications web modernes et performantes. Je maîtrise les technologies front-end et back-end pour livrer des solutions complètes et innovantes."
+    "description": "Je ne suis pas qu'un simple développeur - je suis un architecte du numérique, un passionné obsédé par la magie qui se cache derrière chaque ligne de code. Mon royaume? L'intersection entre la logique implacable des algorithmes et la créativité sans limites du web moderne. Je crois fermement que les meilleures applications ne sont pas celles qui fonctionnent parfaitement, mais celles qui résolvent des problèmes réels avec une élégance discrète. Mon approche? Transformer la complexité technique en simplicité utilisateur." 
   },
   "projects": {
     "title": "Portfolio",
     "subtitle": "Présentation de mes dernières expériences",
-    "project": "Projet de stage",
-    "date": "16 Juin - 12 Juil. 2024",
-    "description": "Application web de gestion des formations et ressources humaines pour EMIT Business Hub. Solution complète avec interface intuitive et backend robuste.",
     "viewCode": "Voir le code",
-    "viewProject": "Voir le projet"
+    "viewProject": "Voir le projet",
+    "list": [
+      {
+        "type": "Projet de stage",
+        "date": "16 Juin 2025 - (en cours)",
+        "title": "EMIT Business Hub",
+        "description": "Application web complète de gestion des formations et ressources humaines pour EMIT Business Hub. Interface intuitive, backend robuste et génération innovante de badges QR code pour tous les membres, staff et responsables. Simplifie la validation des membres avec approbation en un clic et notifications email automatiques."
+      },
+      {
+        "type": "Projet Académique",
+        "date": "03 Avril - 12 May. 2025",
+        "title": "CyberCafe OpenService", 
+        "description": "Application web innovante de gestion complète pour cybercafé avec système de minuteur intelligent, paiement intégré et analyse financière en temps réel. Génération automatique de rapports de chiffre d'affaire quotidien et visualisation des revenus hebdomadaires par diagrammes interactifs."
+      },
+      {
+        "type": "Projet de stage",
+        "date": "16 Juin - 12 Juil. 2024",
+        "title": "Application de Gestion",
+        "description": "Outil de gestion de tâches collaboratif en temps réel"
+      },
+      {
+        "type": "Projet de stage",
+        "date": "16 Juin - 12 Juil. 2024",
+        "title": "Application de Gestion",
+        "description": "Outil de gestion de tâches collaboratif en temps réel"
+      },
+      {
+        "type": "Projet de stage",
+        "date": "16 Juin - 12 Juil. 2024",
+        "title": "Application de Gestion",
+        "description": "Outil de gestion de tâches collaboratif en temps réel"
+      },
+      {
+        "type": "Projet de stage",
+        "date": "16 Juin - 12 Juil. 2024",
+        "title": "Application de Gestion",
+        "description": "Outil de gestion de tâches collaboratif en temps réel"
+      }
+    ]
   },
   "skills": {
     "title": "Compétences",
     "subtitle": "Présentation de mes compétences",
-    "explorer": "Explorer",
-    "terminal": "Terminal",
-    "vscode": "VS Code",
     "softSkills": {
       "teamwork": "Travail en équipe",
       "communication": "Communication",
@@ -33,9 +65,7 @@
     }
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.",
-    "location": "Remote Worldwide"
+    "subtitle": "N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais."
   },
   "alerts": {
     "copySuccess": "Copié avec succès",
@@ -48,9 +78,12 @@
     "ai": "Intelligence Artificielle"
   },
   "descriptions": {
-    "uiux": "Conception d'interfaces utilisateur intuitives et d'expériences utilisateur optimisées pour des applications web modernes.",
-    "academic": "Parcours académique solide en informatique avec spécialisation en développement web et technologies émergentes.",
-    "networks": "Maîtrise des architectures réseau et des protocoles de communication pour des applications distribuées.",
+    "uiux": "En termes simples : Je crée des sites tellement faciles à utiliser que même votre grand-mère pourrait commander en ligne sans appeler à l'aide !",
+    "academic": "Diplômé en Licence Développement d'Applications Intranet et Internet (DAII) de l'EMIT, Université de Fianarantsoa à Madagascar. Je me spécialise désormais dans l'intégration de l'Intelligence Artificielle pour créer des solutions digitales qui anticipent les besoins des utilisateurs et dépassent leurs attentes. Mon objectif : fusionner l'excellence technique acquise durant mon parcours universitaire avec l'innovation IA pour concevoir des applications qui ne se contentent pas de fonctionner, mais qui comprennent et s'adaptent à vos utilisateurs.",    
+    "networks": "Maîtrise des fondamentaux réseaux : configuration Cisco, routage (RIP, EIGRP), NAT et gestion d'adressage IP pour des infrastructures.",    
     "ai": "Exploration des technologies d'intelligence artificielle et leur intégration dans des applications innovantes."
+  },
+  "copyright":{
+    "text":"Tous droits réservés."
   }
 }

@@ -29,13 +29,42 @@ export default function Home() {
 
   const scrollProgress = useScroll();
   const { showAlert } = useModernAlert();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndexProjet0, setCurrentIndexProjet0] = useState(0);
+  const [currentIndexProjet1, setCurrentIndexProjet1] = useState(0);
+  const [currentIndexProjet4, setCurrentIndexProjet4] = useState(0);
+
+
+
   const { t, language, changeLanguage } = useTranslation();
 
 
   const images = [
-    '/projects/ebh-1.png',
-    '/projects/ebh-2.png',
+    [
+      '/projects/EBH/EBH (7).png',
+      '/projects/EBH/EBH (8).png',
+      '/projects/ebh/ebh-1.png',
+      '/projects/ebh/ebh-2.png',
+      '/projects/EBH/EBH (3).png',
+      '/projects/EBH/EBH (4).png',
+      '/projects/EBH/EBH (5).png',
+      '/projects/EBH/EBH (6).png',
+    ],[
+      '/projects/openService/cyber (1).png',
+      '/projects/openService/cyber (2).png',
+      '/projects/openService/cyber (3).png',
+      '/projects/openService/cyber (4).png',
+      '/projects/openService/cyber (5).png',
+    ],[
+
+    ],[
+
+    ],[
+      '/projects/radioTsiry/radio (1).png',
+      '/projects/radioTsiry/radio (2).png',
+      '/projects/radioTsiry/radio (3).png',
+      '/projects/radioTsiry/radio (4).png',
+      '/projects/radioTsiry/radio (5).png',
+    ]
   ];
 
 
@@ -86,13 +115,33 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      setCurrentIndexProjet0((prevIndex) => 
+        prevIndex === images[0].length - 1 ? 0 : prevIndex + 1
       );
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images[0].length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndexProjet1((prevIndex) => 
+        prevIndex === images[1].length - 1 ? 0 : prevIndex + 1
+      );
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [images[1].length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndexProjet4((prevIndex) => 
+        prevIndex === images[1].length - 1 ? 0 : prevIndex + 1
+      );
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [images[1].length]);
 
   return (
     <div className=" bg-teal-950/25 min-h-screen w-full border-t-2 border-teal-500 overflow-x-hidden">
@@ -115,7 +164,7 @@ export default function Home() {
           >
             <div className="bg-teal-950/25 profil border-2 border-teal-500 md:w-72 md:h-72 w-40 h-40 rounded-full rotate-x-90 p-2">
               <div className="w-full h-full rounded-full border-4 border-teal-500 bg-black" >
-                <Image className='w-full rounded-t-full rounded-br-full border-l-2 border-b-2' src={"/images/steve_profil.jpg"} width={1000} height={1000} alt='steve_profil' ></Image>
+                <Image className='w-full rounded-t-full rounded-br-xl rounded-bl-full border-r-4 border-b-4 border-teal-500' src={"/images/steve_profil.jpg"} width={1000} height={1000} alt='steve_profil' ></Image>
 
               </div>
             </div>
@@ -146,8 +195,8 @@ export default function Home() {
                   {t("hero.title")}<span className="clignoter" >_</span>
                 </div>
                 <div className="w-full flex justify-evenly py-4" >
-                  <div className="py-2 px-3 rounded-xl bg-teal-500 italic text-black font-bold" >@Contact</div>
-                  <div className="py-2 px-3 bg-teal-500/10 rounded-xl" >{t("hero.download")}</div>
+                  <button onClick={() => handleNavClick('contacts')} className="py-2 px-3 rounded-xl bg-teal-500 italic text-black font-bold" >@Contact</button>
+                  <a href='/documents/cv_steve_rasoafanirindraibe.pdf' download="Steve_Rasoafanirindraibe_CV.pdf" className="py-2 px-3 bg-teal-500/10 rounded-xl" >{t("hero.download")}</a>
                 </div>
               </div>
             </div>
@@ -251,7 +300,7 @@ export default function Home() {
                   </div>
                   <div className='py-2' >
                     <div className='pb-2 text-white' >UI/U<span className='text-orange-500' >X</span></div>
-                    <p className='text-sm text-justify indent-6' >{t("descriptions.uiux")}</p>
+                    <p className='text-sm text-justify' >{t("descriptions.uiux")}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -274,22 +323,22 @@ export default function Home() {
                 <AnimatedSection direction='down' threshold={0.7} duration={0.8} className='h-1/2 pb-4' >
                   <div className='h-full px-4 py-6 flex items-center group border-4 border-dotted border-teal-500 rounded-[40px] border-teal-500> text-center transition-all duration-700' >
                     <div>
-                      <FaNetworkWired size={60} className='mx-2' ></FaNetworkWired>
+                      <FaNetworkWired size={45} className='mr-4' ></FaNetworkWired>
                     </div>
                     <div className='' >
                       <div className='pb-2 text-white text-left indent-6 group-hover:scale-105 transition-all duration-700' ><span className='text-orange-500' >N</span>etworks </div>
-                      <div className='text-sm indent-6 text-justify' >{t("descriptions.networks")}</div>
+                      <div className='text-sm text-left ' >{t("descriptions.networks")}</div>
                     </div>
                   </div>
                 </AnimatedSection>
                 <AnimatedSection direction='up' threshold={0.1} duration={0.8}  className='h-1/2' >
                   <div className='h-full px-4 py-6 flex items-center group border-4 border-dotted rounded-[40px] border-teal-500> text-center transition-all duration-700' >
                     <div>
-                      <FaRobot size={60} className='mx-2' ></FaRobot>
+                      <FaRobot size={45} className='mr-4' ></FaRobot>
                     </div>
                     <div className='' >
                       <div className='pb-2 text-white group-hover:scale-105 transition-all duration-700' >Artificial Inteligence<span className='text-orange-500' > IA</span> </div>
-                      <div className='text-sm indent-6 text-justify' >{t("descriptions.ai")}</div>
+                      <div className='text-sm text-left' >{t("descriptions.ai")}</div>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -301,7 +350,7 @@ export default function Home() {
           {/* SB - second block ---------------------------------------------------------------------------------*/}
           <section id="projects"></section>
 
-          <AnimatedSection threshold={0.1} duration={0.8} className='w-full h-full py-20' >
+          <div className='w-full h-full pt-20' >
             <div className='h-full w-full text-4xl text-center underline-rounded' >
               <span className="text-orange-500">&lt;</span>
               <span>Portfolio</span>
@@ -312,13 +361,13 @@ export default function Home() {
               <div className='w-full pt-20' >
                 <div className='w-full flex justify-center '>
                   {/* Image make a move */}
-                  <AnimatedSection direction='left' threshold={0.5} delay={0.5} duration={1.5} className="relative w-[520] h-[292] bg-teal-500 overflow-hidden rounded-l-xl shadow-2xl mx-16">
+                  <AnimatedSection direction='left' threshold={0.5} delay={0.5} duration={1.5} className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-l-xl shadow-2xl mx-16">
                     <div className="relative w-full h-full">  
-                      {images.map((image, index) => (
+                      {images[0].map((image, index) => (
                         <div
                           key={index}
                           className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                            index === currentIndex
+                            index === currentIndexProjet0
                               ? 'opacity-100 scale-100'
                               : 'opacity-0 scale-105'
                           }`}
@@ -336,13 +385,13 @@ export default function Home() {
 
                     {/* Indicateurs */}
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                      {images.map((_, index) => (
+                      {images[0].map((_, index) => (
                         <button
                           key={index}
                           className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            index === currentIndex ? 'bg-white scale-125' : 'bg-white/50'
+                            index === currentIndexProjet0 ? 'bg-white scale-125' : 'bg-white/50'
                           }`}
-                          onClick={() => setCurrentIndex(index)}
+                          onClick={() => setCurrentIndexProjet0(index)}
                         />
                       ))}
                     </div>
@@ -350,27 +399,23 @@ export default function Home() {
                   <div className='h-96 w-3 bg-white border-r-4 border-teal-500 rounded-tr-[50px] rounded-bl-[50px]' ></div>
                   <div className=" w-[400] pt-8 ">
                     <div className='border-l-[30px] border-teal-500 px-3 ' >
-                      <div className="text-xl uppercase ">{t("projects.project")}</div>
+                      <div className="text-xl uppercase ">{t("projects.list.0.type")}</div>
                       <div className='w-full flex items-center text-sm ' >
                         <FaClock size={14} ></FaClock>
-                        <div className='px-2' >{t("projects.date")}</div>
+                        <div className='px-2' >{t("projects.list.0.date")}</div>
                       </div>
                     </div>
 
                     <AnimatedSection direction='left' threshold={0.7} delay={0.5} duration={1.5}>
                       <div className='py-8 px-4' >
-                        {/* <div className='flex px-5 pb-3 text-lg ' ><FaLaptop size={24} className='mx-2 mt-[2px] ' /> Description</div> */}
-                        <p className='text-sm leading-6 text-justify indent-6' >Une application web pour la gestion des formations et ressource humaine de l'EMIT Business Hub. Elle a pour but de ... Lorem ipsum dolor sit amet consectetur adipisiciisicing elit. Tempora, officiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. At earum harum facere aperiam sint non.</p>
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.0.description")}</p>
                       </div>
-
                       <div className=' px-4'>
-                        
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJs</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgreSQL</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Tailwind</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Drizzle_ORM</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+2</span>
-
                       </div>
                       <div className="w-full flex justify-evenly mt-8 px-4">
                         <button
@@ -398,17 +443,17 @@ export default function Home() {
                   <div className=" w-[400]">
                     <div  className='w-full flex justify-end' >
                       <div className='border-r-[30px] border-white px-3 ' >
-                        <div className="text-xl uppercase ">Project de stage</div>
+                        <div className="text-xl uppercase ">{t("projects.list.1.type")}</div>
                         <div className='w-full flex items-center justify-end text-sm  ' >
                           <FaClock size={14} ></FaClock>
-                          <div className='px-2' >16 Jui. - 12 Jul. 2025</div>
+                          <div className='px-2' >{t("projects.list.1.date")}</div>
                         </div>
                       </div>
                     </div>
 
                     <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={1.5}>
                       <div className='w-full py-8 px-4' >
-                        <p className='text-sm leading-6 text-justify indent-6' >Une application web pour la gestion des formations et ressource humaine de l'EMIT Business Hub. Elle a pour but de ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, amet? Lorem ipsum Tempora, officiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. At earum harum facere aperiam sint non.</p>
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.1.description")}</p>
                       </div>
                       <div className=' px-4'>
                         
@@ -434,21 +479,17 @@ export default function Home() {
                         </button>           
                       </div>
                     </AnimatedSection>
-
-                      
                   </div>
-
                   <div className='h-96 w-3 bg-white border-r-4 border-teal-500 rounded-tr-[50px] rounded-bl-[50px]' ></div>
-
                   {/* Image make a move */}
                   <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={1.5} className='h-[384px] flex items-end px-16 ' >
-                    <div className="relative w-[520] h-[292] bg-teal-500 overflow-hidden rounded-r-xl shadow-2xl">
+                    <div className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-r-xl shadow-2xl">
                       <div className="relative w-full h-full">
-                        {images.map((image, index) => (
+                        {images[1].map((image, index) => (
                           <div
                             key={index}
                             className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                              index === currentIndex
+                              index === currentIndexProjet1
                                 ? 'opacity-100 scale-100'
                                 : 'opacity-0 scale-105'
                             }`}
@@ -466,13 +507,13 @@ export default function Home() {
 
                       {/* Indicateurs */}
                       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        {images.map((_, index) => (
+                        {images[1].map((_, index) => (
                           <button
                             key={index}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                              index === currentIndex ? 'bg-white scale-125' : 'bg-white/50'
+                              index === currentIndexProjet1 ? 'bg-white scale-125' : 'bg-white/50'
                             }`}
-                            onClick={() => setCurrentIndex(index)}
+                            onClick={() => setCurrentIndexProjet1(index)}
                           />
                         ))}
                       </div>
@@ -486,13 +527,13 @@ export default function Home() {
               <div className='w-full pt-20' >
                 <div className='w-full flex justify-center '>
                   {/* Image make a move */}
-                  <AnimatedSection direction='left' threshold={0.7} delay={0.5} duration={2} className="relative w-[520] h-[292] bg-teal-500 overflow-hidden rounded-l-xl shadow-2xl mx-16">
+                  <AnimatedSection direction='left' threshold={0.7} delay={0.5} duration={2} className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-l-xl shadow-2xl mx-16">
                     <div className="relative w-full h-full">  
-                      {images.map((image, index) => (
+                      {images[0].map((image, index) => (
                         <div
                           key={index}
                           className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                            index === currentIndex
+                            index === currentIndexProjet0
                               ? 'opacity-100 scale-100'
                               : 'opacity-0 scale-105'
                           }`}
@@ -510,13 +551,13 @@ export default function Home() {
 
                     {/* Indicateurs */}
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                      {images.map((_, index) => (
+                      {images[0].map((_, index) => (
                         <button
                           key={index}
                           className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            index === currentIndex ? 'bg-white scale-125' : 'bg-white/50'
+                            index === currentIndexProjet0 ? 'bg-white scale-125' : 'bg-white/50'
                           }`}
-                          onClick={() => setCurrentIndex(index)}
+                          onClick={() => setCurrentIndexProjet0(index)}
                         />
                       ))}
                     </div>
@@ -524,27 +565,24 @@ export default function Home() {
                   <div className='h-96 w-3 bg-white border-r-4 border-teal-500 rounded-tr-[50px] rounded-bl-[50px]' ></div>
                   <div className=" w-[400] pt-8 ">
                     <div className='border-l-[30px] border-teal-500 px-3 ' >
-                      <div className="text-xl uppercase ">Project de stage</div>
+                      <div className="text-xl uppercase ">{t("projects.list.2.type")}</div>
                       <div className='w-full flex items-center text-sm ' >
                         <FaClock size={14} ></FaClock>
-                        <div className='px-2' >16 Jui. - 12 Jul. 2025</div>
+                        <div className='px-2' >{t("projects.list.2.date")}</div>
                       </div>
                     </div>
 
                     <AnimatedSection direction='left' threshold={0.7} delay={0.5} duration={2}>
                       <div className='py-8 px-4' >
                         {/* <div className='flex px-5 pb-3 text-lg ' ><FaLaptop size={24} className='mx-2 mt-[2px] ' /> Description</div> */}
-                        <p className='text-sm leading-6 text-justify indent-6' >Une application web pour la gestion des formations et ressource humaine de l'EMIT Business Hub. Elle a pour but de ... Lorem ipsum dolor sit amet consectetur adipisiciisicing elit. Tempora, officiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. At earum harum facere aperiam sint non.</p>
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.2.description")}</p>
                       </div>
-
                       <div className=' px-4'>
-                        
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJs</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgreSQL</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Tailwind</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Drizzle_ORM</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+2</span>
-
                       </div>
                       <div className="w-full flex justify-evenly mt-8 px-4">
                         <button
@@ -562,32 +600,26 @@ export default function Home() {
                         </button>           
                       </div>
                     </AnimatedSection>
-
-
-
-
                   </div>
-
                 </div>
               </div>
-
               <div className='w-full h-full ' >
                 <div className='w-full h-full flex justify-center'>
 
                   <div className=" w-[400]">
                     <div  className='w-full flex justify-end' >
                       <div className='border-r-[30px] border-white px-3 ' >
-                        <div className="text-xl uppercase ">Project de stage</div>
+                        <div className="text-xl uppercase ">{t("projects.list.3.type")}</div>
                         <div className='w-full flex items-center justify-end text-sm  ' >
                           <FaClock size={14} ></FaClock>
-                          <div className='px-2' >16 Jui. - 12 Jul. 2025</div>
+                          <div className='px-2' >{t("projects.list.3.date")}</div>
                         </div>
                       </div>
                     </div>
 
                     <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={2}>
                       <div className='w-full py-8 px-4' >
-                        <p className='text-sm leading-6 text-justify indent-6' >Une application web pour la gestion des formations et ressource humaine de l'EMIT Business Hub. Elle a pour but de ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, amet? Lorem ipsum Tempora, officiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. At earum harum facere aperiam sint non.</p>
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.3.description")}</p>
                       </div>
                       <div className=' px-4'>
                         
@@ -621,13 +653,13 @@ export default function Home() {
 
                   {/* Image make a move */}
                   <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={2} className='h-[384px] flex items-end px-16 ' >
-                    <div className="relative w-[520] h-[292] bg-teal-500 overflow-hidden rounded-r-xl shadow-2xl">
+                    <div className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-r-xl shadow-2xl">
                       <div className="relative w-full h-full">
-                        {images.map((image, index) => (
+                        {images[1].map((image, index) => (
                           <div
                             key={index}
                             className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                              index === currentIndex
+                              index === currentIndexProjet1
                                 ? 'opacity-100 scale-100'
                                 : 'opacity-0 scale-105'
                             }`}
@@ -645,13 +677,179 @@ export default function Home() {
 
                       {/* Indicateurs */}
                       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        {images.map((_, index) => (
+                        {images[1].map((_, index) => (
                           <button
                             key={index}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                              index === currentIndex ? 'bg-white scale-125' : 'bg-white/50'
+                              index === currentIndexProjet1 ? 'bg-white scale-125' : 'bg-white/50'
                             }`}
-                            onClick={() => setCurrentIndex(index)}
+                            onClick={() => setCurrentIndexProjet1(index)}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </AnimatedSection>
+
+                </div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-b from-black to-teal-900/50 px-24 pb-20">
+              <div className='w-full pt-20' >
+                <div className='w-full flex justify-center '>
+                  {/* Image make a move */}
+                  <AnimatedSection direction='left' threshold={0.5} delay={0.5} duration={1.5} className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-l-xl shadow-2xl mx-16">
+                    <div className="relative w-full h-full">  
+                      {images[4].map((image, index) => (
+                        <div
+                          key={index}
+                          className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
+                            index === currentIndexProjet4
+                              ? 'opacity-100 scale-100'
+                              : 'opacity-0 scale-105'
+                          }`}
+                        >
+                          <Image
+                            src={image}
+                            alt={`Slide ${index + 1}`}
+                            fill
+                            className="object-cover"
+                            priority={index === 0}
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Indicateurs */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                      {images[4].map((_, index) => (
+                        <button
+                          key={index}
+                          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                            index === currentIndexProjet4 ? 'bg-white scale-125' : 'bg-white/50'
+                          }`}
+                          onClick={() => setCurrentIndexProjet4(index)}
+                        />
+                      ))}
+                    </div>
+                  </AnimatedSection>
+                  <div className='h-96 w-3 bg-white border-r-4 border-teal-500 rounded-tr-[50px] rounded-bl-[50px]' ></div>
+                  <div className=" w-[400] pt-8 ">
+                    <div className='border-l-[30px] border-teal-500 px-3 ' >
+                      <div className="text-xl uppercase ">{t("projects.list.0.type")}</div>
+                      <div className='w-full flex items-center text-sm ' >
+                        <FaClock size={14} ></FaClock>
+                        <div className='px-2' >{t("projects.list.0.date")}</div>
+                      </div>
+                    </div>
+
+                    <AnimatedSection direction='left' threshold={0.7} delay={0.5} duration={1.5}>
+                      <div className='py-8 px-4' >
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.0.description")}</p>
+                      </div>
+                      <div className=' px-4'>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PHP</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >JavaScript</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >MySQL</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Bootstrap</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >CSS</span>
+                      </div>
+                      <div className="w-full flex justify-evenly mt-8 px-4">
+                        <button
+                          onClick={() => showAlert("Le code est securisé", "error")}
+                          className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
+                        >
+                          <FaGithub className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaGithub> 
+                          <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >{t('projects.viewCode')} </div>
+                        </button>
+                        <button
+                          className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
+                        >
+                          <FaEye className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaEye> 
+                          <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >{t('projects.viewProject')}</div>
+                        </button>           
+                      </div>
+                    </AnimatedSection>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-full h-full ' >
+                <div className='w-full h-full flex justify-center'>
+
+                  <div className=" w-[400]">
+                    <div  className='w-full flex justify-end' >
+                      <div className='border-r-[30px] border-white px-3 ' >
+                        <div className="text-xl uppercase ">{t("projects.list.1.type")}</div>
+                        <div className='w-full flex items-center justify-end text-sm  ' >
+                          <FaClock size={14} ></FaClock>
+                          <div className='px-2' >{t("projects.list.1.date")}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={1.5}>
+                      <div className='w-full py-8 px-4' >
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.1.description")}</p>
+                      </div>
+                      <div className=' px-4'>
+                        
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJs</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgreSQL</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Tailwind</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Drizzle_ORM</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+2</span>
+
+                      </div>
+                      <div className="w-full flex justify-evenly mt-8 px-4">
+                        <button
+                          className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
+                        >
+                          <FaGithub className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaGithub> 
+                          <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >{t('projects.viewCode')} </div>
+                        </button>
+                        <button
+                          className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
+                        >
+                          <FaEye className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaEye> 
+                          <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >{t('projects.viewProject')}</div>
+                        </button>           
+                      </div>
+                    </AnimatedSection>
+                  </div>
+                  <div className='h-96 w-3 bg-white border-r-4 border-teal-500 rounded-tr-[50px] rounded-bl-[50px]' ></div>
+                  {/* Image make a move */}
+                  <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={1.5} className='h-[384px] flex items-end px-16' >
+                    <div className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-r-xl shadow-2xl">
+                      <div className="relative w-full h-full">
+                        {images[1].map((image, index) => (
+                          <div
+                            key={index}
+                            className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
+                              index === currentIndexProjet1
+                                ? 'opacity-100 scale-100'
+                                : 'opacity-0 scale-105'
+                            }`}
+                          >
+                            <Image
+                              src={image}
+                              alt={`Slide ${index + 1}`}
+                              fill
+                              className="object-cover"
+                              priority={index === 0}
+                            />
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Indicateurs */}
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {images[1].map((_, index) => (
+                          <button
+                            key={index}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                              index === currentIndexProjet1 ? 'bg-white scale-125' : 'bg-white/50'
+                            }`}
+                            onClick={() => setCurrentIndexProjet1(index)}
                           />
                         ))}
                       </div>
@@ -662,7 +860,7 @@ export default function Home() {
               </div>
             </div>
 
-          </AnimatedSection>
+          </div>
         </div>
 
         {/* Third block -----------------------------------------------------------------------------------------*/}
@@ -671,9 +869,9 @@ export default function Home() {
           <AnimatedSection direction='scale' threshold={0.3} delay={0.1} duration={1} >
             <div className='h-full w-full transform -translate-y-16 text-4xl text-center underline-rounded' >
               <span className="text-orange-500">&lt;</span>
-              <span>Skills</span> 
+              <span>{t("skills.title")}</span> 
               <span className="text-orange-500">/&gt;</span>
-              <div className="text-sm text-gray-700 py-3">Présentation de mes compétences.</div>
+              <div className="text-sm text-gray-700 py-3">{t("skills.subtitle")}</div>
             </div>
           </AnimatedSection>
 
@@ -773,22 +971,22 @@ export default function Home() {
                   </div>
                   <div className='h-[90%] bg-black pt-4 p-2' >
                     <code className='text-sm'>
-                      <div className=''>&lt;html&gt;</div>
-                      <div className='pl-4'>&lt;body&gt;</div>
+                      <div className=''>&lt;<span className='text-orange-500' >html</span>&gt;</div>
+                      <div className='pl-4'>&lt;<span className='text-blue-500' >body</span>&gt;</div>
                       
-                      <div className='pl-8'>&lt;Title&gt; <span className='text-[18px] font-bold'>SoftSkills</span> &lt;/Title&gt;</div>
-                      <div className='pl-8'>&lt;li&gt;</div>
-                      <div className='pl-12'> &lt;ul&gt; <span className='font-bold'>Travail en equipe </span>&lt;/ul&gt;</div>
-                      <div className='pl-12'> &lt;ul&gt; <span className='font-bold'>Communication </span>&lt;/ul&gt;</div>
-                      <div className='pl-12'> &lt;ul&gt; <span className='font-bold'>Conception de S.I </span>&lt;/ul&gt;</div>
-                      <div className='pl-12'> &lt;ul&gt; <span className='font-bold'>Algorithme </span>&lt;/ul&gt;</div>
-                      <div className='pl-12'> &lt;ul&gt; <span className='font-bold'>Adaptabilite </span>&lt;/ul&gt;</div>
-                      <div className='pl-12'> &lt;ul&gt; <span className='font-bold'>Resolution des problemes </span>&lt;/ul&gt;</div>
+                      <div className='pl-8'>&lt;<span className='text-blue-500' >title</span>&gt; <span className='text-[18px] font-bold'>SoftSkills</span> &lt;<span className='text-blue-500' >/title</span>&gt;</div>
+                      <div className='pl-8'>&lt;<span className='text-blue-500' >li</span>&gt;</div>
+                      <div className='pl-12'> &lt;<span className='text-blue-500' >ul</span>&gt; <span className='font-bold'>{t("skills.softSkills.teamwork")} </span>&lt;<span className='text-blue-500' >/ul</span>&gt;</div>
+                      <div className='pl-12'> &lt;<span className='text-blue-500' >ul</span>&gt; <span className='font-bold'>{t("skills.softSkills.communication")} </span>&lt;<span className='text-blue-500' >/ul</span>&gt;</div>
+                      <div className='pl-12'> &lt;<span className='text-blue-500' >ul</span>&gt; <span className='font-bold'>{t("skills.softSkills.systemDesign")} </span>&lt;<span className='text-blue-500' >/ul</span>&gt;</div>
+                      <div className='pl-12'> &lt;<span className='text-blue-500' >ul</span>&gt; <span className='font-bold'>{t("skills.softSkills.algorithms")} </span>&lt;<span className='text-blue-500' >/ul</span>&gt;</div>
+                      <div className='pl-12'> &lt;<span className='text-blue-500' >ul</span>&gt; <span className='font-bold'>{t("skills.softSkills.adaptability")} </span>&lt;<span className='text-blue-500' >/ul</span>&gt;</div>
+                      <div className='pl-12'> &lt;<span className='text-blue-500' >ul</span>&gt; <span className='font-bold'>{t("skills.softSkills.problemSolving")}</span>&lt;<span className='text-blue-500' >/ul</span>&gt;</div>
 
-                      <div className='pl-8'>&lt;/li&gt;</div>
+                      <div className='pl-8'>&lt;<span className='text-blue-500' >/li</span>&gt;</div>
 
-                      <div className='pl-4'>&lt;/body&gt;</div>
-                      <div className=''>&lt;/html&gt;</div>
+                      <div className='pl-4'>&lt;<span className='text-blue-500' >/body</span>&gt;</div>
+                      <div className=''>&lt;<span className='text-orange-500' >/html</span>&gt;</div>
                     </code>
                   </div>
                 </AnimatedSection>        
@@ -802,10 +1000,10 @@ export default function Home() {
               <AnimatedSection direction='scale' threshold={0.3} delay={0.1} duration={0.8}>
                 <div className='text-4xl text-center pb-3' >
                   <span className="text-orange-500">&lt;</span>
-                  <span>Contact</span> 
+                  <span>Contact</span>
                   <span className="text-orange-500">/&gt;</span>
                 </div>
-                <div className='text-center pb-14 text-sm text-gray-300' >N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.</div>
+                <div className='text-center pb-14 text-sm text-gray-300' >{t("contact.subtitle")}</div>
               </AnimatedSection>
 
               <AnimatedSection direction='up' threshold={0.1} delay={0.3} duration={0.3} className='flex justify-center py-2'> 
@@ -849,7 +1047,7 @@ export default function Home() {
           </div>
           <div className='w-full h-[10%] flex justify-center items-center' >
             <div className="text-black text-sm">
-              <p>&copy; 2024 <strong>Steve Rasoafanirindraibe</strong>. Tous droits réservés.</p>
+              <p>&copy; 2024 <strong>Steve Rasoafanirindraibe</strong>. {t("copyright.text")}</p>
             </div>
           </div>
         </footer>

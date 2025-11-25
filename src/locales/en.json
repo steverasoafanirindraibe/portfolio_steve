@@ -6,23 +6,55 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Passionate developer specialized in creating modern and high-performance web applications. I master both front-end and back-end technologies to deliver complete and innovative solutions."
+    "description": "I'm not just a developer - I'm a digital architect, a passionate soul obsessed with the magic behind every line of code. My kingdom? The intersection between the relentless logic of algorithms and the boundless creativity of the modern web.I firmly believe that the best applications aren't those that work perfectly, but those that solve real problems with discreet elegance. My approach? Transforming technical complexity into user simplicity."
   },
   "projects": {
     "title": "Portfolio",
     "subtitle": "Showcase of my latest experiences",
-    "project": "Internship Project",
-    "date": "Jun 16 - Jul 12, 2024",
-    "description": "Web application for training and human resources management for EMIT Business Hub. Complete solution with intuitive interface and robust backend.",
     "viewCode": "View Code",
-    "viewProject": "View Project"
+    "viewProject": "View Project",
+    "list": [
+      {
+        "type": "Internship Project",
+        "date": "June 16, 2025 - (in progress)",
+        "title": "EMIT Business Hub",
+        "description": "Complete web application for training and human resources management at EMIT Business Hub. Features an intuitive interface, robust backend, and innovative QR code badge generation for all members, staff, and managers. Simplifies member validation with one-click approval and automatic email notifications."
+      },
+      {
+        "type": "Academic Project",
+        "date": "April 03 - May 12, 2024",
+        "title": "CyberCafe OpenService",
+        "description": "Innovative web application for complete cybercafe management with smart timer system, integrated payment and real-time financial analysis. Automatic generation of daily revenue reports and weekly income visualization through interactive charts."
+      },
+      {
+        "type": "Internship Project",
+        "date": "Jun 16 - Jul 12, 2024",
+        "title": "Management Application",
+        "description": "Collaborative task management tool in real-time"
+      },
+      {
+        "type": "Internship Project",
+        "date": "Jun 16 - Jul 12, 2024",
+        "title": "Management Application",
+        "description": "Collaborative task management tool in real-time"
+      },
+      {
+        "type": "Internship Project",
+        "date": "Jun 16 - Jul 12, 2024",
+        "title": "Management Application",
+        "description": "Collaborative task management tool in real-time"
+      },
+      {
+        "type": "Internship Project",
+        "date": "Jun 16 - Jul 12, 2024",
+        "title": "Management Application",
+        "description": "Collaborative task management tool in real-time"
+      }
+    ]
   },
   "skills": {
     "title": "Skills",
     "subtitle": "Presentation of my competencies",
-    "explorer": "Explorer",
-    "terminal": "Terminal", 
-    "vscode": "VS Code",
     "softSkills": {
       "teamwork": "Teamwork",
       "communication": "Communication",
@@ -33,9 +65,7 @@
     }
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Feel free to contact me, I will respond as soon as possible.",
-    "location": "Remote Worldwide"
+    "subtitle": "Feel free to contact me, I will respond as soon as possible."
   },
   "alerts": {
     "copySuccess": "Copied successfully",
@@ -48,9 +78,12 @@
     "ai": "Artificial Intelligence"
   },
   "descriptions": {
-    "uiux": "Design of intuitive user interfaces and optimized user experiences for modern web applications.",
-    "academic": "Strong academic background in computer science with specialization in web development and emerging technologies.",
-    "networks": "Mastery of network architectures and communication protocols for distributed applications.",
+    "uiux": "In simple terms: I create websites so easy to use that even your grandmother could order online without calling for help!",
+    "academic": "Graduated with a Bachelor's degree in Intranet and Internet Application Development (DAII) from EMIT, University of Fianarantsoa in Madagascar. I now specialize in integrating Artificial Intelligence to create digital solutions that anticipate user needs and exceed expectations.My goal: to merge the technical excellence acquired during my academic journey with AI innovation to design applications that don't just function, but understand and adapt to your users.",    
+    "networks": "Networks\nMastery of network fundamentals: Cisco configuration, routing (RIP, EIGRP), NAT and IP address management for infrastructures.",    
     "ai": "Exploration of artificial intelligence technologies and their integration into innovative applications."
+  },
+  "copyright":{
+    "text":" All rights reserved."
   }
 }
