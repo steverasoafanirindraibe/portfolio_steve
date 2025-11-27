@@ -8,14 +8,13 @@ import {
   AlertTriangle,
   X,
   Sparkles,
-  MessageCircle
 } from 'lucide-react';
 
 const ModernAlert = () => {
   const [alert, setAlert] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const showAlert = useCallback((message, type = 'info', duration = 4000) => {
+  const showAlert = useCallback((message, type = 'info') => {
     setAlert({ message, type });
     setIsVisible(true);
   }, []);

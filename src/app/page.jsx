@@ -90,17 +90,17 @@ export default function Home() {
   };
 
   const getTranslateY = (baseOffset) => {
-   if (scrollProgress > 0.5) {
-      const navbar = document.getElementById('navbar');
-      if (navbar) {
-        navbar.classList.add('backdrop-blur-[2px]');
-      }
-    } else {
-      const navbar = document.getElementById('navbar');
-      if (navbar) {
-        navbar.classList.remove('backdrop-blur-[2px]');
-      }
-    }
+  //  if (scrollProgress > 0.5) {
+  //     const navbar = document.getElementById('navbar');
+  //     if (navbar) {
+  //       navbar.classList.add('backdrop-blur-[2px]');
+  //     }
+  //   } else {
+  //     const navbar = document.getElementById('navbar');
+  //     if (navbar) {
+  //       navbar.classList.remove('backdrop-blur-[2px]');
+  //     }
+  //   }
     return baseOffset * scrollProgress;
   }
 
@@ -119,12 +119,14 @@ export default function Home() {
   };
 
   const handleNavClick = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+    if (typeof document !== 'undefined') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
   };
 
@@ -251,7 +253,7 @@ export default function Home() {
                   <div className="sm:text-8xl text-5xl" >
                     <span className="text-teal-500" >S</span>teve 
                   </div>
-                  <div className="text-2xl sm:text-6xl">
+                  <div className="text-3xl sm:text-7xl">
                     Rasoafanirindrai<span className="text-orange-500" >be</span>;
                   </div>
                 </div>
@@ -961,6 +963,10 @@ export default function Home() {
                     <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500 mr-1 mt-1"></div>
                     <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-indigo-500 mr-1 mt-1"></div>
                   </div>
+                </div>
+                <div className='flex items-center text-xs sm:text-sm mt-2 px-3 py-2 rounded-xl bg-gray-300/20 mx-2' >
+                  <FaHome className='mr-3' ></FaHome>
+                  FRONTEND
                 </div>
                 <div className='h-auto sm:h-[90%] w-full'>
                   <div className='p-3 sm:p-6 grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-4'>
