@@ -1,4 +1,3 @@
-
 "use client"
 import {useScroll } from '@/hooks/useScroll';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -19,7 +18,7 @@ import {
 } from 'react-icons/si';
 import { FaAppStore, FaBookDead, FaBookOpen, FaBoxOpen, FaCertificate, FaCheck, FaClock, FaCode, FaEnvelope, FaExclamation, FaEye, FaFolder, FaGithub, FaGlobe, FaGraduationCap, FaHome, FaIdBadge, FaInternetExplorer, FaLaptop, FaLaptopCode, FaLinkedin, FaListOl, FaLocationArrow, FaMap, FaNetworkWired, FaProjectDiagram, FaRobot, FaRProject, FaStar, FaStarAndCrescent, FaStarHalf, FaStarHalfAlt, FaStarOfDavid, FaTimes, FaUikit, FaUniversity, FaUser, FaUserAlt, FaUserCheck, FaUserGraduate, FaWallet, FaWarehouse } from 'react-icons/fa';
 import Image from 'next/image';
-import { FaBagShopping, FaBook, FaBookAtlas, FaBookQuran, FaLocationDot, FaMapLocation, FaStarHalfStroke, FaTimeline, FaUpwork, FaVault, FaWebAwesome, FaWebflow } from 'react-icons/fa6';
+import { FaBagShopping, FaBook,FaComment,FaPaperPlane , FaBookAtlas, FaBookQuran, FaLocationDot, FaMapLocation, FaStarHalfStroke, FaTimeline, FaUpwork, FaVault, FaWebAwesome, FaWebflow } from 'react-icons/fa6';
 import { useState,useEffect } from 'react';
 import { useModernAlert } from '@/components/ModernAlert';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -29,14 +28,15 @@ export default function Home() {
 
   const scrollProgress = useScroll();
   const { showAlert } = useModernAlert();
+
   const [currentIndexProjet0, setCurrentIndexProjet0] = useState(0);
   const [currentIndexProjet1, setCurrentIndexProjet1] = useState(0);
+  const [currentIndexProjet2, setCurrentIndexProjet2] = useState(0);
+  const [currentIndexProjet3, setCurrentIndexProjet3] = useState(0);
   const [currentIndexProjet4, setCurrentIndexProjet4] = useState(0);
-
-
+  const [currentIndexProjet5, setCurrentIndexProjet5] = useState(0);
 
   const { t, language, changeLanguage } = useTranslation();
-
 
   const images = [
     [
@@ -55,18 +55,32 @@ export default function Home() {
       '/projects/openService/cyber (4).png',
       '/projects/openService/cyber (5).png',
     ],[
-
+      '/projects/autoEcole/autoecole (1).png',
+      '/projects/autoEcole/autoecole (2).png',
+      '/projects/autoEcole/autoecole (3).png',
+      '/projects/autoEcole/autoecole (4).png',
+      '/projects/autoEcole/autoecole (5).png',
     ],[
-
+      '/projects/impots/impots (1).png',
+      '/projects/impots/impots (2).png',
+      '/projects/impots/impots (3).png',
+      '/projects/impots/impots (4).png',
+      '/projects/impots/impots (5).png',
+      '/projects/impots/impots (6).png',
+      '/projects/impots/impots (7).png',
     ],[
       '/projects/radioTsiry/radio (1).png',
       '/projects/radioTsiry/radio (2).png',
       '/projects/radioTsiry/radio (3).png',
       '/projects/radioTsiry/radio (4).png',
       '/projects/radioTsiry/radio (5).png',
+    ],[
+      '/projects/homevers/homevers (1).png',
+      '/projects/homevers/homevers (2).png',
+      '/projects/homevers/homevers (3).png',
+      '/projects/homevers/homevers (4).png',
     ]
   ];
-
 
   const getOffset = (baseOffset) => {
     console.log(scrollProgress)
@@ -85,7 +99,6 @@ export default function Home() {
         navbar.classList.remove('backdrop-blur-[2px]');
       }
     }
-
     return baseOffset * scrollProgress;
   }
 
@@ -119,7 +132,6 @@ export default function Home() {
         prevIndex === images[0].length - 1 ? 0 : prevIndex + 1
       );
     }, 6000);
-
     return () => clearInterval(interval);
   }, [images[0].length]);
 
@@ -129,19 +141,44 @@ export default function Home() {
         prevIndex === images[1].length - 1 ? 0 : prevIndex + 1
       );
     }, 6000);
-
     return () => clearInterval(interval);
   }, [images[1].length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndexProjet4((prevIndex) => 
-        prevIndex === images[1].length - 1 ? 0 : prevIndex + 1
+      setCurrentIndexProjet2((prevIndex) => 
+        prevIndex === images[2].length - 1 ? 0 : prevIndex + 1
       );
     }, 6000);
-
     return () => clearInterval(interval);
-  }, [images[1].length]);
+  }, [images[2].length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndexProjet3((prevIndex) => 
+        prevIndex === images[3].length - 1 ? 0 : prevIndex + 1
+      );
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [images[3].length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndexProjet4((prevIndex) => 
+        prevIndex === images[4].length - 1 ? 0 : prevIndex + 1
+      );
+    }, 6000);
+    return () => clearInterval(interval);
+
+  }, [images[4].length]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndexProjet5((prevIndex) => 
+        prevIndex === images[5].length - 1 ? 0 : prevIndex + 1
+      );
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [images[5].length]);
 
   return (
     <div className=" bg-teal-950/25 min-h-screen w-full border-t-2 border-teal-500 overflow-x-hidden">
@@ -457,10 +494,10 @@ export default function Home() {
                       </div>
                       <div className=' px-4'>
                         
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJs</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >SpringBoot</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Next</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgreSQL</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Tailwind</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Drizzle_ORM</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >RestAPI</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+2</span>
 
                       </div>
@@ -529,11 +566,11 @@ export default function Home() {
                   {/* Image make a move */}
                   <AnimatedSection direction='left' threshold={0.7} delay={0.5} duration={2} className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-l-xl shadow-2xl mx-16">
                     <div className="relative w-full h-full">  
-                      {images[0].map((image, index) => (
+                      {images[2].map((image, index) => (
                         <div
                           key={index}
                           className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                            index === currentIndexProjet0
+                            index === currentIndexProjet2
                               ? 'opacity-100 scale-100'
                               : 'opacity-0 scale-105'
                           }`}
@@ -551,13 +588,13 @@ export default function Home() {
 
                     {/* Indicateurs */}
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                      {images[0].map((_, index) => (
+                      {images[2].map((_, index) => (
                         <button
                           key={index}
                           className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            index === currentIndexProjet0 ? 'bg-white scale-125' : 'bg-white/50'
+                            index === currentIndexProjet2 ? 'bg-white scale-125' : 'bg-white/50'
                           }`}
-                          onClick={() => setCurrentIndexProjet0(index)}
+                          onClick={() => setCurrentIndexProjet2(index)}
                         />
                       ))}
                     </div>
@@ -578,20 +615,19 @@ export default function Home() {
                         <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.2.description")}</p>
                       </div>
                       <div className=' px-4'>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJs</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgreSQL</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Laravel</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJS</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgresSQL</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Tailwind</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Drizzle_ORM</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+2</span>
                       </div>
                       <div className="w-full flex justify-evenly mt-8 px-4">
-                        <button
-                          onClick={() => showAlert("Le code est securisé", "error")}
+                        <a href='https://github.com/steverasoafanirindraibe/Auto_ecole_application_web'
                           className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
                         >
                           <FaGithub className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaGithub> 
                           <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >{t('projects.viewCode')} </div>
-                        </button>
+                        </a>
                         <button
                           className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
                         >
@@ -618,16 +654,20 @@ export default function Home() {
                     </div>
 
                     <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={2}>
-                      <div className='w-full py-8 px-4' >
+                      <div className='w-full pt-8 px-4' >
                         <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.3.description")}</p>
+                      </div>
+                      <div className='text-blue-700 text-[13px] underline pt-2 pb-8 text-right px-4'>
+                        <a href="/documents/rapportStage.pdf" target="_blank" rel="noopener noreferrer" >{t("projects.list.3.report")}</a>
                       </div>
                       <div className=' px-4'>
                         
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJs</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgreSQL</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >ReactJs</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >ExpressJs</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >MySQL</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Tailwind</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Drizzle_ORM</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+2</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >CSS</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+1</span>
 
                       </div>
                       <div className="w-full flex justify-evenly mt-8 px-4">
@@ -655,11 +695,11 @@ export default function Home() {
                   <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={2} className='h-[384px] flex items-end px-16 ' >
                     <div className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-r-xl shadow-2xl">
                       <div className="relative w-full h-full">
-                        {images[1].map((image, index) => (
+                        {images[3].map((image, index) => (
                           <div
                             key={index}
                             className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                              index === currentIndexProjet1
+                              index === currentIndexProjet3
                                 ? 'opacity-100 scale-100'
                                 : 'opacity-0 scale-105'
                             }`}
@@ -677,13 +717,13 @@ export default function Home() {
 
                       {/* Indicateurs */}
                       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        {images[1].map((_, index) => (
+                        {images[3].map((_, index) => (
                           <button
                             key={index}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                              index === currentIndexProjet1 ? 'bg-white scale-125' : 'bg-white/50'
+                              index === currentIndexProjet3 ? 'bg-white scale-125' : 'bg-white/50'
                             }`}
-                            onClick={() => setCurrentIndexProjet1(index)}
+                            onClick={() => setCurrentIndexProjet3(index)}
                           />
                         ))}
                       </div>
@@ -735,7 +775,7 @@ export default function Home() {
                   <div className='h-96 w-3 bg-white border-r-4 border-teal-500 rounded-tr-[50px] rounded-bl-[50px]' ></div>
                   <div className=" w-[400] pt-8 ">
                     <div className='border-l-[30px] border-teal-500 px-3 ' >
-                      <div className="text-xl uppercase ">{t("projects.list.0.type")}</div>
+                      <div className="text-xl uppercase ">{t("projects.list.4.type")}</div>
                       <div className='w-full flex items-center text-sm ' >
                         <FaClock size={14} ></FaClock>
                         <div className='px-2' >{t("projects.list.0.date")}</div>
@@ -744,7 +784,7 @@ export default function Home() {
 
                     <AnimatedSection direction='left' threshold={0.7} delay={0.5} duration={1.5}>
                       <div className='py-8 px-4' >
-                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.0.description")}</p>
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.4.description")}</p>
                       </div>
                       <div className=' px-4'>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PHP</span>
@@ -752,6 +792,7 @@ export default function Home() {
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >MySQL</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Bootstrap</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >CSS</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Jquery</span>
                       </div>
                       <div className="w-full flex justify-evenly mt-8 px-4">
                         <button
@@ -779,34 +820,36 @@ export default function Home() {
                   <div className=" w-[400]">
                     <div  className='w-full flex justify-end' >
                       <div className='border-r-[30px] border-white px-3 ' >
-                        <div className="text-xl uppercase ">{t("projects.list.1.type")}</div>
+                        <div className="text-xl uppercase ">{t("projects.list.5.type")}</div>
                         <div className='w-full flex items-center justify-end text-sm  ' >
                           <FaClock size={14} ></FaClock>
-                          <div className='px-2' >{t("projects.list.1.date")}</div>
+                          <div className='px-2' >{t("projects.list.5.date")}</div>
                         </div>
                       </div>
                     </div>
 
                     <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={1.5}>
                       <div className='w-full py-8 px-4' >
-                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.1.description")}</p>
+                        <p className='text-sm leading-6 text-justify indent-6' >{t("projects.list.5.description")}</p>
                       </div>
                       <div className=' px-4'>
                         
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >NextJs</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PostgreSQL</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Tailwind</span>
-                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Drizzle_ORM</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >ReactJs</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >PHP</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >MySQL</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >CSS</span>
+                        <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >Bootstrap</span>
                         <span className='w-full px-2 py-1 bg-teal-500/15 rounded-full text-[13px] mr-2' >+2</span>
 
                       </div>
                       <div className="w-full flex justify-evenly mt-8 px-4">
-                        <button
+                        <a
+                          href='https://github.com/steverasoafanirindraibe/Homeveres-appli'
                           className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
                         >
                           <FaGithub className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaGithub> 
                           <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >{t('projects.viewCode')} </div>
-                        </button>
+                        </a>
                         <button
                           className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
                         >
@@ -821,11 +864,11 @@ export default function Home() {
                   <AnimatedSection direction='right' threshold={0.7} delay={0.5} duration={1.5} className='h-[384px] flex items-end px-16' >
                     <div className="relative w-[520] h-[292] bg-gray-900 overflow-hidden rounded-r-xl shadow-2xl">
                       <div className="relative w-full h-full">
-                        {images[1].map((image, index) => (
+                        {images[5].map((image, index) => (
                           <div
                             key={index}
                             className={`absolute inset-0 transition-all duration-2000 ease-in-out ${
-                              index === currentIndexProjet1
+                              index === currentIndexProjet5
                                 ? 'opacity-100 scale-100'
                                 : 'opacity-0 scale-105'
                             }`}
@@ -847,9 +890,9 @@ export default function Home() {
                           <button
                             key={index}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                              index === currentIndexProjet1 ? 'bg-white scale-125' : 'bg-white/50'
+                              index === currentIndexProjet5 ? 'bg-white scale-125' : 'bg-white/50'
                             }`}
-                            onClick={() => setCurrentIndexProjet1(index)}
+                            onClick={() => setCurrentIndexProjet5(index)}
                           />
                         ))}
                       </div>
@@ -994,55 +1037,108 @@ export default function Home() {
           </div>
         </div>
         
-        <footer id='contacts' className='footer h-screen ' >
-          <div className='footer-section w-full h-[90%] flex justify-center items-center rounded-b-[50%]' >
-            <div>
-              <AnimatedSection direction='scale' threshold={0.3} delay={0.1} duration={0.8}>
-                <div className='text-4xl text-center pb-3' >
-                  <span className="text-orange-500">&lt;</span>
-                  <span>Contact</span>
-                  <span className="text-orange-500">/&gt;</span>
-                </div>
-                <div className='text-center pb-14 text-sm text-gray-300' >{t("contact.subtitle")}</div>
-              </AnimatedSection>
+        <footer id='contacts' className='footer h-screen w-full' >
+          <div className='footer-section w-full h-[90%] items-center rounded-b-[50%]' >
+            <AnimatedSection direction='scale' threshold={0.3} delay={0.1} duration={0.8}>
+              <div className='text-4xl text-center pt-8 pb-3' >
+                <span className="text-orange-500">&lt;</span>
+                <span>Contact</span>
+                <span className="text-orange-500">/&gt;</span>
+              </div>
+              <div className='text-center pb-8 text-sm text-gray-300' >{t("contact.subtitle")}</div>
+            </AnimatedSection>
+            <div className='flex' >
+              <div className='w-1/3' >
+                <AnimatedSection direction='up' threshold={0.1} delay={0.3} duration={0.3} className='flex justify-center py-2'> 
+                  <button 
+                    className='flex justify-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-teal-500 hover:text-black hover:border-teal-500 transition-all duration-700 ease-out cursor-copy'
+                    onClick={handleCopy()}
+                  >
+                    <FaEnvelope className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaEnvelope>
+                    <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >steveshannyrasoafanirindraibe@gmail.com </div>
+                    <FaStar className='w-0 h-2 group-hover:w-2 transition-all duration-700 ease-out' ></FaStar>
+                  </button>
+                </AnimatedSection>
+                <AnimatedSection direction='up' threshold={0.1} delay={0.6} duration={0.3} className=' flex justify-center py-2' > 
+                  <a 
+                    href='https://fr.linkedin.com/'
+                    className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
+                  >
+                    <FaLinkedin className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaLinkedin> 
+                    <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >Steve Shanny Rasoafanirindraibe </div>
+                  </a>
+                </AnimatedSection>
+                <AnimatedSection direction='up' threshold={0.1} delay={0.8} duration={0.2} className=' flex justify-center py-2' > 
+                  <a 
+                    href='https://github.com/steverasoafanirindraibe' 
+                    className='flex justify-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
+                  >
+                    <FaGithub className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaGithub> 
+                    <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >steve_rasoafanirindraibe </div>
+                  </a>
+                </AnimatedSection>
+                <AnimatedSection direction='scale' threshold={0.1} delay={1} duration={0.1}>
+                  <div className='w-full flex justify-center py-2' > 
+                    <FaGlobe className='mt-1 mx-2' ></FaGlobe> 
+                    <div className='text-sm' >Remote Worldwide</div>
+                  </div>
+                  <div className='w-full flex justify-center pb-3' >- <FaStarHalfAlt className='text-xl mx-2' ></FaStarHalfAlt> -</div>
+                </AnimatedSection>
+              </div>
+              
+              <div className='w-2/3' >
+                <AnimatedSection direction='left' threshold={0.1} delay={0.4} duration={0.8} className='w-full flex justify-left'>
+                  <form className='w-4/5 max-w-md bg-black/30 backdrop-blur-sm rounded-2xl p-6 shadow-2xl'>
+                    {/* <h3 className='text-white text-xl font-bold text-center mb-6'>Envoyez-moi un message</h3> */}
+                    
+                    <div className='mb-4 group'>
+                      <div className='flex items-center mb-2'>
+                        <FaUser className='text-teal-400 mr-2 text-sm' />
+                        <label className='text-white text-sm font-medium'>Votre Nom</label>
+                      </div>
+                      <input 
+                        type="text" 
+                        className='w-full bg-black/40 border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none'
+                        placeholder='John Doe'
+                      />
+                    </div>
 
-              <AnimatedSection direction='up' threshold={0.1} delay={0.3} duration={0.3} className='flex justify-center py-2'> 
-                <button 
-                  className='flex justify-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-teal-500 hover:text-black hover:border-teal-500 transition-all duration-700 ease-out cursor-copy'
-                  onClick={handleCopy()}
-                >
-                  <FaEnvelope className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaEnvelope>
-                  <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >steveshannyrasoafanirindraibe@gmail.com </div>
-                  <FaStar className='w-0 h-2 group-hover:w-2 transition-all duration-700 ease-out' ></FaStar>
+                    <div className='mb-4 group'>
+                      <div className='flex items-center mb-2'>
+                        <FaEnvelope className='text-teal-400 mr-2 text-sm' />
+                        <label className='text-white text-sm font-medium'>Votre Email</label>
+                      </div>
+                      <input 
+                        type="email" 
+                        className='w-full bg-black/40 border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none'
+                        placeholder='john@example.com'
+                      />
+                    </div>
 
-                </button>
-              </AnimatedSection>
-              <AnimatedSection direction='up' threshold={0.1} delay={0.6} duration={0.3} className=' flex justify-center py-2' > 
-                <a 
-                  href='https://fr.linkedin.com/'
-                  className='flex justify-center group py-2 px-3 bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
-                >
-                  <FaLinkedin className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaLinkedin> 
-                  <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >Steve Shanny Rasoafanirindraibe </div>
-                </a>
-              </AnimatedSection>
-              <AnimatedSection direction='up' threshold={0.1} delay={0.8} duration={0.2} className=' flex justify-center py-2' > 
-                <a 
-                  href='https://github.com/steverasoafanirindraibe' 
-                  className='flex justify-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
-                >
-                  <FaGithub className='mt-1 group-hover:w-0 transition-all duration-700 ease-out' ></FaGithub> 
-                  <div className='text-sm pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >steve_rasoafanirindraibe </div>
-                </a>
-              </AnimatedSection>
-              <AnimatedSection direction='scale' threshold={0.1} delay={1} duration={0.1}>
-                <div className='w-full flex justify-center py-2' > 
-                  <FaGlobe className='mt-1 mx-2' ></FaGlobe> 
-                  <div className='text-sm' >Remote Worldwide</div>
-                </div>
-                <div className='w-full flex justify-center pb-3' >- <FaStarHalfAlt className='text-xl mx-2' ></FaStarHalfAlt> -</div>
-              </AnimatedSection>
+                    {/* Message */}
+                    <div className='mb-6 group'>
+                      <div className='flex items-center mb-2'>
+                        <FaComment className='text-teal-400 mr-2 text-sm' />
+                        <label className='text-white text-sm font-medium'>Votre Message</label>
+                      </div>
+                      <textarea 
+                        rows="4"
+                        className='w-full bg-black/40 border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none resize-none'
+                        placeholder='Dites-moi en quoi je peux vous aider...'
+                      ></textarea>
+                    </div>
 
+                    <button 
+                      type="submit"
+                      className='w-full group flex justify-center items-center py-2 px-6 bg-gradient-to-r from-teal-600 to-teal-600 rounded-xl text-white font-semibold hover:from-teal-700 hover:to-teal-500 hover:border-teal-300 transition-all duration-500 ease-out shadow-lg'
+                    >
+                      <FaPaperPlane className='mr-2 group-hover:rotate-45 transition-transform duration-500' />
+                      <span>Envoyer le message</span>
+                      <FaStar className='ml-2 w-0 group-hover:w-4 transition-all duration-700 ease-out' />
+                    </button>
+                  </form>
+                </AnimatedSection>
+              </div>
             </div>
           </div>
           <div className='w-full h-[10%] flex justify-center items-center' >

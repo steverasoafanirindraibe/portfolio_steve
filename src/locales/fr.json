@@ -4,6 +4,11 @@
     "contact": "@Contact",
     "download": "Télécharger CV"
   },
+    "portfolio_notice": {
+    "title": "💫 À propos de ce portfolio",
+    "message": "Ce portfolio interactif est une démonstration de mes capacités créatives et techniques. Les projets présentés ici illustrent mon approche du développement web. Pour vos projets réels, je conçois des applications sur mesure, adaptées à vos besoins spécifiques et à votre identité professionnelle. N'hésitez pas à me contacter pour discuter de votre projet !",
+    "contact_cta": "Discutons de votre projet personnalisé"
+  },
   "about": {
     "title": "À Propos",
     "description": "Je ne suis pas qu'un simple développeur - je suis un architecte du numérique, un passionné obsédé par la magie qui se cache derrière chaque ligne de code. Mon royaume? L'intersection entre la logique implacable des algorithmes et la créativité sans limites du web moderne. Je crois fermement que les meilleures applications ne sont pas celles qui fonctionnent parfaitement, mais celles qui résolvent des problèmes réels avec une élégance discrète. Mon approche? Transformer la complexité technique en simplicité utilisateur." 
@@ -15,40 +20,41 @@
     "viewProject": "Voir le projet",
     "list": [
       {
-        "type": "Projet de stage",
+        "type": "EMIT Business Hub",
         "date": "16 Juin 2025 - (en cours)",
         "title": "EMIT Business Hub",
         "description": "Application web complète de gestion des formations et ressources humaines pour EMIT Business Hub. Interface intuitive, backend robuste et génération innovante de badges QR code pour tous les membres, staff et responsables. Simplifie la validation des membres avec approbation en un clic et notifications email automatiques."
       },
       {
         "type": "Projet Académique",
-        "date": "03 Avril - 12 May. 2025",
+        "date": "03 Mars - 12 May. 2025",
         "title": "CyberCafe OpenService", 
         "description": "Application web innovante de gestion complète pour cybercafé avec système de minuteur intelligent, paiement intégré et analyse financière en temps réel. Génération automatique de rapports de chiffre d'affaire quotidien et visualisation des revenus hebdomadaires par diagrammes interactifs."
       },
       {
-        "type": "Projet de stage",
-        "date": "16 Juin - 12 Juil. 2024",
-        "title": "Application de Gestion",
-        "description": "Outil de gestion de tâches collaboratif en temps réel"
+        "type": "Auto-école <Drive Vision>",
+        "date": "12 Février - 11 Mars 2025",
+        "title": "Drive Vision",
+        "description": "Module public d'application web pour auto-école permettant la découverte des formations, consultation des tarifs et tests théoriques préparatoires. Interface intuitive avec les emplois du temps et simulation d'examen en conditions réelles. Développé en collaboration avec Raharisoa."
       },
       {
         "type": "Projet de stage",
-        "date": "16 Juin - 12 Juil. 2024",
-        "title": "Application de Gestion",
-        "description": "Outil de gestion de tâches collaboratif en temps réel"
+        "date": "Juin 2024 - Août 2024",
+        "title": "ISI",
+        "report": "rapport de stage.pdf",
+        "description": "Développement de module RPA (Robotic Process Automation) pour le télépaiement de l'Impôt Synthétique Intermittent au sein du centre fiscal A. Conception MERISE avec automatisation des processus de déclaration et de paiement des impôts pour les contribuables intermittents."
       },
       {
-        "type": "Projet de stage",
-        "date": "16 Juin - 12 Juil. 2024",
-        "title": "Application de Gestion",
-        "description": "Outil de gestion de tâches collaboratif en temps réel"
+        "type": "Projet Académique",
+        "date": "11 Février - 02 Avril. 2024",
+        "title": "Radio Tsiry",
+        "description": "Plateforme web complète pour Radio Tsiry permettant l'écoute en direct, la recherche et la découverte de contenus audio. Interface intuitive avec système de chat intégré pour communiquer directement avec les responsables de la radio et proposer des diffusions d'informations en temps réel."
       },
       {
-        "type": "Projet de stage",
-        "date": "16 Juin - 12 Juil. 2024",
-        "title": "Application de Gestion",
-        "description": "Outil de gestion de tâches collaboratif en temps réel"
+        "type": "Projet Académique",
+        "date": "Octobre 2023 - Décembre 2023",
+        "title": "Homevers - Gestion Immobilière",
+        "description": "Application web de gestion d'appartements avec système complet de paiement et de facturation. Interface administrateur permettant l'ajout de nouveaux appartements et l'attribution personnalisée des locataires selon leurs préférences. Développé en collaboration avec Emmanuel Alexis pour optimiser la gestion locative."
       }
     ]
   },
