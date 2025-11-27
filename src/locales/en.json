@@ -32,7 +32,7 @@
         "description": "Innovative web application for complete cybercafe management with smart timer system, integrated payment and real-time financial analysis. Automatic generation of daily revenue reports and weekly income visualization through interactive charts."
       },
       {
-        "type": "Driving School <Drive Vision>",
+        "type": "Driving School",
         "date": "February  12 - March 11, 2025",
         "title": "Auto-ecole",
         "description": "Public web application module for driving school enabling course discovery, fee consultation and preparatory theory tests. Intuitive interface with schedule management and real-condition exam simulation. Developed in collaboration with Raharisoa."
@@ -71,7 +71,13 @@
     }
   },
   "contact": {
-    "subtitle": "Feel free to contact me, I will respond as soon as possible."
+    "subtitle": "Feel free to contact me, I will respond as soon as possible.",
+    "name":"Your Name",
+    "email":"Your Email",
+    "message":"Your Message",
+    "placeholder":"Tell me how I can help you...",
+    "send":"Send"
+
   },
   "alerts": {
     "copySuccess": "Copied successfully",

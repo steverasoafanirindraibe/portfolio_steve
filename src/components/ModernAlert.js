@@ -35,7 +35,7 @@ const ModernAlert = () => {
   // Icônes selon le type
   const icons = {
     success: <CheckCircle className="w-6 h-6 text-teal-400" />,
-    error: <XCircle className="w-6 h-6 text-rose-400" />,
+    error: <XCircle className="w-4 h-4 sm:w-6 sm:h-6 text-rose-400" />,
     warning: <AlertTriangle className="w-6 h-6 text-amber-400" />,
     info: <Info className="w-6 h-6 text-blue-400" />,
   };
@@ -57,7 +57,7 @@ const ModernAlert = () => {
     <AnimatePresence>
       {isVisible && alert && (
         <motion.div
-          className="fixed top-6 left-6 z-50 max-w-sm w-64"
+          className="fixed top-12 sm:top-6 left-6 z-50 max-w-sm w-64"
           initial={{ 
             opacity: 0, 
             x: -300,
@@ -86,7 +86,7 @@ const ModernAlert = () => {
           }}
         >
           <motion.div
-            className={`relative bg-gradient-to-br ${colors[alert.type]} backdrop-blur-xl border rounded-2xl p-4 shadow-2xl overflow-hidden`}
+            className={`relative text-[10px] sm:text-sm bg-gradient-to-br ${colors[alert.type]} backdrop-blur-xl border rounded-2xl p-2 w-42 sm:w-full sm:p-4 shadow-2xl overflow-hidden`}
             whileHover={{ 
               scale: 1.02,
               y: -2,
@@ -142,7 +142,7 @@ const ModernAlert = () => {
               {/* Bouton fermer */}
               <motion.button
                 onClick={hideAlert}
-                className="flex-shrink-0 p-1 rounded-full hover:bg-white/10 transition-colors duration-200"
+                className="flex-shrink-0 p-1 sm:text-sm text-[10px] rounded-full hover:bg-white/10 transition-colors duration-200"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, scale: 0 }}

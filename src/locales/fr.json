@@ -32,7 +32,7 @@
         "description": "Application web innovante de gestion complète pour cybercafé avec système de minuteur intelligent, paiement intégré et analyse financière en temps réel. Génération automatique de rapports de chiffre d'affaire quotidien et visualisation des revenus hebdomadaires par diagrammes interactifs."
       },
       {
-        "type": "Auto-école <Drive Vision>",
+        "type": "Auto-école",
         "date": "12 Février - 11 Mars 2025",
         "title": "Drive Vision",
         "description": "Module public d'application web pour auto-école permettant la découverte des formations, consultation des tarifs et tests théoriques préparatoires. Interface intuitive avec les emplois du temps et simulation d'examen en conditions réelles. Développé en collaboration avec Raharisoa."
@@ -71,7 +71,12 @@
     }
   },
   "contact": {
-    "subtitle": "N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais."
+    "subtitle": "N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.",
+    "name":"Votre Nom",
+    "email":"Votre Email",
+    "message":"Votre message",
+    "placeholder":"Dites-moi en quoi je peux vous aider...",
+    "send":"Envoyer"
   },
   "alerts": {
     "copySuccess": "Copié avec succès",
