@@ -277,21 +277,21 @@ export default function Home() {
             >
               <button 
                 onClick={() => handleNavClick('projects')}
-                className="w-20 flex justify-center text-sm py-2 pt-4 rounded-b-2xl border-b-4  border-b-teal-500 relative overflow-hidden group hover:scale-125 transition-all duration-300 ease-in-out"
+                className="w-20 flex justify-center text-sm py-2 pt-4 rounded-b-2xl border-b-4  border-b-teal-500 relative overflow-hidden group hover:scale-105 transition-all duration-300 ease-in-out"
                 style={{ marginLeft: `${getOffset(0)}px` }}>
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>  
                 <span className="relative z-10">Projects</span>
               </button>          
               <button
                 onClick={() => handleNavClick('skills')} 
-                className="w-20 flex justify-center mt-1 text-sm py-2 pt-3 rounded-b-2xl border-b-4 border-b-teal-500 relative overflow-hidden group hover:scale-125 transition-all duration-200 ease-in-out"
+                className="w-20 flex justify-center mt-1 text-sm py-2 pt-3 rounded-b-2xl border-b-4 border-b-teal-500 relative overflow-hidden group hover:scale-105 transition-all duration-200 ease-in-out"
                 style={{ marginLeft: `${getOffset(40)}px` }}>
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
                 <span className="relative z-10">Skills</span>
               </button>
               <button 
                 onClick={() => handleNavClick('contacts')} 
-                className="w-20 flex justify-center mt-1 text-sm py-2 pt-3 rounded-b-2xl border-b-4 border-b-teal-500 relative overflow-hidden group hover:scale-125 transition-all duration-100 ease-in-out"
+                className="w-20 flex justify-center mt-1 text-sm py-2 pt-3 rounded-b-2xl border-b-4 border-b-teal-500 relative overflow-hidden group hover:scale-105 transition-all duration-100 ease-in-out"
                 style={{ marginLeft: `${getOffset(80)}px` }}>
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
                 <span className="relative z-10">Contacts</span>
