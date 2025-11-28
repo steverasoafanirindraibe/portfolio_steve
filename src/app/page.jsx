@@ -42,45 +42,45 @@ export default function Home() {
 
   const images = [
     [
-      '/projects/EBH/EBH (7).png',
-      '/projects/EBH/EBH (8).png',
-      '/projects/ebh/ebh-1.png',
-      '/projects/ebh/ebh-2.png',
-      '/projects/EBH/EBH (3).png',
-      '/projects/EBH/EBH (4).png',
-      '/projects/EBH/EBH (5).png',
-      '/projects/EBH/EBH (6).png',
+      '/projects/ebh/EBH-8.png',
+      '/projects/ebh/EBH-7.png',
+      '/projects/ebh/EBH-1.png',
+      '/projects/ebh/EBH-2.png',
+      '/projects/ebh/EBH-3.png',
+      '/projects/ebh/EBH-4.png',
+      '/projects/ebh/EBH-5.png',
+      '/projects/ebh/EBH-6.png',
     ],[
-      '/projects/openService/cyber (1).png',
-      '/projects/openService/cyber (2).png',
-      '/projects/openService/cyber (3).png',
-      '/projects/openService/cyber (4).png',
-      '/projects/openService/cyber (5).png',
+      '/projects/openService/cyber-1.png',
+      '/projects/openService/cyber-2.png',
+      '/projects/openService/cyber-3.png',
+      '/projects/openService/cyber-4.png',
+      '/projects/openService/cyber-5.png',
     ],[
-      '/projects/autoEcole/autoecole (1).png',
-      '/projects/autoEcole/autoecole (2).png',
-      '/projects/autoEcole/autoecole (3).png',
-      '/projects/autoEcole/autoecole (4).png',
-      '/projects/autoEcole/autoecole (5).png',
+      '/projects/autoEcole/autoecole-1.png',
+      '/projects/autoEcole/autoecole-2.png',
+      '/projects/autoEcole/autoecole-3.png',
+      '/projects/autoEcole/autoecole-4.png',
+      '/projects/autoEcole/autoecole-5.png',
     ],[
-      '/projects/impots/impots (1).png',
-      '/projects/impots/impots (2).png',
-      '/projects/impots/impots (3).png',
-      '/projects/impots/impots (4).png',
-      '/projects/impots/impots (5).png',
-      '/projects/impots/impots (6).png',
-      '/projects/impots/impots (7).png',
+      '/projects/impots/impots-1.png',
+      '/projects/impots/impots-2.png',
+      '/projects/impots/impots-3.png',
+      '/projects/impots/impots-4.png',
+      '/projects/impots/impots-5.png',
+      '/projects/impots/impots-6.png',
+      '/projects/impots/impots-7.png',
     ],[
-      '/projects/radioTsiry/radio (1).png',
-      '/projects/radioTsiry/radio (2).png',
-      '/projects/radioTsiry/radio (3).png',
-      '/projects/radioTsiry/radio (4).png',
-      '/projects/radioTsiry/radio (5).png',
+      '/projects/radioTsiry/radio-1.png',
+      '/projects/radioTsiry/radio-2.png',
+      '/projects/radioTsiry/radio-3.png',
+      '/projects/radioTsiry/radio-4.png',
+      '/projects/radioTsiry/radio-5.png',
     ],[
-      '/projects/homevers/homevers (1).png',
-      '/projects/homevers/homevers (2).png',
-      '/projects/homevers/homevers (3).png',
-      '/projects/homevers/homevers (4).png',
+      '/projects/homevers/homevers-1.png',
+      '/projects/homevers/homevers-2.png',
+      '/projects/homevers/homevers-3.png',
+      '/projects/homevers/homevers-4.png',
     ]
   ];
 
@@ -187,38 +187,38 @@ export default function Home() {
 
   return (
     <div className=" bg-teal-950/25 min-h-screen w-full sm:border-t-2 border-teal-500 overflow-x-hidden">
-      <div className='fixed z-30' >
+      <div className='fixed z-5' >
         <div className='flex sm:hidden backdrop-blur-sm bg-black/30 rounded-br-xl' >
           <div className=' w-6 h-6 m-2 flex justify-center items-center border-2 border-teal-500 rounded-full rounded-' >S</div>
           <button 
             onClick={() => handleNavClick('projects')}
             className="w-20 flex justify-center sm:text-sm text-[13px] pt-3 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out">
             <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>  
-            <span className="relative z-10">Projects</span>
+            <span className="relative">Projects</span>
           </button> 
           <button
             onClick={() => handleNavClick('skills')} 
             className="w-20 flex justify-center sm:text-sm text-[13px] pt-3 pb-1  rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
-            <span className="relative z-10">Skills</span>
+            <span className="relative">Skills</span>
           </button>
           <button 
             onClick={() => handleNavClick('contacts')} 
             className="w-20 flex justify-center sm:text-sm text-[13px] pt-3 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
-            <span className="relative z-10">Contacts</span>
+            <span className="relative">Contacts</span>
           </button>
           <div className="relative overflow-hidden w-4"></div>
         </div>
       </div>
-      <div className="fixed sm:w-12 z-50 md:top-1/3 md:right-4 top-4 right-4">
+      <div className="fixed sm:w-10 z-50 md:top-1/3 md:right-4 top-4 right-4">
         <button
           onClick={() => changeLanguage(language === 'fr' ? 'en' : 'fr')}
-          className="px-3 py-1 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-all backdrop-blur-sm text-[12px] sm:text-base"
+          className="sm:w-8 w-6 bg-black/50 border-2 border-teal text-white rounded-lg transition-all backdrop-blur-sm text-[12px] sm:text-base"
         >
-          {language === 'fr' ? 'EN' : 'FR'}
+          {language === 'fr' ?  <Image src={'/images/flag_fr.png'} width={80} height={60} alt='flag-fr' ></Image> : <Image src={'/images/flag_en.png'} width={80} height={60} alt='flag-en' ></Image>}
         </button>
       </div>
 
@@ -250,19 +250,19 @@ export default function Home() {
             <div className="sm:w-full w-full h-full flex justify-center sm:justify-start items-center px-4 sm:px-0" >
               <div className="text-center sm:text-left">
                 <div className="sm:text-5xl text-3xl sm:font-semibold" >
-                  <div className="sm:text-8xl text-5xl" >
+                  <AnimatedSection direction='left' duration={1.3} className="sm:text-8xl text-5xl" >
                     <span className="text-teal-500" >S</span>teve 
-                  </div>
-                  <div className="text-3xl sm:text-7xl">
+                  </AnimatedSection>
+                  <AnimatedSection direction='left' delay={0.8} duration={1.3} className="text-3xl sm:text-7xl">
                     Rasoafanirindrai<span className="text-orange-500" >be</span>;
-                  </div>
+                  </AnimatedSection>
                 </div>
-                <div className="sm:py-3 sm:text-3xl text-lg italic">
+                <AnimatedSection direction='left' delay={1.4} duration={1.3} className="sm:py-3 sm:text-3xl text-lg italic">
                   {t("hero.title")}<span className="clignoter" >_</span>
-                </div>
+                </AnimatedSection>
                 <div className="w-full flex my-6 flex-col sm:flex-row justify-center sm:justify-evenly gap-2 py-4" >
                   <button onClick={() => handleNavClick('contacts')} className="flex justify-center items-center py-2 px-3 rounded-xl bg-teal-500 italic text-black font-bold text-[14px] sm:text-base">@Contact <FaPhone className='mx-2' ></FaPhone> </button>
-                  <a href='/documents/cv_steve_rasoafanirindraibe.pdf' download="Steve_Rasoafanirindraibe_CV.pdf" className="flex py-2 px-3 bg-teal-500/10 rounded-xl text-[14px] sm:text-base items-center justify-center"> <FaDownload className='mx-2' ></FaDownload> {t("hero.download")}</a>
+                  <a href='/documents/cv_steve_non_confidentiel.pdf' download="Steve_Rasoafanirindraibe_CV.pdf" className="flex py-2 px-3 bg-teal-500/10 rounded-xl text-[14px] sm:text-base items-center justify-center"> <FaDownload className='mx-2' ></FaDownload> {t("hero.download")}</a>
                 </div>
               </div>
             </div>
@@ -305,24 +305,6 @@ export default function Home() {
           className="bg-black w-full sm:min:h-96 rounded-t-[100px_30px] sm:rounded-t-[250px_80px] shadow-glow-teal transition-all duration-400 ease-out"          style={{ transform: `translateY(${-getTranslateY(150)}px)` }}
         >
           <div className='h-full w-full flex flex-col sm:flex-row px-6 sm:px-24 py-10 sm:py-20' >
-                  {/* Message Portfolio Notice */}
-                {/* {showPortfolioNotice && (
-                  <div className="fixed top-4 left-4 right-4 z-50 bg-blue-600/90 backdrop-blur-sm text-white p-4 rounded-xl shadow-2xl border border-blue-400/30">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <h3 className="font-bold text-lg mb-2">💫 {t("portfolio_notice.title")}</h3>
-                        <p className="text-sm opacity-90">{t("portfolio_notice.message")}</p>
-                        <p className="text-sm font-semibold mt-2 opacity-95">{t("portfolio_notice.contact_cta")}</p>
-                      </div>
-                      <button 
-                        onClick={() => setShowPortfolioNotice(false)}
-                        className="ml-4 text-white/80 hover:text-white text-lg"
-                      >
-                        ×
-                      </button>
-                    </div>
-                  </div>
-                )} */}
             <AnimatedSection  className='w-full sm:w-1/2 mb-8 sm:mb-0' direction='scale' threshold={0.4} duration={1}>
             <div>
               <div className='py-6 sm:py-10' >
@@ -515,6 +497,7 @@ export default function Home() {
                           <div className='sm:pl-2 pl-1 group-hover:pl-0 transition-all duration-700 ease-out'>{t('projects.viewCode')}</div>
                         </button>
                         <button
+                          onClick={() => showAlert(t('alerts.underDevelopment'), "info")}
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaEye className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
@@ -552,14 +535,15 @@ export default function Home() {
                         <span className='px-2 py-1 bg-teal-500/15 rounded-full text-[11px] sm:text-[13px] mr-1 sm:mr-2 mb-1' >+2</span>
                       </div>
                       <div className="w-full flex sm:flex-row justify-evenly gap-2 mt-4 sm:mt-8 px-2 sm:px-4">
-                        <button
-                          onClick={() => showAlert(t('alerts.codeSecured'), "error")}
+                        <a
+                          href='https://github.com/steverasoafanirindraibe/CyberCafe_application_web'
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaGithub className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
                           <div className='sm:pl-2 pl-1 group-hover:pl-0 transition-all duration-700 ease-out'>{t('projects.viewCode')}</div>
-                        </button>
+                        </a>
                         <button
+                          onClick={() => showAlert(t('alerts.projectNotAvailable'), "info")}
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaEye className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
@@ -599,7 +583,7 @@ export default function Home() {
                           className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                             index === currentIndexProjet1 ? 'bg-white scale-125' : 'bg-white/50'
                           }`}
-                          onClick={() => setCurrentIndexProjet0(index)}
+                          onClick={() => setCurrentIndexProjet1(index)}
                         />
                       ))}
                     </div>
@@ -670,14 +654,15 @@ export default function Home() {
                         <span className='px-2 py-1 bg-teal-500/15 rounded-full text-[11px] sm:text-[13px] mr-1 sm:mr-2 mb-1' >+2</span>
                       </div>
                       <div className="w-full flex sm:flex-row justify-evenly gap-2 mt-4 sm:mt-8 px-2 sm:px-4">
-                        <button
-                          onClick={() => showAlert(t('alerts.codeSecured'), "error")}
+                        <a
+                          href='https://github.com/neon-rah/application-web-auto-ecole-projet'
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaGithub className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
                           <div className='sm:pl-2 pl-1 group-hover:pl-0 transition-all duration-700 ease-out'>{t('projects.viewCode')}</div>
-                        </button>
+                        </a>
                         <button
+                          onClick={() => showAlert(t('alerts.projectNotAvailable'), "info")}
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaEye className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
@@ -725,6 +710,7 @@ export default function Home() {
                           <div className='sm:pl-2 pl-1 group-hover:pl-0 transition-all duration-700 ease-out'>{t('projects.viewCode')}</div>
                         </button>
                         <button
+                          onClick={() => showAlert(t('alerts.projectNotAvailable'), "info")}
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaEye className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
@@ -843,6 +829,7 @@ export default function Home() {
                           <div className='sm:pl-2 pl-1 group-hover:pl-0 transition-all duration-700 ease-out'>{t('projects.viewCode')}</div>
                         </button>
                         <button
+                          onClick={() => showAlert(t('alerts.projectNotAvailable'), "info")}
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaEye className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
@@ -889,6 +876,7 @@ export default function Home() {
                           <div className='sm:pl-2 pl-1 group-hover:pl-0 transition-all duration-700 ease-out'>{t('projects.viewCode')}</div>
                         </a>
                         <button
+                          onClick={() => showAlert(t('alerts.projectNotAvailable'), "info")}
                           className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer text-xs sm:text-sm'
                         >
                           <FaEye className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
@@ -1088,8 +1076,8 @@ export default function Home() {
               <div className='text-center pb-6 sm:pb-8 text-xs sm:text-sm text-gray-300 px-4'>{t("contact.subtitle")}</div>
             </AnimatedSection>
             <div className='flex flex-col sm:flex-row px-4 sm:px-0' >
-              <div className='w-full sm:w-1/3 mb-8 sm:mb-0' >
-                <AnimatedSection direction='up' threshold={0.1} delay={0.3} duration={0.3} className='flex justify-center py-2'> 
+              <div className='w-full sm:w-1/3 mb-8 sm:mb-0 sm:pr-16' >
+                <AnimatedSection direction='up' threshold={0.1} delay={0.3} duration={0.3} className='flex justify-center sm:justify-end py-2'> 
                   <button 
                     className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-teal-500 hover:text-black hover:border-teal-500 transition-all duration-700 ease-out cursor-copy text-xs sm:text-sm'
                     onClick={handleCopy()}
@@ -1099,7 +1087,7 @@ export default function Home() {
                     <FaStar className='w-0 h-2 group-hover:w-2 transition-all duration-700 ease-out' />
                   </button>
                 </AnimatedSection>
-                <AnimatedSection direction='up' threshold={0.1} delay={0.6} duration={0.3} className=' flex justify-center py-2' > 
+                <AnimatedSection direction='up' threshold={0.1} delay={0.6} duration={0.3} className=' flex justify-center sm:justify-end py-2' > 
                   <a 
                     href='https://fr.linkedin.com/'
                     className='flex justify-center items-center group py-2 px-3 text-xs sm:text-sm bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
@@ -1108,7 +1096,7 @@ export default function Home() {
                     <div className='pl-2 group-hover:pl-0 transition-all duration-700 ease-out truncate max-w-[250px] sm:max-w-none'>Steve Shanny Rasoafanirindraibe </div>
                   </a>
                 </AnimatedSection>
-                <AnimatedSection direction='up' threshold={0.1} delay={0.8} duration={0.2} className=' flex justify-center py-2' > 
+                <AnimatedSection direction='up' threshold={0.1} delay={0.8} duration={0.2} className=' flex justify-center sm:justify-end py-2' > 
                   <a 
                     href='https://github.com/steverasoafanirindraibe' 
                     className='flex justify-center items-center group py-2 px-3 text-xs sm:text-sm bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
@@ -1118,11 +1106,11 @@ export default function Home() {
                   </a>
                 </AnimatedSection>
                 <AnimatedSection direction='scale' threshold={0.1} delay={1} duration={0.1}>
-                  <div className='w-full flex justify-center items-center py-2' > 
+                  <div className='w-full flex justify-center sm:justify-end items-center py-2' > 
                     <FaGlobe className='mx-2  text-xs sm:text-sm' ></FaGlobe> 
                     <div className=' text-xs sm:text-sm' >Remote Worldwide</div>
                   </div>
-                  <div className='w-full flex justify-center ' >- <FaStarHalfAlt className=' text-sm sm:text-xl mx-2' ></FaStarHalfAlt> -</div>
+                  <div className='w-full flex justify-center  sm:justify-end' >- <FaStarHalfAlt className=' text-sm sm:text-xl mx-2' ></FaStarHalfAlt> -</div>
                 </AnimatedSection>
               </div>
               

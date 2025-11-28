@@ -4,10 +4,12 @@
     "contact": "@Contact", 
     "download": "Download Resume"
   },
-    "portfolio_notice": {
-    "title": "💫 About This Portfolio", 
-    "message": "This interactive portfolio demonstrates my creative and technical capabilities. The projects shown here illustrate my web development approach. For your actual projects, I design custom applications tailored to your specific needs and professional identity. Feel free to contact me to discuss your project!",
-    "contact_cta": "Let's Discuss Your Custom Project"
+  "welcome": {
+    "title": "Welcome", 
+    "subtitle": "Showcase of my skills",
+    "message": "This interactive portfolio demonstrates my creative and technical capabilities. The projects featured here highlight some of my web development achievements. For your professional projects, I design custom solutions tailored to your specific requirements. I am available to discuss your projects or to join your team as a developer.",
+    "button": "Enter portfolio", 
+    "loading": "Loading content..."
   },
   "about": {
     "title": "About Me",
@@ -81,7 +83,10 @@
   },
   "alerts": {
     "copySuccess": "Copied successfully",
-    "codeSecured": "Code is secured"
+    "codeSecured": "Code is secured",
+    "projectNotAvailable": "The project is not yet available online",
+    "comingSoon": "Project coming soon",
+    "underDevelopment": "Project under development"
   },
   "sections": {
     "uiux": "UI/UX",

@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ModernAlert from '../components/ModernAlert';
-
-
+import ClientLayout from './ClientLayout';
 
 export const metadata: Metadata = {
-  title: "Steve_Rasoafanirindraibe",
-}
-import "./globals.css";
-
-
+  title: "Steve Rasoafanirindraibe - Portfolio",
+  description: "Portfolio de Steve Rasoafanirindraibe, développeur full-stack",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-
-    <html lang="en" >
+    <html lang="fr">
       <body>
-        {children}
-        <ModernAlert />
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

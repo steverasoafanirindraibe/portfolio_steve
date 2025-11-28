@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion';
 export const useScrollAnimation = (threshold = 0.1) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    amount: threshold, // ✅ Correction : utiliser 'amount' au lieu de 'threshold'
+    amount: threshold, 
     // once: true
   });
 

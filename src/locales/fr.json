@@ -4,10 +4,12 @@
     "contact": "@Contact",
     "download": "Télécharger CV"
   },
-    "portfolio_notice": {
-    "title": "💫 À propos de ce portfolio",
-    "message": "Ce portfolio interactif est une démonstration de mes capacités créatives et techniques. Les projets présentés ici illustrent mon approche du développement web. Pour vos projets réels, je conçois des applications sur mesure, adaptées à vos besoins spécifiques et à votre identité professionnelle. N'hésitez pas à me contacter pour discuter de votre projet !",
-    "contact_cta": "Discutons de votre projet personnalisé"
+  "welcome": {
+    "title": "Bienvenue",
+    "subtitle": "Démonstration de mes compétences", 
+    "message": "Ce portfolio interactif présente une démonstration de mes capacités créatives et techniques. Les projets illustrés ici mettent en avant certaines de mes réalisations en développement web. Pour vos projets réels, je conçois des solutions sur mesure adaptées à vos besoins spécifiques. Je suis disponible pour discuter de vos projets ou pour rejoindre votre équipe en tant que développeur.",
+    "button": "Accéder au portfolio",
+    "loading": "Chargement des contenus..."
   },
   "about": {
     "title": "À Propos",
@@ -80,7 +82,10 @@
   },
   "alerts": {
     "copySuccess": "Copié avec succès",
-    "codeSecured": "Le code est sécurisé"
+    "codeSecured": "Le code est sécurisé",
+    "projectNotAvailable": "Le projet n'est pas encore disponible en ligne",
+    "comingSoon": "Projet bientôt disponible",
+    "underDevelopment": "Projet en cours de développement"
   },
   "sections": {
     "uiux": "UI/UX",

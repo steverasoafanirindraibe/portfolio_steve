@@ -10,8 +10,8 @@ export const useScroll = () => {
       const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = winHeightPx > 0 ? scrollPx / winHeightPx : 0;
       
-      // Limite la progression à 21% et normalise entre 0 et 1
-      const limitedProgress = Math.min(scrolled, 0.10) / 0.10;
+      // Limite la progression à 21% 
+      const limitedProgress = Math.min(scrolled, 0.08) / 0.08;
       
       setScrollProgress(limitedProgress);
     };
