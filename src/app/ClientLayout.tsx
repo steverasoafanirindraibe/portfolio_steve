@@ -28,7 +28,7 @@ export default function ClientLayout({
   if (!isMounted) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-white">Chargement...</div>
+        <div className="text-xs sm:text-base text-white">Loading...</div>
       </div>
     );
   }
