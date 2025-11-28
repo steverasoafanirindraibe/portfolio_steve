@@ -187,7 +187,7 @@ export default function Home() {
 
   return (
     <div className=" bg-teal-950/25 min-h-screen w-full sm:border-t-2 border-teal-500 overflow-x-hidden">
-      <div className='fixed z-5' >
+      <div className='fixed z-30' >
         <div className='flex sm:hidden backdrop-blur-sm bg-black/30 rounded-br-xl' >
           <div className=' w-6 h-6 m-2 flex justify-center items-center border-2 border-teal-500 rounded-full rounded-' >S</div>
           <button 
