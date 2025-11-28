@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
-import { FaRocket, FaCode, FaStar, FaHandshake, FaGlobe } from 'react-icons/fa';
+import { FaRocket, FaCode, FaStar, FaGlobe } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Welcome({ onEnter }: { onEnter: () => void }) {
