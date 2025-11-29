@@ -78,7 +78,9 @@
     "email":"Votre Email",
     "message":"Votre message",
     "placeholder":"Dites-moi en quoi je peux vous aider...",
-    "send":"Envoyer"
+    "send":"Envoyer",
+    "success":"Message envoyé avec succès !",
+    "error":"Veuillez vérifier votre email ou me contacter directement."
   },
   "alerts": {
     "copySuccess": "Copié avec succès",

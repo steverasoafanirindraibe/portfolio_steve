@@ -1,5 +1,6 @@
 "use client"
 import {useScroll } from '@/hooks/useScroll';
+import emailjs from '@emailjs/browser';
 import { useTranslation } from '@/hooks/useTranslation';
 
 import {
@@ -39,6 +40,19 @@ export default function Home() {
   const [currentIndexProjet5, setCurrentIndexProjet5] = useState(0);
 
   const { t, language, changeLanguage } = useTranslation();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const EMAILJS_CONFIG = {
+    SERVICE_ID: 'service_g7rknfn',
+    TEMPLATE_TO_YOU: 'template_92k46ri', 
+    TEMPLATE_AUTO_REPLY: 'template_vz9h3rv', 
+    USER_ID: 'MK-TmMeFEG4l1LxG_'
+  };
 
   const images = [
     [
@@ -129,6 +143,61 @@ export default function Home() {
       }
     }
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Gestion de la soumission du formulaire
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      // Envoi du message vers votre email
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_TO_YOU,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Steve Rasoafanirindraibe',
+          reply_to: formData.email
+        },
+        EMAILJS_CONFIG.USER_ID
+      );
+      // Envoi de l'auto-réponse au visiteur
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_AUTO_REPLY,
+        {
+          to_name: formData.name,
+          to_email: formData.email,
+          from_name: 'Steve Rasoafanirindraibe', 
+          reply_to: 'steveshannyrasoafanirindraibe@gmail.com'
+        },
+        EMAILJS_CONFIG.USER_ID
+      );
+
+      showAlert(t('contact.success'), "success");
+
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+
+    } catch (error) {
+      showAlert(t('contact.error'), "error");
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
 
   useEffect(() => {
@@ -1116,51 +1185,90 @@ export default function Home() {
               
               <div className='w-full sm:w-2/3' >
                 <AnimatedSection direction='left' threshold={0.1} delay={0.4} duration={0.8} className='w-full flex sm:justify-left'>
-                  <form className='w-full sm:w-4/5 max-w-md bg-black/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-2xl'>
+                  <form onSubmit={handleSubmit} className='w-full sm:w-4/5 max-w-md bg-black/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-2xl'>
+                    
+                    {/* Champ Nom */}
                     <div className='mb-4 group'>
                       <div className='flex items-center mb-2'>
                         <FaUser className='text-teal-400 mr-2 text-sm' />
-                        <label className='text-white text-xs sm:text-sm font-medium'>{t("contact.name")}</label>
+                        <label htmlFor='name' className='text-white text-xs sm:text-sm font-medium'>
+                          {t("contact.name")}
+                        </label>
                       </div>
                       <input 
+                        id='name'
+                        name='name'
                         type="text" 
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
                         className='w-full text-xs sm:text-sm bg-black/40 border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none'
                         placeholder='Martin Dupont'
                       />
                     </div>
 
+                    {/* Champ Email */}
                     <div className='mb-4 group'>
                       <div className='flex items-center mb-2'>
                         <FaEnvelope className='text-teal-400 mr-2 text-sm' />
-                        <label className='text-white text-xs sm:text-sm font-medium'>{t("contact.email")}</label>
+                        <label htmlFor='email' className='text-white text-xs sm:text-sm font-medium'>
+                          {t("contact.email")}
+                        </label>
                       </div>
                       <input 
+                        id='email'
+                        name='email'
                         type="email" 
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                         className='w-full bg-black/40 text-xs sm:text-sm border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none'
                         placeholder='john@example.com'
                       />
                     </div>
 
-                    {/* Message */}
+                    {/* Champ Message */}
                     <div className='mb-6 group'>
                       <div className='flex items-center mb-2'>
                         <FaComment className='text-teal-400 mr-2 text-sm' />
-                        <label className='text-white text-xs sm:text-sm font-medium'>{t("contact.message")}</label>
+                        <label htmlFor='message' className='text-white text-xs sm:text-sm font-medium'>
+                          {t("contact.message")}
+                        </label>
                       </div>
                       <textarea 
+                        id='message'
+                        name='message'
                         rows="4"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
                         className='w-full bg-black/40 text-xs sm:text-sm border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none resize-none'
                         placeholder={t('contact.placeholder')}
                       ></textarea>
                     </div>
 
+                    {/* Bouton d'envoi */}
                     <button 
                       type="submit"
-                      className='w-full group flex justify-center items-center py-2 px-6 bg-gradient-to-r from-teal-600 to-teal-600 rounded-xl text-white font-semibold hover:from-teal-700 hover:to-teal-500 hover:border-teal-300 transition-all duration-500 ease-out shadow-lg'
+                      disabled={isLoading}
+                      className={`w-full group flex justify-center items-center py-2 px-6 rounded-xl text-white font-semibold transition-all duration-500 ease-out shadow-lg ${
+                        isLoading 
+                          ? 'bg-gray-600 cursor-not-allowed' 
+                          : 'bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-500 hover:border-teal-300'
+                      }`}
                     >
-                      <FaPaperPlane className='mr-2 text-xs sm:text-sm group-hover:rotate-45 transition-transform duration-500' />
-                      <span>{t("contact.send")}</span>
-                      <FaStar className='ml-2 w-0 group-hover:w-4 transition-all duration-700 ease-out' />
+                      {isLoading ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                          <span>Envoi en cours...</span>
+                        </>
+                      ) : (
+                        <>
+                          <FaPaperPlane className='mr-2 text-xs sm:text-sm group-hover:rotate-45 transition-transform duration-500' />
+                          <span>{t("contact.send")}</span>
+                          <FaStar className='ml-2 w-0 group-hover:w-4 transition-all duration-700 ease-out' />
+                        </>
+                      )}
                     </button>
                   </form>
                 </AnimatedSection>
