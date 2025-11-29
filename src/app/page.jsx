@@ -56,14 +56,15 @@ export default function Home() {
 
   const images = [
     [
+ 
+      '/projects/ebh/EBH-2.png',
       '/projects/ebh/EBH-8.png',
       '/projects/ebh/EBH-7.png',
-      '/projects/ebh/EBH-1.png',
-      '/projects/ebh/EBH-2.png',
+      '/projects/ebh/EBH-5.png',
       '/projects/ebh/EBH-3.png',
       '/projects/ebh/EBH-4.png',
-      '/projects/ebh/EBH-5.png',
       '/projects/ebh/EBH-6.png',
+      '/projects/ebh/EBH-1.png',
     ],[
       '/projects/openService/cyber-1.png',
       '/projects/openService/cyber-2.png',
@@ -257,27 +258,29 @@ export default function Home() {
   return (
     <div className=" bg-teal-950/25 min-h-screen w-full sm:border-t-2 border-teal-500 overflow-x-hidden">
       <div className='fixed z-30' >
-        <div className='flex sm:hidden backdrop-blur-sm bg-black/30 rounded-br-xl' >
-          <div className=' w-6 h-6 m-2 flex justify-center items-center border-2 border-teal-500 rounded-full rounded-' >S</div>
+        <div className='flex sm:hidden backdrop-blur-sm h-12 bg-black/30 rounded-br-xl' >
+          <div className='h-full mx-3 flex justify-center items-center' >
+            <div className='w-7 h-7 flex justify-center border-2 border-teal-500 rounded-full' >S</div>
+          </div>
           <button 
             onClick={() => handleNavClick('projects')}
-            className="w-20 flex justify-center sm:text-sm text-[13px] pt-3 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out">
+            className="w-20 flex justify-center sm:text-sm text-[13px] pt-4 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out">
             <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>  
-            <span className="relative">Projects</span>
+            <span className="relative uppercase">Projects</span>
           </button> 
           <button
             onClick={() => handleNavClick('skills')} 
-            className="w-20 flex justify-center sm:text-sm text-[13px] pt-3 pb-1  rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
+            className="w-20 flex justify-center sm:text-sm text-[13px] pt-4 pb-1  rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
-            <span className="relative">Skills</span>
+            <span className="relative uppercase">Skills</span>
           </button>
           <button 
             onClick={() => handleNavClick('contacts')} 
-            className="w-20 flex justify-center sm:text-sm text-[13px] pt-3 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
+            className="w-20 flex justify-center sm:text-sm text-[13px] pt-4 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
-            <span className="relative">Contacts</span>
+            <span className="relative uppercase">Contacts</span>
           </button>
           <div className="relative overflow-hidden w-4"></div>
         </div>
@@ -285,7 +288,7 @@ export default function Home() {
       <div className="fixed sm:w-10 z-50 md:top-1/3 md:right-4 top-4 right-4">
         <button
           onClick={() => changeLanguage(language === 'fr' ? 'en' : 'fr')}
-          className="sm:w-8 w-6 bg-black/50 border-2 border-teal text-white rounded-lg transition-all backdrop-blur-sm text-[12px] sm:text-base"
+          className="sm:w-8 w-6 bg-black/50 border-2 border-teal text-white rounded-lg transition-all backdrop-blur-sm text-sm sm:text-base"
         >
           {language === 'fr' ?  <Image src={'/images/flag_fr.png'} width={80} height={60} alt='flag-fr' ></Image> : <Image src={'/images/flag_en.png'} width={80} height={60} alt='flag-en' ></Image>}
         </button>
@@ -1001,7 +1004,7 @@ export default function Home() {
         <div className='relative h-auto sm:h-[80%] w-full px-4 sm:px-20'>
           <section id='skills' className='absolute -top-20 sm:-top-36'></section>
           <AnimatedSection direction='scale' threshold={0.3} delay={0.1} duration={1}>
-            <div className='h-full w-full transform -translate-y-8 sm:-translate-y-16 text-xl sm:text-4xl text-center underline-rounded'>
+            <div className='h-full w-full transform -translate-y-20 sm:-translate-y-16 text-xl sm:text-4xl text-center underline-rounded'>
               <span className="text-orange-500">&lt;</span>
               <span>{t("skills.title")}</span> 
               <span className="text-orange-500">/&gt;</span>
@@ -1009,7 +1012,7 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <div className='w-full h-auto sm:h-96 transform -translate-y-6 sm:-translate-y-10'>
+          <div className='w-full h-auto sm:h-96 transform -translate-y-14 sm:-translate-y-10'>
             <div className="w-full h-full sm:h-[350px] flex flex-col sm:flex-row items-center sm:justify-evenly gap-4 sm:gap-0">
               {/* Première carte - Explorer */}
               <AnimatedSection direction='left' threshold={0.3} delay={0.1} duration={1} className="w-full sm:w-[360px] h-full p-2 bg-black rounded-xl">
@@ -1223,7 +1226,7 @@ export default function Home() {
                         onChange={handleChange}
                         required
                         className='w-full bg-black/40 text-xs sm:text-sm border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none'
-                        placeholder='john@example.com'
+                        placeholder='martindupon@example.com'
                       />
                     </div>
 
