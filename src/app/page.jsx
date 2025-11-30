@@ -306,7 +306,7 @@ export default function Home() {
                 <Image className='w-full rounded-t-full rounded-br-xl rounded-bl-full border-r-4 border-b-4 border-teal-500' src={"/images/steve_profil.jpg"} width={1000} height={1000} alt='steve_profil' ></Image>
               </div>
             </div>
-            <div className="absolute rotate-[48deg] top-[210px] -z-10 hidden sm:block" >
+            {/* <div className="absolute rotate-[48deg] top-[210px] -z-10 hidden sm:block" >
               <div className="animate-moveHorizontalFast text-md whitespace-nowrap uppercase" >
                 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
               </div>
@@ -316,7 +316,7 @@ export default function Home() {
               <div className="animate-moveHorizontalSlow text-2xl top-[280px] uppercase" >
                 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="sm:w-4/12 w-full h-full" >
             <div className="sm:w-full w-full h-full flex justify-center sm:justify-start items-center px-4 sm:px-0" >
