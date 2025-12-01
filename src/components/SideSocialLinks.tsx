@@ -35,7 +35,7 @@ const SideSocialLinks = () => {
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 1 }}
-      className="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block"
+      className="fixed left-6 top-1/4 transform -translate-y-1/2 z-40 hidden lg:block"
     >
       <div className="flex flex-col items-center space-y-6">
         {/* Ligne verticale */}

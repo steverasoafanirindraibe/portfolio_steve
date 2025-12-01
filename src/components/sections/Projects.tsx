@@ -1,0 +1,254 @@
+import { useState, useEffect, useMemo } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
+import { useModernAlert } from '@/components/ModernAlert';
+import Image from 'next/image';
+import AnimatedSection from '@/components/AnimatedSection';
+
+// Icons
+import { FaClock, FaGithub, FaEye, FaCode, FaReact, FaPhp, FaBootstrap, FaCss3Alt, FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiDrizzle, SiSpringboot, SiLaravel, SiExpress, SiMysql, SiJquery, SiJavascript, SiTypescript } from 'react-icons/si';
+
+// --- UTILS ---
+
+const getTechConfig = (name: string) => {
+  const map: any = {
+    'NextJs': { icon: SiNextdotjs, color: '#fff', bg: 'bg-white/10' },
+    'PostgreSQL': { icon: SiPostgresql, color: '#336791', bg: 'bg-blue-500/10' },
+    'Tailwind': { icon: SiTailwindcss, color: '#38bdf8', bg: 'bg-cyan-500/10' },
+    'SpringBoot': { icon: SiSpringboot, color: '#6db33f', bg: 'bg-green-500/10' },
+    'Laravel': { icon: SiLaravel, color: '#ff2d20', bg: 'bg-red-500/10' },
+    'ReactJs': { icon: FaReact, color: '#61dafb', bg: 'bg-blue-400/10' },
+    'PHP': { icon: FaPhp, color: '#777bb4', bg: 'bg-indigo-500/10' },
+    'MySQL': { icon: SiMysql, color: '#ce650fff', bg: 'bg-blue-600/10' },
+    'ExpressJs': { icon: SiExpress, color: '#ffffffff', bg: 'bg-gray-800/10' },
+    'Drizzle-ORM': { icon: SiDrizzle, color: '#00caff', bg: 'bg-cyan-400/10' },
+    'Java': { icon: FaCode, color: '#f89820', bg: 'bg-orange-400/10' },
+    'CSS': { icon: FaCss3Alt, color: '#264de4', bg: 'bg-blue-500/10' },
+    'Jquery': { icon: SiJquery, color: '#0769ad', bg: 'bg-blue-600/10' },
+    'Bootstrap': { icon: FaBootstrap, color: '#7952b3', bg: 'bg-purple-500/10' },
+    'JavaScript': { icon: SiJavascript, color: '#f0db4f', bg: 'bg-yellow-400/10' },
+    'TypeScript': { icon: SiTypescript, color: '#3178c6', bg: 'bg-blue-500/10' },
+    // ... autres mappings par défaut
+  };
+  return map[name] || { icon: FaCode, color: '#999', bg: 'bg-gray-800/20' };
+};
+
+const TechBadge = ({ name, mini = false }: { name: string, mini?: boolean }) => {
+  const config = getTechConfig(name);
+  const Icon = config.icon;
+  return (
+    <div className={`flex items-center gap-2 ${mini ? 'px-2 py-1' : 'px-2 py-1'} rounded-md border border-white/5 ${config.bg} backdrop-blur-sm`}>
+      <Icon style={{ color: config.color }} className={mini ? "text-xs" : "text-sm"} />
+      <span className="hidden md:block text-sm font-medium text-gray-300">{name}</span>
+    </div>
+  );
+};
+
+// --- COMPOSANT 1 ---
+const FeaturedProject = ({ project, index, t, showAlert }: any) => {
+  const [activeImage, setActiveImage] = useState(0);
+  const isRight = index % 2 !== 0;
+
+  const nextImg = (e: any) => {
+    e.stopPropagation();
+    setActiveImage((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevImg = (e: any) => {
+    e.stopPropagation();
+    setActiveImage((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+  };
+
+  return (
+    <div className="w-full max-w-5xl mx-auto py-8 sm:py-12 border-b border-white/5 last:border-0">
+      <div className={`flex flex-col ${isRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-6 md:gap-10`}>
+        
+        {/* IMAGE SLIDER (Compact) */}
+        <div className="relative w-full md:w-1/2 h-[185px] sm:h-[280px] rounded-lg overflow-hidden border border-white/10 bg-[#0a0a0a] group">
+          {project.images.map((img: string, idx: number) => (
+            <div key={idx} className={`absolute inset-0 transition-opacity duration-500 ${idx === activeImage ? 'opacity-100' : 'opacity-0'}`}>
+              <Image src={img} alt="Project" fill className="object-cover" />
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+          ))}
+          
+          {/* Controls */}
+          <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
+            <button onClick={prevImg} className="p-2 rounded-full bg-black/50 hover:bg-teal-500 text-white transition"><FaChevronLeft size={12}/></button>
+            <button onClick={nextImg} className="p-2 rounded-full bg-black/50 hover:bg-teal-500 text-white transition"><FaChevronRight size={12}/></button>
+          </div>
+          
+          {/* Badge Type */}
+          <div className="absolute top-2 left-2 bg-black/70 backdrop-blur px-2 py-0.5 rounded text-sm text-teal-400 font-mono border border-teal-500/30">
+            {t(`projects.list.${project.id}.type`)}
+          </div>
+        </div>
+
+        {/* INFO (Compact) */}
+        <div className="w-full md:w-1/2 flex flex-col items-start text-left space-y-3">
+          <div className="flex items-center gap-2 text-teal-500/60 text-sm uppercase tracking-widest font-mono">
+            <span>0{project.id + 1}</span>
+            <span className="w-3 h-px bg-teal-500/30"></span>
+            <FaClock size={10} />
+            <span>{t(`projects.list.${project.id}.date`)}</span>
+          </div>
+
+          <h3 className="text-xl sm:text-2xl font-bold text-white leading-none">
+            <span className='text-white' >{t(`projects.list.${project.id}.title`)}</span>
+          </h3>
+
+          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-none text-justify">
+            {t(`projects.list.${project.id}.description`)}
+          </p>
+
+           {/* Report Link */}
+           {project.hasReport && (
+              <a href="/documents/rapportStage.pdf" target="_blank" className="text-sm text-teal-400 underline hover:text-white">
+                {t("projects.list.3.report")}
+              </a>
+           )}
+
+          <div className="flex flex-wrap gap-3 pt-1">
+            {project.techs.map((tech: string, i: number) => (
+              <TechBadge key={i} name={tech} />
+            ))}
+          </div>
+
+          <div className="flex gap-3 pt-2 w-full sm:w-auto">
+            <button 
+              onClick={() => project.githubLink ? window.open(project.githubLink) : showAlert(t('alerts.codeSecured'), "error")}
+              className="flex items-center justify-center sm:flex-none px-4 py-2 sm:text-sm text-xs border border-white/20 rounded-xl hover:bg-white/10 text-gray-300 transition"
+            >
+              <FaGithub className='mr-2' ></FaGithub>
+              Github
+            </button>
+            <button 
+              onClick={() => showAlert(t('alerts.projectNotAvailable'), "info")}
+              className="flex items-center justify-center sm:flex-none px-4 py-2 sm:text-sm text-xs bg-teal-700 hover:bg-teal-600 text-white rounded-xl transition shadow-lg shadow-teal-900/20"
+            >
+              <FaEye size={16} className='mr-2'></FaEye>
+              Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- COMPOSANT 2 : MINIMALIST GRID CARD (Ultra Compact) ---
+const CompactProject = ({ project, t, showAlert }: any) => {
+    // Simple hover to switch image or manual click
+    const [imgIndex, setImgIndex] = useState(0);
+
+    const next = (e:any) => {
+        e.stopPropagation(); 
+        setImgIndex(p => (p === project.images.length - 1 ? 0 : p + 1));
+    }
+
+    return (
+        <div className="group relative bg-gray-950 border border-white/5 rounded-lg overflow-hidden hover:border-teal-500/30 transition-all duration-300 flex flex-col h-full">
+            {/* Image Header */}
+            <div className="relative w-full h-32 sm:h-40 bg-gray-900 overflow-hidden cursor-pointer" onClick={next}>
+                <Image src={project.images[imgIndex]} alt="Project" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80" />
+                <div className="absolute bottom-2 left-3">
+                    <div className="text-white text-sm font-bold truncate">{t(`projects.list.${project.id}.type`)}</div>
+                    <div className="text-sm text-teal-400 font-mono">{t(`projects.list.${project.id}.date`)}</div>
+                </div>
+                {/* Mini Clicker */}
+                <button onClick={next} className="absolute top-2 right-2 p-1 bg-black/50 rounded text-white opacity-0 group-hover:opacity-100 transition"><FaChevronRight size={8}/></button>
+            </div>
+
+            {/* Content Body */}
+            <div className="p-3 flex flex-col flex-grow">
+                <p className="text-sm text-gray-400 line-clamp-3 leading-6 mb-3 flex-grow">
+                    {t(`projects.list.${project.id}.description`)}
+                </p>
+                
+                {/* Footer: Techs + Link */}
+                <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
+                    <div className="h-8 flex space-x-2">
+                         {project.techs.slice(0, 4).map((tech: string, i: number) => (
+                             <TechBadge key={i} name={tech}  />
+                         ))}
+                    </div>
+                    <button 
+                        onClick={() => project.githubLink ? window.open(project.githubLink) : showAlert(t('alerts.projectNotAvailable'), "info")}
+                        className=" text-gray-400 hover:text-white transition"
+                    >
+                        <FaGithub size={24} />
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+// --- MAIN ---
+export default function Projects() {
+  const { t } = useTranslation();
+  const { showAlert } = useModernAlert();
+
+  // IDs 0 (EBH), 1 (Cyber), 3 (Impots) -> Featured
+  // IDs 2 (Auto), 4 (Radio), 5 (Homevers) -> Compact Grid
+  const projectsData = useMemo(() => [
+    { id: 0, featured: true, images: ['/projects/ebh/EBH-2.png','/projects/ebh/EBH-8.png','/projects/ebh/EBH-7.png','/projects/ebh/EBH-9.png'], techs: ['NextJs', ,'PostgreSQL', 'TypeScript', 'Tailwind', 'Drizzle-ORM', 'ReactJs'] },
+    { id: 1, featured: true, images: ['/projects/openService/cyber-1.png','/projects/openService/cyber-3.png','/projects/openService/cyber-4.png','/projects/openService/cyber-5.png'], techs: ['SpringBoot', 'NextJs', 'PostgreSQL' ,'REST API', 'Tailwind'], githubLink: 'https://github.com/steverasoafanirindraibe/CyberCafe_application_web' },
+    { id: 2, featured: false, images: ['/projects/autoEcole/autoecole-1.png','/projects/autoEcole/autoecole-2.png','/projects/autoEcole/autoecole-4.png'], techs: ['Laravel', 'NextJs', 'PostgreSQL'], githubLink: 'https://github.com/neon-rah/application-web-auto-ecole-projet' },
+    { id: 3, featured: true, images: ['/projects/impots/impots-1.png','/projects/impots/impots-4.png','/projects/impots/impots-5.png','/projects/impots/impots-7.png'], techs: ['ReactJs', 'ExpressJs', 'MySQL','Tailwind','CSS'], hasReport: true },
+    { id: 4, featured: false, images: ['/projects/radioTsiry/radio-1.png','/projects/radioTsiry/radio-4.png','/projects/radioTsiry/radio-5.png'], techs: ['JavaScript', 'PHP', 'MySQL'] },
+    { id: 5, featured: false, images: ['/projects/homevers/homevers-1.png','/projects/homevers/homevers-2.png','/projects/homevers/homevers-3.png'], techs: ['ReactJs', 'PHP', 'MySQL'], githubLink: 'https://github.com/steverasoafanirindraibe/Homeveres-appli.git' }
+  ], []);
+
+  const featuredProjects = projectsData.filter(p => p.featured);
+  const otherProjects = projectsData.filter(p => !p.featured);
+
+  return (
+    <div className="w-full h-full bg-gradient-to-b from-black via-gray-950 to-black text-gray-200 py-10 sm:py-20 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Header Compact */}
+        <AnimatedSection direction='down' duration={0.8} threshold={0.1}>
+          <div className='mb-8 sm:mb-10'>
+            <h2 className='text-3xl sm:text-4xl font-extrabold text-center'>
+              <span className="text-orange-500">&lt;</span>
+              <span>{t("projects.title")}</span>
+              <span className="text-orange-500">/&gt;</span>
+            </h2>
+            <div className="w-12 h-1 bg-teal-500 rounded mx-auto mt-2"></div>
+            <p className="text-xs text-gray-500 mt-3 text-center">{t("projects.subtitle")}</p>
+
+          </div>
+        </AnimatedSection>
+
+
+        {/* SECTION 1: FEATURED (01, 02, 04) */}
+        <div className="flex flex-col gap-6 sm:gap-0 mb-10">
+          {featuredProjects.map((project, index) => (
+             <AnimatedSection key={project.id} direction="up" delay={index * 0.1}>
+                <FeaturedProject project={project} index={index} t={t} showAlert={showAlert} />
+             </AnimatedSection>
+          ))}
+        </div>
+
+        {/* SECTION 2: THE LAB / ARCHIVE (03, 05, 06) - GRID */}
+        {otherProjects.length > 0 && (
+            <AnimatedSection direction="up" threshold={0.2}>
+                <div className="flex items-center gap-4 mb-6">
+                    <h3 className="text-xl font-bold text-gray-300">Other Experiments</h3>
+                    <div className="h-px bg-white/10 flex-grow"></div>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {otherProjects.map((project) => (
+                        <CompactProject key={project.id} project={project} t={t} showAlert={showAlert} />
+                    ))}
+                </div>
+            </AnimatedSection>
+        )}
+
+      </div>
+    </div>
+  );
+}

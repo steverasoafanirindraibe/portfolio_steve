@@ -1,8 +1,16 @@
 {
+  "nav": {
+    "about": "À Propos",
+    "projects": "Portfolio",
+    "skills": "Compétences",
+    "contacts": "Contacts"
+      
+  },
   "hero": {
     "title": "Développeur FullStack",
-    "contact": "@Contact",
-    "download": "Télécharger CV"
+    "contact": "Contacter-moi",
+    "download": "Télécharger CV",
+    "expertise": "Expertise FullStack"
   },
   "welcome": {
     "title": "Bienvenue",
@@ -13,6 +21,7 @@
   },
   "about": {
     "title": "À Propos",
+    "subtitle": "À Propos de moi et mon parcours",
     "description": "Je ne suis pas qu'un simple développeur - je suis un architecte du numérique, un passionné obsédé par la magie qui se cache derrière chaque ligne de code. Mon royaume? L'intersection entre la logique implacable des algorithmes et la créativité sans limites du web moderne. Je crois fermement que les meilleures applications ne sont pas celles qui fonctionnent parfaitement, mais celles qui résolvent des problèmes réels avec une élégance discrète. Mon approche? Transformer la complexité technique en simplicité utilisateur." 
   },
   "projects": {
@@ -97,7 +106,7 @@
   },
   "descriptions": {
     "uiux": "En termes simples : Je crée des sites tellement faciles à utiliser que même votre grand-mère pourrait commander en ligne sans appeler à l'aide !",
-    "academic": "Diplômé en Licence Développement d'Applications Intranet et Internet (DAII) de l'EMIT, Université de Fianarantsoa à Madagascar. Je me spécialise désormais dans l'intégration de l'Intelligence Artificielle pour créer des solutions digitales qui anticipent les besoins des utilisateurs et dépassent leurs attentes. Mon objectif : fusionner l'excellence technique acquise durant mon parcours universitaire avec l'innovation IA pour concevoir des applications qui ne se contentent pas de fonctionner, mais qui comprennent et s'adaptent à vos utilisateurs.",    
+    "academic": "Diplômé en Licence Développement d'Applications Intranet et Internet (DAII) de l'EMIT, Université de Fianarantsoa à Madagascar. ",    
     "networks": "Maîtrise des fondamentaux réseaux : configuration Cisco, routage (RIP, EIGRP), NAT et gestion d'adressage IP pour des infrastructures.",    
     "ai": "Exploration des technologies d'intelligence artificielle et leur intégration dans des applications innovantes."
   },

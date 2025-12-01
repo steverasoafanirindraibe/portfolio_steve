@@ -1,8 +1,15 @@
 {
+  "nav": {
+    "about": "About",
+    "projects": "Portfolio",
+    "skills": "Skills",
+    "contacts": "Contacts"  
+  },
   "hero": {
     "title": "FullStack Developer",
-    "contact": "@Contact", 
-    "download": "Download Resume"
+    "contact": "Contact Me", 
+    "download": "Download Resume",
+    "expertise": "FullStack Expertise"
   },
   "welcome": {
     "title": "Welcome", 
@@ -13,6 +20,7 @@
   },
   "about": {
     "title": "About Me",
+    "subtitle": "About me",
     "description": "I'm not just a developer - I'm a digital architect, a passionate soul obsessed with the magic behind every line of code. My kingdom? The intersection between the relentless logic of algorithms and the boundless creativity of the modern web.I firmly believe that the best applications aren't those that work perfectly, but those that solve real problems with discreet elegance. My approach? Transforming technical complexity into user simplicity."
   },
   "projects": {
@@ -98,7 +106,7 @@
   },
   "descriptions": {
     "uiux": "In simple terms: I create websites so easy to use that even your grandmother could order online without calling for help!",
-    "academic": "Graduated with a Bachelor's degree in Intranet and Internet Application Development (DAII) from EMIT, University of Fianarantsoa in Madagascar. I now specialize in integrating Artificial Intelligence to create digital solutions that anticipate user needs and exceed expectations.My goal: to merge the technical excellence acquired during my academic journey with AI innovation to design applications that don't just function, but understand and adapt to your users.",    
+    "academic": "Graduated with a Bachelor's degree in Intranet and Internet Application Development (DAII) from EMIT, University of Fianarantsoa in Madagascar. ",    
     "networks": "Networks\nMastery of network fundamentals: Cisco configuration, routing (RIP, EIGRP), NAT and IP address management for infrastructures.",    
     "ai": "Exploration of artificial intelligence technologies and their integration into innovative applications."
   },
