@@ -45,7 +45,7 @@ const AnimatedSection = ({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={getVariants()}
-      className={className}
+      className={className + 'overflow-hidden'}
     >
       {children}
     </motion.div>

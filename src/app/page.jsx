@@ -9,54 +9,9 @@ import Contact from '@/components/sections/Contact';
 import SideSocialLinks from '@/components/SideSocialLinks';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Phone, Download, Code, Server, User, Globe } from 'lucide-react'; 
-
-
-// Composant de switch de langue stylisé
-const LanguageSwitcher = ({ currentLang, setLang }) => (
-    <div className="flex items-center justify-center p-1 bg-gray-700 rounded-full shadow-inner border border-teal-500/50 w-32">
-        <Globe className="text-teal-400 mr-2 h-4 w-4" />
-        {['FR', 'EN'].map((lang) => (
-            <button
-                key={lang}
-                onClick={() => setLang(lang)}
-                className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
-                    currentLang === lang 
-                        ? 'bg-teal-500 text-gray-900 shadow-md transform scale-105' 
-                        : 'text-gray-400 hover:text-white hover:bg-gray-600'
-                }`}
-            >
-                {lang}
-            </button>
-        ))}
-    </div>
-);
-
-
-// Définissez t pour la traduction ou utilisez directement le texte
-const getTranslation = (key, lang) => {
-    const translations = {
-        'FR': {
-            'hero.title': "Développeur Web FullStack | Freelance",
-            'hero.download': "Télécharger CV",
-            'nav.projects': "Projets",
-            'nav.skills': "Compétences",
-            'nav.contacts': "Contacts",
-            'nav.about': "À Propos",
-            'contact.btn': "Contacter-moi"
-        },
-        'EN': {
-            'hero.title': "FullStack Web Developer | Freelance",
-            'hero.download': "Download CV",
-            'nav.projects': "Projects",
-            'nav.skills': "Skills",
-            'nav.contacts': "Contacts",
-            'nav.about': "About",
-            'contact.btn': "Contact Me"
-        },
-    };
-    return translations[lang]?.[key] || key;
-};
+import { Phone, Download, Code, Server, User, Globe, DivideCircleIcon } from 'lucide-react'; 
+import AnimatedSection from '@/components/AnimatedSection';
+import AvailabilityIndicator from '@/components/AvailabilityIndicator';
 
 
 // Composant principal de la section Hero
@@ -65,70 +20,72 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
         <div className="w-full h-full font-inter bg-gray-950 text-white">
             
             {/* --- Hero Content Block --- */}
-            <div className="min-h-[600px] h-auto xl:min-h-[600px] w-full flex flex-col sm:flex-row items-center pt-10 sm:pt-16 relative overflow-hidden max-w-7xl mx-auto  ">
-                
+            <div className="min-h-[500px] h-auto xl:min-h-[600px] w-full flex flex-col sm:flex-row items-center pt-6 sm:pt-6 relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-0">
                 
                 {/* ----------------- 1. Bloc de l'image de profil (5/12) ----------------- */}
                 <div 
-                    className="relative py-10 sm:py-0 overflow-visible z-10 sm:w-5/12 w-full h-full flex justify-center items-center duration-400 ease-out"
+                    className="relative py-6 sm:py-0 overflow-visible z-10 w-full sm:w-5/12 h-full flex justify-center items-center duration-400 ease-out"
                 >
                     <div className="relative p-2 bg-teal-500/10 rounded-tr-full rounded-tl-full rounded-bl-full hover:scale-105 transition-scale duration-500 ease-in">
-                      <div className="rounded-full rounded-br-xl bg-teal-500/10 p-2">
-                        <div className="bg-teal-500/10 rounded-full rounded-br-xl p-2 md:w-80 md:h-96 w-52 h-52 overflow-hidden">
+                      <div className="rounded-full rounded-br-xl bg-teal-500/10 p-1 sm:p-2">
+                        <AnimatedSection direction='scale' delay={0.2} duration={0.7} className="bg-teal-500/10 rounded-full rounded-br-xl p-1 sm:p-2 w-40 h-40 sm:w-80 sm:h-96 overflow-hidden">
                             <img 
-                              className='w-full h-full object-cover rounded-br-xl rounded-full ' 
-                              // Placeholder pour la compatibilité
+                              className='w-full h-full object-cover rounded-br-xl rounded-full' 
                               src={"/images/steve_profil.jpg"} 
                               alt='steve_profil' 
                             />
-                          </div>
-
+                          </AnimatedSection>
                         </div>
                     </div>
                 </div>
 
                 {/* ----------------- 2. Bloc du titre et des boutons (7/12) ----------------- */}
-                <div className="sm:w-7/12 w-full h-full flex justify-center sm:justify-start items-center px-4 sm:px-0 z-10">
-                    <div className="text-center sm:text-left">
-                        {/* Nom & Prénom */}
-                        <div className="sm:text-7xl text-3xl font-extrabold mb-4">
-                            <span className="text-teal-400">S</span>teve
-                            <div className="text-3xl sm:text-6xl font-light tracking-wide mt-1">
-                                Rasoafanirindrai<span className="text-orange-500 font-bold">be</span>
-                            </div>
-                        </div>
+                <div className="w-full sm:w-7/12 h-full flex justify-center sm:justify-start items-center px-0 sm:px-0 z-10 mt-6 sm:mt-0">
+                  <div className="text-center sm:text-left">
+                    <div>
+                      {/* --- Ligne d'accroche et Nom (Style Terminal/Code) --- */}
+                      <AnimatedSection direction='left' duration={0.5} className='text-xs sm:text-lg font-mono mb-3 sm:mb-4'>
+                        <span className="text-gray-400">{t("hero.greeting")}</span>
                         
+                        {/* Nom stylisé comme une balise ou un élément de code */}
+                        <span className="text-lg sm:text-2xl font-bold ml-1 sm:ml-2">
+                          &lt;<span className="text-teal-400">Steve Rasoafanirindrai</span><span className="text-orange-500">be</span>/&gt;
+                        </span>
+                      </AnimatedSection>
+                      {/* --- Headline Principal (Proposition de Valeur) --- */}
+                      <AnimatedSection direction='left' delay={0.2} duration={0.5} className="text-xl sm:text-5xl font-extrabold leading-tight mb-3 sm:mb-4">
+                        <span className="text-white">{t("hero.headline")}</span>
+                      </AnimatedSection>
+                    </div>
                         {/* Titre & Slogan */}
-                        <p className="py-3 sm:text-3xl text-xl font-mono italic text-gray-300">
+                        <AnimatedSection direction='left' delay={0.3} duration={0.5} className="py-2 sm:py-3 text-base sm:text-3xl font-mono italic text-gray-300">
                             {t("hero.title")}
                             <span className="clignoter font-bold text-teal-400">_</span>
-                        </p>
-
+                        </AnimatedSection>
                         {/* Bloc "Tech Tag Cloud" */}
-                        <div className="my-8 p-4 bg-teal-500/10 rounded-xl shadow-inner shadow-teal-500/20 max-w-lg">
-                            <h3 className='text-sm font-semibold mb-2 text-teal-300 flex items-center'><Code className='mr-2 h-4 w-4' />{t('hero.expertise')}</h3>
-                            <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                        <AnimatedSection direction='left' delay={0.4} duration={0.5} className="my-4 sm:my-8 sm:mr-16 p-3 sm:p-4 bg-teal-500/10 rounded-xl shadow-inner shadow-teal-500/20 max-w-lg">
+                            <h3 className='text-xs sm:text-sm font-semibold mb-2 text-teal-300 flex items-center justify-center sm:justify-start'>
+                              <Code className='mr-2 h-3 w-3 sm:h-4 sm:w-4' />
+                              {t('hero.expertise')}
+                            </h3>
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center sm:justify-start">
                                 {techStack.map((tech, index) => (
-                                    <span key={index} className="px-3 py-1 text-xs font-medium text-teal-100 bg-teal-600/50 rounded-full border border-teal-500/50 hover:bg-teal-500 transition duration-300 cursor-default">
+                                    <span key={index} className="px-2 sm:px-3 py-1 text-xs font-medium text-teal-100 bg-teal-600/50 rounded-full border border-teal-500/50 hover:bg-teal-500 transition duration-300 cursor-default">
                                         {tech}
                                     </span>
                                 ))}
                             </div>
-                        </div>
-
-                        {/* Bouton d'action "Contacter-moi" */}
-                        <div className="w-full flex my-6 flex-col sm:flex-row justify-center sm:justify-start gap-4 py-4">
-                            <button 
-                                onClick={() => handleNavClick('contacts')} 
-                                className="flex justify-center items-center py-2 px-6 rounded-full bg-teal-500 text-gray-900 font-extrabold text-base uppercase tracking-wider shadow-lg shadow-teal-500/30 hover:bg-white transition duration-300 ease-in-out"
-                            >
-                                <Phone className='mr-2 text-lg' /> {t("hero.contact")}
-                            </button>
-                        </div>
+                        </AnimatedSection>
+                        {/* Bouton de contact */}
+                        <AnimatedSection direction='left' delay={0.5} duration={0.5} className='mt-6 sm:mt-10'>
+                          <button className='px-5 sm:px-6 py-2 bg-teal-500 text-black text-xs sm:text-sm font-bold rounded-lg transition-all duration-300 hover:bg-orange-500 hover:text-white transform hover:scale-105 shadow-lg'
+                              onClick={() => handleNavClick('contacts')} >
+                              {t("hero.contact")}
+                          </button>
+                      </AnimatedSection>
                     </div>
                 </div>
             </div>
-      
         </div>
     );
 };
@@ -138,22 +95,22 @@ export default function Home() {
   const { t, language, changeLanguage } = useTranslation();
   const scrollProgress = useScroll();
 
-  const [currentLang, setCurrentLang] = useState('FR'); 
+  // const [currentLang, setCurrentLang] = useState('FR'); 
   
 
     // Placeholder pour les fonctions de défilement (gardé pour la signature)
     const getTranslateY = (offset) => 0; 
     
     const techStack = [
-        "Next.js (App Router)", "React/Redux", "TypeScript", "Node.js/Express",
-        "PostgreSQL/MongoDB", "REST API", "Tailwind CSS", "Docker", "CI/CD"
+        "Next.js (App Router)", "React/Hooks", "TypeScript", "Node.js/Express",
+        "PostgreSQL/MySQL", "SpringBoot", "REST API", "Tailwind CSS"
     ];
 
     const navItems = [
-        { id: 'about', label: t('nav.about'), icon: <User className="h-4 w-4" /> },
-        { id: 'projects', label: t('nav.projects'), icon: <Code className="h-4 w-4" /> },
-        { id: 'skills', label: t('nav.skills'), icon: <Server className="h-4 w-4" /> },
-        { id: 'contacts', label: t('nav.contacts'), icon: <Phone className="h-4 w-4" /> },
+        { id: 'about', label: t('nav.about'), icon: <User className="sm:h-4 sm:w-4 h-6 w-6" /> },
+        { id: 'projects', label: t('nav.projects'), icon: <Code className="sm:h-4 sm:w-4 h-6 w-6" /> },
+        { id: 'skills', label: t('nav.skills'), icon: <Server className="sm:h-4 sm:w-4 h-6 w-6" /> },
+        { id: 'contacts', label: t('nav.contacts'), icon: <Phone className="sm:h-4 sm:w-4 h-6 w-6" /> },
     ];
 
   const handleNavClick = (sectionId) => {
@@ -170,106 +127,100 @@ export default function Home() {
 
 
   return (
-    <div className="bg-gray-950 min-h-screen w-full sm:border-t-2 border-teal-500">
-
-      <div className='fixed z-30' >
-        <div className='flex sm:hidden backdrop-blur-sm h-12 bg-black/30 rounded-br-xl' >
-          <div className='h-full mx-3 flex justify-center items-center' >
-            <div className='w-7 h-7 flex justify-center border-2 border-teal-500 rounded-full' >S</div>
-          </div>
-          <button 
-            onClick={() => handleNavClick('projects')}
-            className="w-20 flex justify-center sm:text-sm text-[13px] pt-4 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out">
-            <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>  
-            <span className="relative uppercase">Projects</span>
-          </button> 
-          <button
-            onClick={() => handleNavClick('skills')} 
-            className="w-20 flex justify-center sm:text-sm text-[13px] pt-4 pb-1  rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
-            <span className="relative uppercase">Skills</span>
-          </button>
-          <button 
-            onClick={() => handleNavClick('contacts')} 
-            className="w-20 flex justify-center sm:text-sm text-[13px] pt-4 pb-1 rounded-b-sm border-b-2 border-b-teal-500 relative overflow-hidden group transition-all duration-300 ease-in-out"
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-teal-500/20 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"></div>
-            <span className="relative uppercase">Contacts</span>
-          </button>
-          <div className="relative overflow-hidden w-4"></div>
-        </div>
-      </div>
+    <div key={language}  className="bg-gray-950 min-h-screen w-full sm:border-t-2 border-teal-500">
 
       <SideSocialLinks></SideSocialLinks>
-
-        {/* 1. Ton Hero (plein écran au départ) */}
+      
         <HeroContent 
           handleNavClick={handleNavClick}
-          currentLang={currentLang}
-          setCurrentLang={setCurrentLang}
           t={t}
           navItems={navItems}
           techStack={techStack}
           getTranslateY={getTranslateY}
-        />
+      />
 
 
-        {/* 2. Navbar sticky qui apparaît dès qu’on descend */}
-        <div className="sticky top-0 z-50 w-full bg-gray-950/50 backdrop-blur-md shadow-xl border- border-teal-500/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-center sm:justify-between items-center gap-4">
-            <nav className="flex items-center flex-wrap justify-center gap-2 sm:gap-4">
+        {/* 2. Navbar sticky qui apparaît dès qu'on descend */}
+        <AnimatedSection direction='scale' delay={0.5} duration={0.5} className="sticky top-0 z-40 w-full bg-gray-950/50 backdrop-blur-md shadow-xl border- border-teal-500/30">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 flex flex-wrap justify-center sm:justify-between items-center gap-2 sm:gap-4">
+            <button onClick={() => handleNavClick('contacts')} className='absolute left-12 w-12 sm:w-14 hidden sm:block' >
+              <AvailabilityIndicator></AvailabilityIndicator>
+            </button>
+
+            <div className="hidden sm:block"></div>
+            
+            <nav className="flex items-center flex-wrap justify-center gap-1 sm:gap-4 w-full sm:w-auto order-2 sm:order-1 mt-2 sm:mt-0">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className="flex items-center text-sm py-2 px-3 rounded-full text-gray-300 hover:bg-teal-500 hover:text-gray-900 transition-colors duration-300 font-medium group"
+                  className="flex items-center text-xs py-1.5 sm:py-2 px-2 sm:px-3 rounded-full text-gray-300 hover:bg-teal-500 hover:text-gray-900 transition-colors duration-300 font-medium group"
                 >
-                  <span className="mr-2 group-hover:text-gray-900 text-teal-400">{item.icon}</span>
-                  <span className="uppercase tracking-wider">{item.label}</span>
+                  <span className="mr-0 sm:mr-2 group-hover:text-gray-900 text-teal-400 text-xs">{item.icon}</span>
+                  <span className="hidden sm:block uppercase tracking-wider text-xs sm:text-xs">{item.label}</span>
                 </button>
               ))}
               <a 
                 href='/documents/cv_steve_non_confidentiel.pdf' 
                 download="Steve_Rasoafanirindraibe_CV.pdf" 
-                className="flex items-center py-2 px-3 bg-teal-500/20 text-teal-300 rounded-full text-sm font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
+                className="flex items-center py-1 sm:py-1.5 px-2 sm:px-3 bg-teal-500/20 text-teal-300 rounded-full text-xs font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
               > 
-                <Download className='mr-2 h-4 w-4' /> {t("hero.download")}
+                <Download className='mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4' /> 
+                <span className="text-xs sm:text-xs">{t("hero.download")}</span>
               </a>
             </nav>
 
-            <div className="flex items-center justify-center p-1 bg-gray-700 rounded-full shadow-inner border border-teal-500/50 w-32">
-              <Globe className="text-teal-400 mr-2 h-4 w-4" />
-              <button
-                  onClick={() => changeLanguage('en')}
-                  className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
+            <div className="hidden sm:flex items-center justify-center p-1 bg-gray-900 rounded-full shadow-inner border border-orange-500/50 w-24 sm:w-32 order-1 sm:order-2">
+              <Globe className="text-orange-400 mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+              <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
                       language === 'en'  
-                          ? 'bg-teal-500 text-gray-900 shadow-md transform scale-105' 
-                          : 'text-gray-400 hover:text-white hover:bg-gray-600'
+                          ? 'bg-orange-500 text-white shadow-md transform scale-105' 
+                          : 'text-gray-400 hover:text-white hover:bg-gray-800'
                   }`}
               >
                   EN
               </button>
-              <button
-                  onClick={() => changeLanguage('fr')}
-                  className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
+              <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
                       language === 'fr'
-                          ? 'bg-teal-500 text-gray-900 shadow-md transform scale-105' 
+                          ? 'bg-orange-500 text-white shadow-md transform scale-105' 
                           : 'text-gray-400 hover:text-white hover:bg-gray-600'
                   }`}
               >
                   FR
               </button>
-            
             </div>
           </div>
+        </AnimatedSection>
+
+        <div className='fixed bottom-5 right-4 z-50' >            
+          <div className="sm:hidden flex items-center justify-center p-1 bg-gray-900 rounded-full shadow-inner border border-orange-500/50 order-1 sm:order-2">
+            <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
+                    language === 'en'  
+                        ? 'bg-orange-500 text-white shadow-md transform scale-105' 
+                        : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                }`}
+            >
+                EN
+            </button>
+            <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
+                    language === 'fr'
+                        ? 'bg-orange-500 text-white shadow-md transform scale-105' 
+                        : 'text-gray-400 hover:text-white hover:bg-gray-600'
+                }`}
+            >
+                FR
+            </button>
+          </div>
         </div>
+
+
+
       <main className="relative w-full max-w-full min-h-screen overflow-x-hidden">
-        {/* Second block ---------------------------------------------------------------------------------*/}
+        {/* Second block ----------------------------------------------------------------------------------------*/}
         <div 
-          className="bg-black mt-10 w-full sm:min:h-96 rounded-t-[100px_30px] sm:rounded-t-[280px_80px] shadow-glow-teal transition-all duration-400 ease-out"          
-          // style={{ transform: `translateY(${-getTranslateY(150)}px)` }}
+          className="bg-black mt-6 sm:mt-10 w-full rounded-t-[50px_15px] sm:rounded-t-[100px_30px] lg:rounded-t-[280px_80px] shadow-glow-teal transition-all duration-400 ease-out"          
         >
+          <section id="about"></section>
           <About></About>
 
           <section id="projects"></section>
@@ -277,8 +228,10 @@ export default function Home() {
         </div>
 
         {/* Third block -----------------------------------------------------------------------------------------*/}
+        <section id="skills"></section>
         <Skills></Skills>
-        
+
+        <section id="contacts"></section>
         <Contact></Contact>
       </main>
     </div>

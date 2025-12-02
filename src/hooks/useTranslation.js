@@ -1,41 +1,46 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client"
+import { useContext, createContext, useState, useEffect } from 'react';
 
-// Import des traductions
-import frTranslations from '@/locales/fr.json';
-import enTranslations from '@/locales/en.json';
+const TranslationContext = createContext();
 
-const translations = {
-  fr: frTranslations,
-  en: enTranslations
-};
-
-export const useTranslation = () => {
+export function TranslationProvider({ children }) {
   const [language, setLanguage] = useState('fr');
 
   // Charger la langue sauvegardée
   useEffect(() => {
-    const savedLang = localStorage.getItem('language');
+    const savedLang = localStorage.getItem('preferred-language');
     if (savedLang) {
       setLanguage(savedLang);
     }
   }, []);
 
-  const t = (key) => {
-    const keys = key.split('.');
-    let value = translations[language];
-    
-    for (const k of keys) {
-      value = value?.[k];
-    }
-    
-    return value || key; // Retourne la clé si non trouvée
-  };
-
+  // Sauvegarder la langue
   const changeLanguage = (lang) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    localStorage.setItem('preferred-language', lang);
   };
 
-  return { t, language, changeLanguage };
-};
+  const value = {
+    language,
+    changeLanguage,
+    t: (key) => {
+      // Charger les traductions selon la langue
+      const translations = require(`@/locales/${language}.json`);
+      return key.split('.').reduce((obj, k) => obj && obj[k], translations) || key;
+    }
+  };
+
+  return (
+    <TranslationContext.Provider value={value}>
+      {children}
+    </TranslationContext.Provider>
+  );
+}
+
+export function useTranslation() {
+  const context = useContext(TranslationContext);
+  if (!context) {
+    throw new Error('useTranslation must be used within TranslationProvider');
+  }
+  return context;
+}

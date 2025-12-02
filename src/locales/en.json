@@ -6,10 +6,13 @@
     "contacts": "Contacts"  
   },
   "hero": {
-    "title": "FullStack Developer",
-    "contact": "Contact Me", 
+    "title": "FullStack Web Developer",
+    "contact": "Start a Project",
     "download": "Download Resume",
-    "expertise": "FullStack Expertise"
+    "expertise": "FullStack Expertise",
+    "greeting": "Hi, I'm",
+    "headline": "I turn your ideas into high-performance software solutions.",
+    "tagline": "Senior Full Stack Developer | React & SpringBoot Ecosystem Expert | Freelancer"
   },
   "welcome": {
     "title": "Welcome", 
@@ -20,9 +23,14 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "About me",
-    "description": "I'm not just a developer - I'm a digital architect, a passionate soul obsessed with the magic behind every line of code. My kingdom? The intersection between the relentless logic of algorithms and the boundless creativity of the modern web.I firmly believe that the best applications aren't those that work perfectly, but those that solve real problems with discreet elegance. My approach? Transforming technical complexity into user simplicity."
+    "subtitle": "About me and my education",
+    "description": "I'm not just a developer - I'm a digital architect, a passionate soul obsessed with the magic behind every line of code. My kingdom? The intersection between the relentless logic of algorithms and the boundless creativity of the modern web.I firmly believe that the best applications aren't those that work perfectly, but those that solve real problems with discreet elegance. My approach? Transforming technical complexity into user simplicity.",
+    "badge": "Who I am",
+    "role": "Web Developer",
+    "solver": "Problem Solver",
+    "training": "Assisted Training"
   },
+
   "projects": {
     "title": "Portfolio",
     "subtitle": "Showcase of my latest experiences",
@@ -68,28 +76,80 @@
       }
     ]
   },
-  "skills": {
-    "title": "Skills",
-    "subtitle": "Presentation of my competencies",
+ "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Technical proficiency and professional competencies",
+    
+    "hardSkills": {
+      "title": "Hard Skills",
+      "subtitle": "Technical expertise and tools"
+    },
+    
+    "categories": {
+      "languages": "Programming Languages",
+      "languagesDesc": "Programming",
+      "frontend": "Frontend Development",
+      "frontendDesc": "Web/Mobile Development",
+      "backend": "Backend Development",
+      "backendDesc": "Servers & APIs",
+      "databases": "Databases",
+      "databasesDesc": "Storage & Management",
+      "tools": "Development Tools",
+      "toolsDesc": "Development"
+    },
+    
     "softSkills": {
-      "teamwork": "Teamwork",
-      "communication": "Communication",
-      "systemDesign": "System Design",
-      "algorithms": "Algorithms",
-      "adaptability": "Adaptability",
-      "problemSolving": "Problem Solving"
+      "title": "Soft Skills",
+      "subtitle": "Professional and interpersonal abilities",
+      "teamwork": "Team collaboration and project coordination",
+      "communication": "Clear technical and non-technical communication",
+      "systemDesign": "System architecture and scalable design",
+      "algorithms": "Algorithmic thinking and optimization",
+      "adaptability": "Quick adaptation to new technologies and methodologies",
+      "problemSolving": "Analytical problem-solving approach",
+      "timeManagement": "Efficient time management and task prioritization",
+      "leadership": "Project leadership and team mentoring"
+    },
+    
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Validated accreditations and training",
+      "pix": {
+        "title": "Digital Skills",
+        "institution": "PIX - Official Certification",
+        "description": "Certification measuring digital proficiency (data management, communication, content creation, security)."
+      },
+      "huawei": {
+        "title": "AI Overview",
+        "institution": "Huawei ICT Academy",
+        "description": "Fundamentals of Artificial Intelligence, Machine Learning, Deep Learning, and AI applications."
+      }
     }
   },
   "contact": {
-    "subtitle": "Feel free to contact me, I will respond as soon as possible.",
-    "name":"Your Name",
-    "email":"Your Email",
-    "message":"Your Message",
-    "placeholder":"Tell me how I can help you...",
-    "send":"Send",
+    "title": "Contact",
+    "subtitle": "Let's discuss your project and create something amazing together.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "location": "Remote Worldwide | Fianarantsoa, Madagascar",
+    "copy": "Copy",
+    "copied": "Successfully copied!",
+    "call": "Call",
+    "connect": "Connect with me",
+    "availabilityNote": "Always available for interesting collaborations",
+    "formTitle": "Send a message",
+    "formSubtitle": "Fill out the form below and I'll get back to you as soon as possible.",
+    "name": "Full name",
+    "namePlaceholder": "Your full name",
+    "email": "Email address",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Describe your project, ideas, or ask me any questions...",
+    "send": "Send message",
+    "sending": "Sending...",
     "success": "Message sent successfully!",
-    "error":"Please check your email or contact me directly."
-
+    "error": "An error occurred. Please try again."
   },
   "alerts": {
     "copySuccess": "Copied successfully",
@@ -100,15 +160,19 @@
   },
   "sections": {
     "uiux": "UI/UX",
-    "academic": "Academic Training", 
+    "academic": "Academic", 
     "networks": "Networks",
-    "ai": "Artificial Intelligence"
+    "ai": "AI"
   },
   "descriptions": {
-    "uiux": "In simple terms: I create websites so easy to use that even your grandmother could order online without calling for help!",
-    "academic": "Graduated with a Bachelor's degree in Intranet and Internet Application Development (DAII) from EMIT, University of Fianarantsoa in Madagascar. ",    
-    "networks": "Networks\nMastery of network fundamentals: Cisco configuration, routing (RIP, EIGRP), NAT and IP address management for infrastructures.",    
-    "ai": "Exploration of artificial intelligence technologies and their integration into innovative applications."
+    "uiuxTitle": "Interface Design & User Experience",
+    "uiux": "Design of intuitive and aesthetic interfaces centered on user experience. Mastery of design principles, prototyping and user testing to create digital products that combine beauty and functionality.",
+    "academicTitle": "Teaching & Research",
+    "academic": "In-depth training in computer science with a rigorous academic approach. Teaching fundamental concepts, research methodology and development of pedagogical skills to train the new generation of developers.",
+    "networksTitle": "Networks & Security",
+    "networks": "Expertise in network architecture, system administration and cybersecurity. Deployment of robust infrastructures, performance optimization and implementation of advanced security protocols.",
+    "aiTitle": "Artificial Intelligence",
+    "ai": "Exploration of AI and machine learning technologies. Development of intelligent algorithms, processing of complex data and integration of automation solutions for innovative applications."
   },
   "copyright":{
     "text":" All rights reserved."

@@ -60,7 +60,7 @@ const FeaturedProject = ({ project, index, t, showAlert }: any) => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-8 sm:py-12 border-b border-white/5 last:border-0">
+    <div className="w-full max-w-5xl mx-auto pt-10 sm:pt-12 border-b border-white/5 last:border-0">
       <div className={`flex flex-col ${isRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-6 md:gap-10`}>
         
         {/* IMAGE SLIDER (Compact) */}
@@ -79,7 +79,7 @@ const FeaturedProject = ({ project, index, t, showAlert }: any) => {
           </div>
           
           {/* Badge Type */}
-          <div className="absolute top-2 left-2 bg-black/70 backdrop-blur px-2 py-0.5 rounded text-sm text-teal-400 font-mono border border-teal-500/30">
+          <div className="absolute top-2 text-xs left-2 bg-black/70 backdrop-blur px-2 py-0.5 rounded text-sm text-teal-400 font-mono border border-teal-500/30">
             {t(`projects.list.${project.id}.type`)}
           </div>
         </div>
@@ -190,8 +190,6 @@ export default function Projects() {
   const { t } = useTranslation();
   const { showAlert } = useModernAlert();
 
-  // IDs 0 (EBH), 1 (Cyber), 3 (Impots) -> Featured
-  // IDs 2 (Auto), 4 (Radio), 5 (Homevers) -> Compact Grid
   const projectsData = useMemo(() => [
     { id: 0, featured: true, images: ['/projects/ebh/EBH-2.png','/projects/ebh/EBH-8.png','/projects/ebh/EBH-7.png','/projects/ebh/EBH-9.png'], techs: ['NextJs', ,'PostgreSQL', 'TypeScript', 'Tailwind', 'Drizzle-ORM', 'ReactJs'] },
     { id: 1, featured: true, images: ['/projects/openService/cyber-1.png','/projects/openService/cyber-3.png','/projects/openService/cyber-4.png','/projects/openService/cyber-5.png'], techs: ['SpringBoot', 'NextJs', 'PostgreSQL' ,'REST API', 'Tailwind'], githubLink: 'https://github.com/steverasoafanirindraibe/CyberCafe_application_web' },
@@ -205,13 +203,13 @@ export default function Projects() {
   const otherProjects = projectsData.filter(p => !p.featured);
 
   return (
-    <div className="w-full h-full bg-gradient-to-b from-black via-gray-950 to-black text-gray-200 py-10 sm:py-20 px-4 sm:px-6">
+    <div className="w-full h-full bg-gradient-to-b from-black via-gray-950 to-black text-gray-200 pt-16 sm:pt-28 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Compact */}
-        <AnimatedSection direction='down' duration={0.8} threshold={0.1}>
-          <div className='mb-8 sm:mb-10'>
-            <h2 className='text-3xl sm:text-4xl font-extrabold text-center'>
+        <AnimatedSection direction='scale' duration={0.4} threshold={0.1}>
+          <div className='mb-2'>
+            <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
               <span className="text-orange-500">&lt;</span>
               <span>{t("projects.title")}</span>
               <span className="text-orange-500">/&gt;</span>
@@ -224,9 +222,9 @@ export default function Projects() {
 
 
         {/* SECTION 1: FEATURED (01, 02, 04) */}
-        <div className="flex flex-col gap-6 sm:gap-0 mb-10">
+        <div className="flex flex-col gap-6 sm:gap-0 mb-14">
           {featuredProjects.map((project, index) => (
-             <AnimatedSection key={project.id} direction="up" delay={index * 0.1}>
+             <AnimatedSection key={project.id} direction="up" delay={0.1}>
                 <FeaturedProject project={project} index={index} t={t} showAlert={showAlert} />
              </AnimatedSection>
           ))}
@@ -234,7 +232,7 @@ export default function Projects() {
 
         {/* SECTION 2: THE LAB / ARCHIVE (03, 05, 06) - GRID */}
         {otherProjects.length > 0 && (
-            <AnimatedSection direction="up" threshold={0.2}>
+            <AnimatedSection direction="up" delay={0.1}>
                 <div className="flex items-center gap-4 mb-6">
                     <h3 className="text-xl font-bold text-gray-300">Other Experiments</h3>
                     <div className="h-px bg-white/10 flex-grow"></div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from './ClientLayout';
+import { TranslationProvider } from "@/hooks/useTranslation";
 
 export const metadata: Metadata = {
   title: "Steve Rasoafanirindraibe - Portfolio",
@@ -40,7 +41,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <ClientLayout>{children}</ClientLayout>
+        <TranslationProvider>
+          {/* <ClientLayout> */}
+            {children}
+          {/* </ClientLayout> */}
+        </TranslationProvider>
+
       </body>
     </html>
   );

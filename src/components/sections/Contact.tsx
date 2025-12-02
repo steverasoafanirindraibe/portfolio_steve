@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
-import { FaEnvelope, FaLinkedin, FaGithub, FaGlobe, FaStarHalfAlt, FaUser, FaComment, FaPaperPlane, FaStar } from 'react-icons/fa';
+import { 
+  FaEnvelope, FaLinkedin, FaGithub, FaGlobe, 
+  FaStarHalfAlt, FaUser, FaComment, FaPaperPlane, 
+  FaStar, FaPhone, FaMapMarkerAlt, FaCheck, 
+  FaExternalLinkAlt, FaCopy
+} from 'react-icons/fa';
+import { SiUpwork, SiFiverr, SiFacebook } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 import AnimatedSection from '@/components/AnimatedSection';
 import { useModernAlert } from '@/components/ModernAlert';
@@ -9,6 +15,7 @@ export default function Contact() {
   const { t } = useTranslation();
   const { showAlert } = useModernAlert();
   const [isLoading, setIsLoading] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -23,18 +30,86 @@ export default function Contact() {
     USER_ID: 'MK-TmMeFEG4l1LxG_'
   };
 
-  const handleCopy = async () => {    
+  const contactInfo = [
+    {
+      id: 1,
+      icon: <FaEnvelope />,
+      label: t('contact.emailLabel'),
+      value: 'steveshannyrasoafanirindraibe@gmail.com',
+      action: 'copy',
+      delay: 0.1
+    },
+    {
+      id: 2,
+      icon: <FaPhone />,
+      label: t('contact.phoneLabel'),
+      value: '+261 34 56 114 77',
+      action: 'call',
+      delay: 0.2
+    },
+  // {
+  //   id: 3,
+  //   icon: <FaMapMarkerAlt />,
+  //   label: t('contact.locationLabel'),
+  //   value: t('contact.location') || 'Remote Worldwide', 
+  //   action: null,
+  //   delay: 0.3
+  // },
+  ];
+
+  const socialLinks = [
+    {
+      id: 1,
+      icon: <FaGithub />,
+      label: 'GitHub',
+      url: 'https://github.com/steverasoafanirindraibe',
+
+      delay: 0.4
+    },
+    {
+      id: 2,
+      icon: <FaLinkedin />,
+      label: 'LinkedIn',
+      url: 'https://fr.linkedin.com/steverasoafanirindraibe',
+      delay: 0.5
+    },
+    {
+      id: 3,
+      icon: <SiFacebook />,
+      label: 'Facebook',
+      url: 'https://www.facebook.com/share/1BZTDSNAqN/',
+      delay: 0.6
+    },
+    {
+      id: 4,
+      icon: <SiFiverr />,
+      label: 'Fiverr',
+      url: 'https://fr.fiverr.com/s/ZmDDRrp',
+      delay: 0.7
+    }
+  ];
+
+  const handleCopy = async (text) => {
     try {
-      await navigator.clipboard.writeText("steveshannyrasoafanirindraibe@gmail.com");
-      showAlert("Copié avec succes", "success")
+      await navigator.clipboard.writeText(text);
+      setCopySuccess(true);
+      showAlert(t('contact.copied'), "success");
+      setTimeout(() => setCopySuccess(false), 2000);
     } catch (err) {
       const textArea = document.createElement('textarea');
-      textArea.value = "steveshannyrasoafanirindraibe@gmail.com";
+      textArea.value = text;
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand('copy');
       document.body.removeChild(textArea);
+      showAlert(t('contact.copied'), "success");
     }
+  };
+
+  const handleCall = (phoneNumber) => {
+    // Supprimer les espaces et le + pour le format tel:
+    const cleanNumber = phoneNumber.replace(/\s+/g, '').replace('+', '');
+    window.open(`tel:${cleanNumber}`, '_blank');
   };
 
   const handleChange = (e) => {
@@ -69,7 +144,7 @@ export default function Contact() {
         {
           to_name: formData.name,
           to_email: formData.email,
-          from_name: 'Steve Rasoafanirindraibe', 
+          from_name: 'Steve Rasoafanirindraibe',
           reply_to: 'steveshannyrasoafanirindraibe@gmail.com'
         },
         EMAILJS_CONFIG.USER_ID
@@ -88,153 +163,214 @@ export default function Contact() {
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <footer id='contacts' className='footer h-auto sm:h-screen w-full' >
-      <div className='footer-section w-full h-auto sm:h-[90%] items-center rounded-b-[30px] sm:rounded-b-[50%] py-8 sm:py-0' >
-        <AnimatedSection direction='scale' threshold={0.3} delay={0.1} duration={0.8}>
-          <div className='text-2xl sm:text-4xl text-center pt-4 sm:pt-8 pb-3' >
-            <span className="text-orange-500">&lt;</span>
-            <span>Contact</span>
-            <span className="text-orange-500">/&gt;</span>
+    <footer className='footer h-auto w-full relative overflow-hidden'>
+      {/* Background Pattern */}
+      <div className='absolute inset-0 z-0 opacity-10'>
+        <div className='absolute top-1/4 left-1/4 w-64 h-64 bg-teal-500 rounded-full blur-3xl'></div>
+        <div className='absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl'></div>
+      </div>
+
+      <div className='footer-section relative z-10 w-full h-auto items-center py-8 sm:pt-20 px-4'>
+        <AnimatedSection direction='scale' duration={0.4} threshold={0.1}>
+          <div className='mb-8 sm:mb-10'>
+            <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
+              <span className="text-orange-500">&lt;</span>
+              <span>Contact</span>
+              <span className="text-orange-500">/&gt;</span>
+            </h2>
+            <div className="w-12 h-1 bg-teal-500 rounded mx-auto mt-2"></div>
+            <p className="text-xs text-gray-500 mt-3 text-center">{t("contact.subtitle")}</p>
+
           </div>
-          <div className='text-center pb-6 sm:pb-8 text-xs sm:text-sm text-gray-300 px-4'>{t("contact.subtitle")}</div>
         </AnimatedSection>
-        <div className='flex flex-col sm:flex-row px-4 sm:px-0' >
-          <div className='w-full sm:w-1/3 mb-8 sm:mb-0 sm:pr-16' >
-            <AnimatedSection direction='up' threshold={0.1} delay={0.3} duration={0.3} className='flex justify-center sm:justify-end py-2'> 
-              <button 
-                className='flex justify-center items-center group py-2 px-3 bg-black/30 border-2 border-white rounded-full hover:bg-teal-500 hover:text-black hover:border-teal-500 transition-all duration-700 ease-out cursor-copy text-xs sm:text-sm'
-                onClick={handleCopy}
-              >
-                <FaEnvelope className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' />
-                <div className='pl-2 group-hover:pl-0 transition-all duration-700 ease-out truncate max-w-[250px] sm:max-w-none'>steveshannyrasoafanirindraibe@gmail.com</div>
-                <FaStar className='w-0 h-2 group-hover:w-2 transition-all duration-700 ease-out' />
-              </button>
-            </AnimatedSection>
-            <AnimatedSection direction='up' threshold={0.1} delay={0.6} duration={0.3} className=' flex justify-center sm:justify-end py-2' > 
-              <a 
-                href='https://fr.linkedin.com/'
-                className='flex justify-center items-center group py-2 px-3 text-xs sm:text-sm bg-black/30  border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
-              >
-                <FaLinkedin className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' ></FaLinkedin> 
-                <div className='pl-2 group-hover:pl-0 transition-all duration-700 ease-out truncate max-w-[250px] sm:max-w-none'>Steve Shanny Rasoafanirindraibe </div>
-              </a>
-            </AnimatedSection>
-            <AnimatedSection direction='up' threshold={0.1} delay={0.8} duration={0.2} className=' flex justify-center sm:justify-end py-2' > 
-              <a 
-                href='https://github.com/steverasoafanirindraibe' 
-                className='flex justify-center items-center group py-2 px-3 text-xs sm:text-sm bg-black/30 border-2 border-white rounded-full hover:bg-white hover:text-black hover:border-white transition-all duration-700 ease-out cursor-pointer' 
-              >
-                <FaGithub className='group-hover:w-0 transition-all duration-700 ease-out size-3 sm:size-4' ></FaGithub> 
-                <div className='pl-2 group-hover:pl-0 transition-all duration-700 ease-out' >steve_rasoafanirindraibe </div>
-              </a>
-            </AnimatedSection>
-            <AnimatedSection direction='scale' threshold={0.1} delay={1} duration={0.1}>
-              <div className='w-full flex justify-center sm:justify-end items-center py-2' > 
-                <FaGlobe className='mx-2  text-xs sm:text-sm' ></FaGlobe> 
-                <div className=' text-xs sm:text-sm' >Remote Worldwide</div>
+
+        <div className='flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto'>
+          {/* Contact Info Cards - Left Side */}
+          <div className='lg:w-1/3 lg:pl-12'>
+            <AnimatedSection direction='up' threshold={0.1} delay={0.2} duration={0.5}>
+              <div className='grid grid-cols-1 gap-4 mb-8'>
+                {contactInfo.map((item) => (
+                  <div 
+                    key={item.id}
+                    className='relative group bg-black/40 backdrop-blur-sm rounded-2xl p-3 border border-white/10 hover:border-teal-500/50 transition-all duration-500 hover:-translate-y-1'
+                  >
+                    <AnimatedSection direction='up' threshold={0.1} delay={item.delay} duration={0.3} >
+                      <div className='flex items-start space-x-3'>
+                        <div className='p-3 rounded-xl bg-orange-500/20 backdrop-blur-sm'>
+                          <div className='text-xl text-white'>{item.icon}</div>
+                        </div>
+                        <div className='flex-1 min-w-0'>
+                          <p className='text-xs text-gray-300 mb-1 truncate'>{item.label}</p>
+                          <p className='text-sm font-medium text-white truncate'>{item.value}</p>
+                        </div>
+                        {item.action === 'copy' && (
+                          <button
+                            onClick={() => handleCopy(item.value)}
+                            className='p-2 rounded-lg bg-white hover:bg-teal-500 transition-colors'
+                            title={t('contact.copy')}
+                          >
+                            {copySuccess ? (
+                              <FaCheck className='text-green-400' />
+                            ) : (
+                              <FaCopy className='text-gray-900 hover:text-white' />
+                            )}
+                          </button>
+                        )}
+                        {item.action === 'call' && (
+                          <button
+                            onClick={() => handleCall(item.value)}
+                            className='group p-2 rounded-lg bg-green-500 transition-colors'
+                            title={t('contact.call')}
+                          >
+                            <FaPhone className=' text-white group-hover:scale-125 transition-all duration-500' />
+                          </button>
+                        )}
+                      </div>
+                    </AnimatedSection>
+                  </div>
+                ))}
               </div>
-              <div className='w-full flex justify-center  sm:justify-end' >- <FaStarHalfAlt className=' text-sm sm:text-xl mx-2' ></FaStarHalfAlt> -</div>
             </AnimatedSection>
+
+            {/* Social Links */}
+            <AnimatedSection direction='up' threshold={0.1} duration={0.4}>
+              <div className='mb'>
+                <h3 className='text-lg font-semibold text-white mb-4 flex items-center'>
+                  <FaGlobe className='mr-2 text-teal-400' />
+                  {t('contact.connect')}
+                </h3>
+                <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-3'>
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.id}
+                      href={social.url}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='flex flex-col items-center justify-center p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 hover:border-teal-500/50 transition-all duration-500 group hover:bg-black/60'
+                    >
+                      <div className='text-2xl mb-2 group-hover:scale-110 transition-transform text-white'>
+                        {social.icon}
+                      </div>
+                      <span className='text-xs font-medium text-white'>{social.label}</span>
+                      <FaExternalLinkAlt className='absolute top-2 right-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity text-teal-400' />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+
           </div>
-          
-          <div className='w-full sm:w-2/3' >
-            <AnimatedSection direction='left' threshold={0.1} delay={0.4} duration={0.8} className='w-full flex sm:justify-left'>
-              <form onSubmit={handleSubmit} className='w-full sm:w-4/5 max-w-md bg-black/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-2xl'>
-                
-                {/* Champ Nom */}
-                <div className='mb-4 group'>
-                  <div className='flex items-center mb-2'>
-                    <FaUser className='text-teal-400 mr-2 text-sm' />
-                    <label htmlFor='name' className='text-white text-xs sm:text-sm font-medium'>
-                      {t("contact.name")}
-                    </label>
-                  </div>
-                  <input 
-                    id='name'
-                    name='name'
-                    type="text" 
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className='w-full text-xs sm:text-sm bg-black/40 border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none'
-                    placeholder='Martin Dupont'
-                  />
+
+          {/* Contact Form - Right Side */}
+          <div className='lg:w-3/5'>
+            <AnimatedSection direction='scale' threshold={0.1} duration={0.4}>
+              <div className='bg-black/40 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl'>
+                <div className='mb-6'>
+                  <h3 className='text-md sm:text-xl font-bold text-white mb-2 text-center'>
+                    {t('contact.formTitle')}
+                  </h3>
+                  <p className='text-gray-400 text-sm text-center'>
+                    {t('contact.formSubtitle')}
+                  </p>
                 </div>
 
-                {/* Champ Email */}
-                <div className='mb-4 group'>
-                  <div className='flex items-center mb-2'>
-                    <FaEnvelope className='text-teal-400 mr-2 text-sm' />
-                    <label htmlFor='email' className='text-white text-xs sm:text-sm font-medium'>
-                      {t("contact.email")}
-                    </label>
-                  </div>
-                  <input 
-                    id='email'
-                    name='email'
-                    type="email" 
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className='w-full bg-black/40 text-xs sm:text-sm border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none'
-                    placeholder='martindupon@example.com'
-                  />
-                </div>
+                <form onSubmit={handleSubmit} className='space-y-6 text-sx sm:text-sm'>
+                  {/* Name & Email Row */}
+                  <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+                    <div className='group'>
+                      <label className='flex items-center mb-2 text-xs sm:text-sm font-medium text-gray-300'>
+                        <FaUser className='mr-2 text-teal-400' />
+                        {t('contact.name')}
+                      </label>
+                      <input
+                        name='name'
+                        type='text'
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className='w-full text-xs sm:text-sm bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl py-3 px-4 text-white placeholder-gray-500 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 transition-all duration-300 outline-none'
+                        placeholder={t('contact.namePlaceholder')}
+                      />
+                    </div>
 
-                {/* Champ Message */}
-                <div className='mb-6 group'>
-                  <div className='flex items-center mb-2'>
-                    <FaComment className='text-teal-400 mr-2 text-sm' />
-                    <label htmlFor='message' className='text-white text-xs sm:text-sm font-medium'>
-                      {t("contact.message")}
-                    </label>
+                    <div className='group'>
+                      <label className='flex items-center mb-2 text-sm font-medium text-gray-300'>
+                        <FaEnvelope className='mr-2 text-teal-400' />
+                        {t('contact.email')}
+                      </label>
+                      <input
+                        name='email'
+                        type='email'
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className='w-full text-xs sm:text-sm bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl py-3 px-4 text-white placeholder-gray-500 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 transition-all duration-300 outline-none'
+                        placeholder={t('contact.emailPlaceholder')}
+                      />
+                    </div>
                   </div>
-                  <textarea 
-                    id='message'
-                    name='message'
-                    rows="4"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className='w-full bg-black/40 text-xs sm:text-sm border border-white/30 rounded-xl py-2 px-4 text-white placeholder-gray-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/20 transition-all duration-500 outline-none resize-none'
-                    placeholder={t('contact.placeholder')}
-                  ></textarea>
-                </div>
 
-                {/* Bouton d'envoi */}
-                <button 
-                  type="submit"
-                  disabled={isLoading}
-                  className={`w-full group flex justify-center items-center py-2 px-6 rounded-xl text-white font-semibold transition-all duration-500 ease-out shadow-lg ${
-                    isLoading 
-                      ? 'bg-gray-600 cursor-not-allowed' 
-                      : 'bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-500 hover:border-teal-300'
-                  }`}
-                >
-                  {isLoading ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      <span>Envoi en cours...</span>
-                    </>
-                  ) : (
-                    <>
-                      <FaPaperPlane className='mr-2 text-xs sm:text-sm group-hover:rotate-45 transition-transform duration-500' />
-                      <span>{t("contact.send")}</span>
-                      <FaStar className='ml-2 w-0 group-hover:w-4 transition-all duration-700 ease-out' />
-                    </>
-                  )}
-                </button>
-              </form>
+                  {/* Message */}
+                  <div className='group'>
+                    <label className='flex items-center mb-2 text-sm font-medium text-gray-300'>
+                      <FaComment className='mr-2 text-teal-400' />
+                      {t('contact.message')}
+                    </label>
+                    <textarea
+                      name='message'
+                      rows='5'
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className='w-full text-xs sm:text-sm bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl py-3 px-4 text-white placeholder-gray-500 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 transition-all duration-300 outline-none resize-none'
+                      placeholder={t('contact.messagePlaceholder')}
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type='submit'
+                    disabled={isLoading}
+                    className={`w-full text-xs sm:text-sm group relative overflow-hidden rounded-xl py-3 px-6 font-semibold transition-all duration-500 ${
+                      isLoading
+                        ? 'bg-gray-700 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-teal-600 to-teal-600 '
+                    }`}
+                  >
+                    <div className='relative z-10 flex items-center justify-center'>
+                      {isLoading ? (
+                        <>
+                          <div className='animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3'></div>
+                          <span className='text-white'>{t('contact.sending')}</span>
+                        </>
+                      ) : (
+                        <>
+                          <FaPaperPlane className='mr-3 text-sm group-hover:rotate-45 transition-transform duration-500 text-white' />
+                          <span className='text-white'>{t('contact.send')}</span>
+                          <FaStar className='ml-3 w-0 group-hover:w-5 transition-all duration-700 ease-out text-yellow-300' />
+                        </>
+                      )}
+                    </div>
+                    <div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000'></div>
+                  </button>
+                </form>
+              </div>
             </AnimatedSection>
           </div>
         </div>
       </div>
-      <div className='w-full h-auto sm:h-[10%] flex justify-center items-center py-4 sm:py-0' >
-        <div className="text-black text-[10px] sm:text-sm text-center px-4">
-          <p>&copy; 2024 <strong>Steve Rasoafanirindraibe</strong>. {t("copyright.text")}</p>
+
+      {/* Footer */}
+      <div className='relative z-10 w-full py-6 backdrop-blur-sm border-t border-white/10'>
+        <div className='max-w-6xl mx-auto px-4'>
+          <div className='text-center'>
+            <p className='text-gray-400 text-[11px] sm:text-xs'>
+              &copy; 2024 <strong className='text-white'>Steve Rasoafanirindraibe</strong>. {t('copyright.text')}
+            </p>
+          </div>
         </div>
       </div>
     </footer>

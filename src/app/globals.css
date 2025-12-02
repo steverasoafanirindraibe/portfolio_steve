@@ -145,10 +145,6 @@ html {
 }
 
 
-.footer {
-  background-color: #ffffff;
-}
-
 .footer-section {
     position: relative; 
     overflow: hidden; 
@@ -163,7 +159,7 @@ html {
     right: 0;
     bottom: 0;
     background-image: 
-        linear-gradient(rgb(10, 26, 22), rgba(187, 125, 32, 0.027)),
+        linear-gradient(rgb(0, 5, 17), rgba(7, 12, 24, 0.521)),
         url('/images/image-1.png');
     background-size: cover;
     background-position: center;
