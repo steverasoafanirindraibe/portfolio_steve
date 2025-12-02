@@ -1,15 +1,12 @@
 "use client"
 import {useScroll } from '@/hooks/useScroll';
 import { useTranslation } from '@/hooks/useTranslation';
-import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
 import Skills from '@/components/sections/Skills';
 import Contact from '@/components/sections/Contact';
 import SideSocialLinks from '@/components/SideSocialLinks';
-import Image from 'next/image';
-import { useState } from 'react';
-import { Phone, Download, Code, Server, User, Globe, DivideCircleIcon } from 'lucide-react'; 
+import { Phone, Download, Code, Server, User, Globe} from 'lucide-react'; 
 import AnimatedSection from '@/components/AnimatedSection';
 import AvailabilityIndicator from '@/components/AvailabilityIndicator';
 

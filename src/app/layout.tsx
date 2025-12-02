@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientLayout from './ClientLayout';
 import { TranslationProvider } from "@/hooks/useTranslation";
 
 export const metadata: Metadata = {

@@ -1,17 +1,17 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useModernAlert } from '@/components/ModernAlert';
 import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
 
 // Icons
-import { FaClock, FaGithub, FaEye, FaCode, FaReact, FaPhp, FaBootstrap, FaCss3Alt, FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaClock, FaGithub, FaEye, FaCode, FaReact, FaPhp, FaBootstrap, FaCss3Alt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiDrizzle, SiSpringboot, SiLaravel, SiExpress, SiMysql, SiJquery, SiJavascript, SiTypescript } from 'react-icons/si';
 
 // --- UTILS ---
 
-const getTechConfig = (name: string) => {
-  const map: any = {
+const getTechConfig = (name) => {
+  const map = {
     'NextJs': { icon: SiNextdotjs, color: '#fff', bg: 'bg-white/10' },
     'PostgreSQL': { icon: SiPostgresql, color: '#336791', bg: 'bg-blue-500/10' },
     'Tailwind': { icon: SiTailwindcss, color: '#38bdf8', bg: 'bg-cyan-500/10' },
@@ -33,7 +33,7 @@ const getTechConfig = (name: string) => {
   return map[name] || { icon: FaCode, color: '#999', bg: 'bg-gray-800/20' };
 };
 
-const TechBadge = ({ name, mini = false }: { name: string, mini?: boolean }) => {
+const TechBadge = ({ name, mini = false }) => {
   const config = getTechConfig(name);
   const Icon = config.icon;
   return (
@@ -45,16 +45,16 @@ const TechBadge = ({ name, mini = false }: { name: string, mini?: boolean }) => 
 };
 
 // --- COMPOSANT 1 ---
-const FeaturedProject = ({ project, index, t, showAlert }: any) => {
+const FeaturedProject = ({ project, index, t, showAlert }) => {
   const [activeImage, setActiveImage] = useState(0);
   const isRight = index % 2 !== 0;
 
-  const nextImg = (e: any) => {
+  const nextImg = (e) => {
     e.stopPropagation();
     setActiveImage((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
   };
 
-  const prevImg = (e: any) => {
+  const prevImg = (e) => {
     e.stopPropagation();
     setActiveImage((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
   };
@@ -65,7 +65,7 @@ const FeaturedProject = ({ project, index, t, showAlert }: any) => {
         
         {/* IMAGE SLIDER (Compact) */}
         <div className="relative w-full md:w-1/2 h-[185px] sm:h-[280px] rounded-lg overflow-hidden border border-white/10 bg-[#0a0a0a] group">
-          {project.images.map((img: string, idx: number) => (
+          {project.images.map((img, idx) => (
             <div key={idx} className={`absolute inset-0 transition-opacity duration-500 ${idx === activeImage ? 'opacity-100' : 'opacity-0'}`}>
               <Image src={img} alt="Project" fill className="object-cover" />
               <div className="absolute inset-0 bg-black/20" />
@@ -109,7 +109,7 @@ const FeaturedProject = ({ project, index, t, showAlert }: any) => {
            )}
 
           <div className="flex flex-wrap gap-3 pt-1">
-            {project.techs.map((tech: string, i: number) => (
+            {project.techs.map((tech, i) => (
               <TechBadge key={i} name={tech} />
             ))}
           </div>
@@ -137,11 +137,11 @@ const FeaturedProject = ({ project, index, t, showAlert }: any) => {
 };
 
 // --- COMPOSANT 2 : MINIMALIST GRID CARD (Ultra Compact) ---
-const CompactProject = ({ project, t, showAlert }: any) => {
+const CompactProject = ({ project, t, showAlert }) => {
     // Simple hover to switch image or manual click
     const [imgIndex, setImgIndex] = useState(0);
 
-    const next = (e:any) => {
+    const next = (e) => {
         e.stopPropagation(); 
         setImgIndex(p => (p === project.images.length - 1 ? 0 : p + 1));
     }
@@ -169,7 +169,7 @@ const CompactProject = ({ project, t, showAlert }: any) => {
                 {/* Footer: Techs + Link */}
                 <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
                     <div className="h-8 flex space-x-2">
-                         {project.techs.slice(0, 4).map((tech: string, i: number) => (
+                         {project.techs.slice(0, 4).map((tech, i) => (
                              <TechBadge key={i} name={tech}  />
                          ))}
                     </div>

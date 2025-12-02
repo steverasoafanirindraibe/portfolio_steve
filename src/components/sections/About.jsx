@@ -48,14 +48,7 @@ const educationDomains = [
 ];
 
 // Composant pour les boutons de navigation (Onglets) amélioré
-const TabButton = ({ isActive, icon: Icon, onClick, children, color, accentColor }: {
-  isActive: boolean;
-  icon: any;
-  onClick: () => void;
-  children: React.ReactNode;
-  color: string;
-  accentColor: string;
-}) => (
+const TabButton = ({ isActive, icon: Icon, onClick, children, color, accentColor }) => (
   <button
     onClick={onClick}
     className={`
@@ -91,21 +84,15 @@ const TabButton = ({ isActive, icon: Icon, onClick, children, color, accentColor
 );
 
 // Composant Carte amélioré
-const DomainCard = ({ title, description, icons, color, accentColor }: {
-  title: string;
-  description: string;
-  icons: any[];
-  color: string;
-  accentColor: string;
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
+const DomainCard = ({ title, description, icons, color, accentColor }) => {
+  // const [isHovered, setIsHovered] = useState(false);
   
   return (
     <div className="w-full h-full">
       <div 
         className="relative rounded-2xl overflow-hidden transition-all duration-700 h-full group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        // onMouseEnter={() => setIsHovered(true)}
+        // onMouseLeave={() => setIsHovered(false)}
       >
 
         
@@ -166,7 +153,7 @@ export default function About() {
   const [activeTab, setActiveTab] = useState(educationDomains[0].key);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handleTabChange = (key: string) => {
+  const handleTabChange = (key) => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setActiveTab(key);
@@ -174,7 +161,7 @@ export default function About() {
   };
 
   const renderDescription = () => {
-    const getDomainIcons = (key: string) => {
+    const getDomainIcons = (key) => {
       switch (key) {
         case 'uiux': return [FaLaptopCode, FaUserAlt, FaPalette, SiMaterialdesign];
         case 'academic': return [FaUniversity, FaUserGraduate, FaBookOpen, FaChartLine];

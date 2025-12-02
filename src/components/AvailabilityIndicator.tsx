@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaCircle, FaStar, FaRocket, FaUserTie, FaWifi } from 'react-icons/fa';
+import { FaStar, FaUserTie } from 'react-icons/fa';
 import { BsLightningChargeFill } from 'react-icons/bs';
 
 const AvailabilityIndicator = () => {
