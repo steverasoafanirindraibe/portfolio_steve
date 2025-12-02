@@ -6,25 +6,25 @@ const SideSocialLinks = () => {
   const socialLinks = [
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/steve",
+      href: "https://linkedin.com/in/steverasoafanirindraibe",
       label: "LinkedIn",
       color: "hover:text-blue-500"
     },
     {
       icon: Github,
-      href: "https://github.com/steve",
+      href: "https://github.com/steverasoafanirindraibe",
       label: "GitHub",
       color: "hover:text-gray-700 dark:hover:text-white"
     },
     {
       icon: Twitter,
-      href: "https://twitter.com/steve",
+      href: "https://x.com/SteveRasoa98456",
       label: "Twitter",
       color: "hover:text-sky-500"
     },
     {
       icon: Mail,
-      href: "mailto:steve@example.com",
+      href: "mailto:steveshannyrasoafanirindraibe@gmail.com",
       label: "Email",
       color: "hover:text-teal-500"
     }
@@ -34,8 +34,8 @@ const SideSocialLinks = () => {
     <motion.div
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, delay: 1 }}
-      className="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block"
+      transition={{ duration: 0.8, delay: 2 }}
+      className="fixed left-6 top-[72px] transform -translate-y-1/2 z-50 hidden lg:block"
     >
       <div className="flex flex-col items-center space-y-6">
         {/* Ligne verticale */}

@@ -1,41 +1,62 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
+import { createContext, useContext, useState, useEffect } from 'react';
 
-// Import des traductions
-import frTranslations from '@/locales/fr.json';
-import enTranslations from '@/locales/en.json';
-
-const translations = {
-  fr: frTranslations,
-  en: enTranslations
+// On pré-importe tous les fichiers de traduction possibles
+const translationsMap = {
+  fr: () => import('@/locales/fr.json'),
+  en: () => import('@/locales/en.json'),
 };
 
-export const useTranslation = () => {
-  const [language, setLanguage] = useState('fr');
+const TranslationContext = createContext();
 
-  // Charger la langue sauvegardée
+export function TranslationProvider({ children }) {
+  const [language, setLanguage] = useState('fr');
+  const [translations, setTranslations] = useState({});
+
   useEffect(() => {
-    const savedLang = localStorage.getItem('language');
-    if (savedLang) {
+    const savedLang = localStorage.getItem('preferred-language');
+    if (savedLang && translationsMap[savedLang]) {
       setLanguage(savedLang);
     }
   }, []);
 
-  const t = (key) => {
-    const keys = key.split('.');
-    let value = translations[language];
-    
-    for (const k of keys) {
-      value = value?.[k];
+  useEffect(() => {
+    if (translationsMap[language]) {
+      translationsMap[language]().then((module) => {
+        setTranslations(module.default);
+      });
     }
-    
-    return value || key; // Retourne la clé si non trouvée
-  };
+  }, [language]);
 
   const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem('language', lang);
+    if (translationsMap[lang]) {
+      setLanguage(lang);
+      localStorage.setItem('preferred-language', lang);
+    }
   };
 
-  return { t, language, changeLanguage };
-};
+  const t = (key) => {
+    return key.split('.').reduce((obj, k) => obj && obj[k], translations) ?? key;
+  };
+
+  const value = {
+    language,
+    changeLanguage,
+    t,
+    translations,
+  };
+
+  return (
+    <TranslationContext.Provider value={value}>
+      {children}
+    </TranslationContext.Provider>
+  );
+}
+
+export function useTranslation() {
+  const context = useContext(TranslationContext);
+  if (!context) {
+    throw new Error('useTranslation must be used within TranslationProvider');
+  }
+  return context;
+}

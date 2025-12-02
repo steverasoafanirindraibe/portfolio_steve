@@ -1,8 +1,20 @@
 {
+  "nav": {
+    "about": "À Propos",
+    "projects": "Portfolio",
+    "skills": "Compétences",
+    "contacts": "Contacts"
+      
+  },
   "hero": {
-    "title": "Développeur FullStack",
-    "contact": "@Contact",
-    "download": "Télécharger CV"
+    "title": "Développeur Web FullStack",
+    "contact": "Démarrer un projet",
+    "download": "Télécharger CV",
+    "expertise": "Expertise FullStack",
+    "greeting": "Salut, moi c'est",
+    "headline": "Je transforme vos idées en solutions logicielles performantes.",
+    "tagline": "Développeur Full Stack Senior | Expert en écosystème React & SpringBoot | Freelance"
+    
   },
   "welcome": {
     "title": "Bienvenue",
@@ -13,7 +25,12 @@
   },
   "about": {
     "title": "À Propos",
-    "description": "Je ne suis pas qu'un simple développeur - je suis un architecte du numérique, un passionné obsédé par la magie qui se cache derrière chaque ligne de code. Mon royaume? L'intersection entre la logique implacable des algorithmes et la créativité sans limites du web moderne. Je crois fermement que les meilleures applications ne sont pas celles qui fonctionnent parfaitement, mais celles qui résolvent des problèmes réels avec une élégance discrète. Mon approche? Transformer la complexité technique en simplicité utilisateur." 
+    "subtitle": "À Propos de moi et mon parcours",
+    "description": "Je ne suis pas qu'un simple développeur - je suis un architecte du numérique, un passionné obsédé par la magie qui se cache derrière chaque ligne de code. Mon royaume? L'intersection entre la logique implacable des algorithmes et la créativité sans limites du web moderne. Je crois fermement que les meilleures applications ne sont pas celles qui fonctionnent parfaitement, mais celles qui résolvent des problèmes réels avec une élégance discrète. Mon approche? Transformer la complexité technique en simplicité utilisateur." ,
+    "badge": "Qui je suis",
+    "role": "Développeur Web",
+    "solver": "Résolveur de problèmes",
+    "training": "Formation assistée"
   },
   "projects": {
     "title": "Portfolio",
@@ -60,27 +77,80 @@
       }
     ]
   },
-  "skills": {
-    "title": "Compétences",
-    "subtitle": "Présentation de mes compétences",
+   "skills": {
+    "title": "Compétences & Expertises",
+    "subtitle": "Maîtrise technique et compétences professionnelles",
+    
+    "hardSkills": {
+      "title": "Hard Skills",
+      "subtitle": "Expertise technique et outils"
+    },
+    
+    "categories": {
+      "languages": "Langages de Programmation",
+      "languagesDesc": "Programmation",
+      "frontend": "Développement Frontend",
+      "frontendDesc": "Développement Web/Mobile",
+      "backend": "Développement Backend",
+      "backendDesc": "Serveurs & APIs",
+      "databases": "Bases de Données",
+      "databasesDesc": "Stockage & Gestion",
+      "tools": "Outils de Développement",
+      "toolsDesc": "Développement"
+    },
+    
     "softSkills": {
-      "teamwork": "Travail en équipe",
-      "communication": "Communication",
-      "systemDesign": "Conception de S.I",
-      "algorithms": "Algorithmes",
-      "adaptability": "Adaptabilité",
-      "problemSolving": "Résolution de problèmes"
+      "title": "Soft Skills",
+      "subtitle": "Compétences professionnelles et interpersonnelles",
+      "teamwork": "Collaboration d'équipe et coordination de projet",
+      "communication": "Communication technique et générale claire",
+      "systemDesign": "Architecture système et conception évolutive",
+      "algorithms": "Pensée algorithmique et optimisation",
+      "adaptability": "Adaptation rapide aux nouvelles technologies",
+      "problemSolving": "Approche analytique de résolution de problèmes",
+      "timeManagement": "Gestion efficace du temps et priorisation des tâches",
+      "leadership": "Leadership de projet et mentorat d'équipe"
+    },
+    
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Accréditations et formations validées",
+      "pix": {
+        "title": "Compétences Numériques",
+        "institution": "PIX - Certification Officielle",
+        "description": "Certification mesurant la maîtrise du numérique (gestion des données, création de contenu, sécurité). "
+      },
+      "huawei": {
+        "title": "Overview IA",
+        "institution": "Huawei ICT Academy",
+        "description": "Fondamentaux de l'Intelligence Artificielle, Machine Learning, Deep Learning et applications IA."
+      }
     }
   },
   "contact": {
-    "subtitle": "N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.",
-    "name":"Votre Nom",
-    "email":"Votre Email",
-    "message":"Votre message",
-    "placeholder":"Dites-moi en quoi je peux vous aider...",
-    "send":"Envoyer",
-    "success":"Message envoyé avec succès !",
-    "error":"Veuillez vérifier votre email ou me contacter directement."
+    "title": "Contact",
+    "subtitle": "Discutons de votre projet et créons quelque chose d'extraordinaire ensemble.",
+    "emailLabel": "Email",
+    "phoneLabel": "Téléphone",
+    "locationLabel": "Localisation",
+    "location": "Remote Worldwide | Fianarantsoa, Madagascar",
+    "copy": "Copier",
+    "copied": "Copié avec succès !",
+    "call": "Appeler",
+    "connect": "Connectez-vous avec moi",
+    "availabilityNote": "Toujours disponible pour des collaborations intéressantes",
+    "formTitle": "Envoyez un message",
+    "formSubtitle": "Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.",
+    "name": "Nom complet",
+    "namePlaceholder": "Votre nom complet",
+    "email": "Adresse email",
+    "emailPlaceholder": "votre@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Décrivez votre projet, vos idées ou posez-moi vos questions...",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Une erreur s'est produite. Veuillez réessayer."
   },
   "alerts": {
     "copySuccess": "Copié avec succès",
@@ -91,15 +161,19 @@
   },
   "sections": {
     "uiux": "UI/UX",
-    "academic": "Formation Académique",
+    "academic": "Académique",
     "networks": "Réseaux",
-    "ai": "Intelligence Artificielle"
+    "ai": "IA"
   },
-  "descriptions": {
-    "uiux": "En termes simples : Je crée des sites tellement faciles à utiliser que même votre grand-mère pourrait commander en ligne sans appeler à l'aide !",
-    "academic": "Diplômé en Licence Développement d'Applications Intranet et Internet (DAII) de l'EMIT, Université de Fianarantsoa à Madagascar. Je me spécialise désormais dans l'intégration de l'Intelligence Artificielle pour créer des solutions digitales qui anticipent les besoins des utilisateurs et dépassent leurs attentes. Mon objectif : fusionner l'excellence technique acquise durant mon parcours universitaire avec l'innovation IA pour concevoir des applications qui ne se contentent pas de fonctionner, mais qui comprennent et s'adaptent à vos utilisateurs.",    
-    "networks": "Maîtrise des fondamentaux réseaux : configuration Cisco, routage (RIP, EIGRP), NAT et gestion d'adressage IP pour des infrastructures.",    
-    "ai": "Exploration des technologies d'intelligence artificielle et leur intégration dans des applications innovantes."
+    "descriptions": {
+    "uiuxTitle": "Design d'Interface & Expérience Utilisateur",
+    "uiux": "Conception d'interfaces intuitives et esthétiques centrées sur l'expérience utilisateur. Maîtrise des principes de design, prototypage et tests utilisateurs pour créer des produits digitaux qui combinent beauté et fonctionnalité.",
+    "academicTitle": "Enseignement & Recherche",
+    "academic": "Formation approfondie en informatique avec une approche académique rigoureuse. Enseignement des concepts fondamentaux, méthodologie de recherche et développement de compétences pédagogiques pour former la nouvelle génération de développeurs.",
+    "networksTitle": "Réseaux & Sécurité",
+    "networks": "Expertise en architecture réseau, administration système et sécurité informatique. Déploiement d'infrastructures robustes, optimisation des performances et mise en place de protocoles de sécurité avancés.",
+    "aiTitle": "Intelligence Artificielle",
+    "ai": "Exploration des technologies d'IA et machine learning. Développement d'algorithmes intelligents, traitement de données complexes et intégration de solutions d'automatisation pour des applications innovantes."
   },
   "copyright":{
     "text":"Tous droits réservés."

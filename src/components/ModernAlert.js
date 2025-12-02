@@ -56,7 +56,7 @@ const ModernAlert = () => {
     <AnimatePresence>
       {isVisible && alert && (
         <motion.div
-          className="fixed top-12 sm:top-6 left-6 z-50 max-w-sm w-64"
+          className="fixed top-12 sm:top-16 left-6 z-50 max-w-sm w-64"
           initial={{ 
             opacity: 0, 
             x: -300,
