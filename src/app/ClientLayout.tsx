@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import ModernAlert from '@/components/ModernAlert';
 import WelcomePage from '@/components/Welcome';
 
 export default function ClientLayout({
@@ -40,7 +39,6 @@ export default function ClientLayout({
   return (
     <>
       {children}
-      <ModernAlert />
     </>
   );
 }

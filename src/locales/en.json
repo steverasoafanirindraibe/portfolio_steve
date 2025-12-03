@@ -104,13 +104,12 @@
       "title": "Soft Skills",
       "subtitle": "Professional and interpersonal abilities",
       "teamwork": "Team collaboration and project coordination",
-      "communication": "Clear technical and non-technical communication",
+      "communication": "Clear non-technical communication",
       "systemDesign": "System architecture and scalable design",
-      "algorithms": "Algorithmic thinking and optimization",
-      "adaptability": "Quick adaptation to new technologies and methodologies",
-      "problemSolving": "Analytical problem-solving approach",
-      "timeManagement": "Efficient time management and task prioritization",
-      "leadership": "Project leadership and team mentoring"
+      "algorithms": "Algorithmic thinking",
+      "adaptability": "Quick adaptation to new technologies",
+      "problemSolving": "Problem-solving",
+      "timeManagement": "Efficient time management and task prioritization"
     },
     
     "certifications": {
