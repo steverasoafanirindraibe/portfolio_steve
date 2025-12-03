@@ -37,7 +37,7 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
               
               {/* Skeleton loader */}
               {!imageLoaded && (
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-700/10 via-gray-800 to-gray-900 animate-pulse" />
               )}
             </>
           ) : (
@@ -45,7 +45,7 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
           )}
           
           {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black/20 to-transparent hover:to-black" />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black/20 to-transparent hover:to-black" /> */}
         </div>
       </div>
 
@@ -136,15 +136,15 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
   );
 };
 
-// Style CSS à ajouter globalement pour l'animation shimmer
-const shimmerStyle = `
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-}
-`;
+// // Style CSS à ajouter globalement pour l'animation shimmer
+// const shimmerStyle = `
+// @keyframes shimmer {
+//   0% { transform: translateX(-100%); }
+//   100% { transform: translateX(100%); }
+// }
+// .animate-shimmer {
+//   animation: shimmer 2s infinite;
+// }
+// `;
 
-export { CertificationCard, shimmerStyle };
+export { CertificationCard};

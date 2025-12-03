@@ -32,7 +32,7 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      id: 1,
+      id: 0,
       icon: <FaEnvelope />,
       label: t('contact.emailLabel'),
       value: 'steveshannyrasoafanirindraibe@gmail.com',
@@ -40,21 +40,21 @@ export default function Contact() {
       delay: 0.1
     },
     {
-      id: 2,
+      id: 1,
       icon: <FaPhone />,
       label: t('contact.phoneLabel'),
       value: '+261 34 56 114 77',
       action: 'call',
       delay: 0.2
     },
-  // {
-  //   id: 3,
-  //   icon: <FaMapMarkerAlt />,
-  //   label: t('contact.locationLabel'),
-  //   value: t('contact.location') || 'Remote Worldwide', 
-  //   action: null,
-  //   delay: 0.3
-  // },
+  {
+    id: 2,
+    icon: <FaMapMarkerAlt />,
+    label: t('contact.locationLabel'),
+    value: t('contact.location') || 'Remote Worldwide', 
+    action: null,
+    delay: 0.3
+  },
   ];
 
   const socialLinks = [
@@ -197,9 +197,9 @@ export default function Contact() {
                     key={item.id}
                     className='relative group bg-black/40 backdrop-blur-sm rounded-2xl p-3 border border-white/10 hover:border-teal-500/50 transition-all duration-500 hover:-translate-y-1'
                   >
-                    <AnimatedSection direction='up' threshold={0.1} delay={item.delay} duration={0.3} >
+                    <AnimatedSection direction='scale' threshold={0.1} delay={item.delay} duration={0.3} >
                       <div className='flex items-start space-x-3'>
-                        <div className='p-3 rounded-xl bg-orange-500/20 backdrop-blur-sm'>
+                        <div className='p-2 rounded-xl bg-orange-500/20 backdrop-blur-sm'>
                           <div className='text-xl text-white'>{item.icon}</div>
                         </div>
                         <div className='flex-1 min-w-0'>
@@ -209,11 +209,11 @@ export default function Contact() {
                         {item.action === 'copy' && (
                           <button
                             onClick={() => handleCopy(item.value)}
-                            className='p-2 rounded-lg bg-white hover:bg-teal-500 transition-colors'
+                            className='p-2 rounded-lg bg-white transition-color '
                             title={t('contact.copy')}
                           >
                             {copySuccess ? (
-                              <FaCheck className='text-green-400' />
+                              <FaCheck className='text-gray-950' />
                             ) : (
                               <FaCopy className='text-gray-900 hover:text-white' />
                             )}
