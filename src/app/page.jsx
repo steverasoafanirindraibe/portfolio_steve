@@ -177,7 +177,7 @@ export default function Home() {
                   onClick={() => handleNavClick(item.id)}
                   className="flex items-center text-xs py-2 px-3 rounded-full text-gray-300 hover:bg-teal-500 hover:text-gray-900 transition-colors duration-300 font-medium group"
                 >
-                  <span className="mr-2 group-hover:text-gray-900 text-teal-400 text-xs">{item.icon}</span>
+                  <span className="mr-2 group-hover:text-gray-900 text-orange-500 text-xs">{item.icon}</span>
                   <span className="uppercase tracking-wider text-xs">{item.label}</span>
                 </button>
               ))}
@@ -191,12 +191,12 @@ export default function Home() {
               </a>
             </nav>
 
-            <div className="hidden md:flex items-center justify-center p-1 bg-gray-900 rounded-full shadow-inner border border-orange-500/50 w-32 order-2">
-              <Globe className="text-orange-400 mr-2 h-4 w-4" />
+            <div className="hidden md:flex items-center justify-center p-1 rounded-full shadow-inner bg-gray-950/30 w-28 order-2">
+              <Globe className="text-gray-200 mx-1 h-4 w-4" />
               <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
                     language === 'en'  
                           ? 'bg-orange-500 text-white shadow-md transform scale-105' 
-                          : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                          : 'text-gray-400 hover:text-white hover:bg-teal-950'
                   }`}
               >
                   EN
@@ -204,7 +204,7 @@ export default function Home() {
               <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
                     language === 'fr'
                           ? 'bg-orange-500 text-white shadow-md transform scale-105' 
-                          : 'text-gray-400 hover:text-white hover:bg-gray-600'
+                          : 'text-gray-400 hover:text-white hover:bg-teal-950'
                   }`}
               >
                   FR

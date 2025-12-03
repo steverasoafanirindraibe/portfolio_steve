@@ -234,7 +234,7 @@ export default function Skills() {
             </div>
             
             {/* Langages */}
-            <AnimatedSection direction='up' duration={0.4}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.languages")}
                 icon={FaCode}
@@ -244,7 +244,7 @@ export default function Skills() {
             </AnimatedSection>
             
             {/* Frontend */}
-            <AnimatedSection direction='up' duration={0.3}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.frontend")}
                 icon={FaCode}
@@ -254,7 +254,7 @@ export default function Skills() {
             </AnimatedSection>
             
             {/* Backend */}
-            <AnimatedSection direction='up' duration={0.3}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.backend")}
                 icon={FaServer}
@@ -264,7 +264,7 @@ export default function Skills() {
             </AnimatedSection>
 
             {/* Bases de données */}
-            <AnimatedSection direction='up'  duration={0.3}>
+            <AnimatedSection direction='scale'  duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.databases")}
                 icon={FaDatabase}
@@ -274,7 +274,7 @@ export default function Skills() {
             </AnimatedSection>
             
             {/* Outils */}
-            <AnimatedSection direction='up' duration={0.3}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.tools")}
                 icon={FaTools}

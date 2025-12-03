@@ -236,7 +236,7 @@ export default function Contact() {
             </AnimatedSection>
 
             {/* Social Links */}
-            <AnimatedSection direction='up' threshold={0.1} duration={0.4}>
+            <AnimatedSection direction='scale' threshold={0.1} duration={0.4}>
               <div className='mb'>
                 <h3 className='text-lg font-semibold text-white mb-4 flex items-center'>
                   <FaGlobe className='mr-2 text-teal-400' />

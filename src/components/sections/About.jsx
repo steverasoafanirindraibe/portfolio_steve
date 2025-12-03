@@ -213,7 +213,7 @@ export default function About() {
             threshold={0.2}
             duration={0.4}
           >
-            <div className="relative p-4 sm:p-6 rounded-2xl h-full">
+            <div className="relative p-4 sm:p-6 border-t border-b border-teal-500 rounded-2xl h-full">
               {/* Carte avec effet verre */}
               <div className="absolute inset-0 bg-gradient-to-br from-gray-950 to-gray-950 
                 backdrop-blur-xl rounded-l-2xl shadow-2xl" />
@@ -258,7 +258,7 @@ export default function About() {
             >
               <div className="">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-1 h-6 rounded-full bg-gradient-to-b from-teal-400 to-cyan-400" />
+                  <div className="w-1 h-6 rounded-full bg-teal-500" />
                   <h3 className="sm:text-2xl text-xl font-bold text-white">{t("about.training")}</h3>
                 </div>
                 
