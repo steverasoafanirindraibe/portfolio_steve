@@ -1,12 +1,12 @@
 "use client"
-import {useScroll } from '@/hooks/useScroll';
+import { useScroll } from '@/hooks/useScroll';
 import { useTranslation } from '@/hooks/useTranslation';
 import About from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
 import Skills from '@/components/sections/Skills';
 import Contact from '@/components/sections/Contact';
 import SideSocialLinks from '@/components/SideSocialLinks';
-import { Phone, Download, Code, Server, User, Globe} from 'lucide-react'; 
+import { Phone, Download, Code, Server, User, Globe, Home as HomeIcon } from 'lucide-react'; // Ajout de HomeIcon si besoin
 import AnimatedSection from '@/components/AnimatedSection';
 import AvailabilityIndicator from '@/components/AvailabilityIndicator';
 
@@ -80,6 +80,21 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                               {t("hero.contact")}
                           </button>
                       </AnimatedSection>
+                      {/* Steve */}
+                      <AnimatedSection direction='left' delay={0.6} duration={0.5} className='sm:hidden w-full flex justify-center items-center' >
+                        <div>
+                        <a 
+                          href='/documents/cv_steve_non_confidentiel.pdf' 
+                          download="Steve_Rasoafanirindraibe_CV.pdf" 
+                          className="flex items-center justify-center w-48 py-2 my-4 px-3 bg-teal-500/20 text-teal-300 rounded-lg text-xs font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
+                        > 
+                          <Download className='mr-2 h-4 w-4' /> 
+                          <span className="text-xs">{t("hero.download")}</span>
+                        </a>
+                        </div>
+
+                      </AnimatedSection>
+
                     </div>
                 </div>
             </div>
@@ -92,10 +107,7 @@ export default function Home() {
   const { t, language, changeLanguage } = useTranslation();
   const scrollProgress = useScroll();
 
-  // const [currentLang, setCurrentLang] = useState('FR'); 
-  
-
-    // Placeholder pour les fonctions de défilement (gardé pour la signature)
+    // Placeholder pour les fonctions de défilement
     const getTranslateY = (offset) => 0; 
     
     const techStack = [
@@ -104,10 +116,10 @@ export default function Home() {
     ];
 
     const navItems = [
-        { id: 'about', label: t('nav.about'), icon: <User className="sm:h-4 sm:w-4 h-6 w-6" /> },
-        { id: 'projects', label: t('nav.projects'), icon: <Code className="sm:h-4 sm:w-4 h-6 w-6" /> },
-        { id: 'skills', label: t('nav.skills'), icon: <Server className="sm:h-4 sm:w-4 h-6 w-6" /> },
-        { id: 'contacts', label: t('nav.contacts'), icon: <Phone className="sm:h-4 sm:w-4 h-6 w-6" /> },
+        { id: 'about', label: t('nav.about'), icon: <User className="h-5 w-5 sm:h-4 sm:w-4" /> },
+        { id: 'projects', label: t('nav.projects'), icon: <Code className="h-5 w-5 sm:h-4 sm:w-4" /> },
+        { id: 'skills', label: t('nav.skills'), icon: <Server className="h-5 w-5 sm:h-4 sm:w-4" /> },
+        { id: 'contacts', label: t('nav.contacts'), icon: <Phone className="h-5 w-5 sm:h-4 sm:w-4" /> },
     ];
 
   const handleNavClick = (sectionId) => {
@@ -124,7 +136,7 @@ export default function Home() {
 
 
   return (
-    <div key={language}  className="bg-gray-950 min-h-screen w-full sm:border-t-2 border-teal-500">
+    <div key={language}  className="bg-gray-950 min-h-screen w-full sm:border-t-2 border-teal-500 pb-20 md:pb-0"> 
 
       <SideSocialLinks></SideSocialLinks>
       
@@ -137,48 +149,48 @@ export default function Home() {
       />
 
 
-        {/* 2. Navbar sticky qui apparaît dès qu'on descend */}
-        <AnimatedSection direction='scale' delay={0.5} duration={0.5} className="sticky top-0 z-40 w-full bg-gray-950/50 backdrop-blur-md shadow-xl border- border-teal-500/30">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 flex flex-wrap justify-center sm:justify-between items-center gap-2 sm:gap-4">
-            <button onClick={() => handleNavClick('contacts')} className='absolute left-12 w-12 sm:w-14 hidden sm:block' >
+        {/* 2. Sticky Navbar Desktop */}
+        <AnimatedSection direction='scale' delay={0.5} duration={0.5} className="hidden md:block sticky top-0 z-40 w-full bg-gray-950/50 backdrop-blur-md shadow-xl border- border-teal-500/30">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 flex flex-wrap justify-between items-center gap-4">
+            <button onClick={() => handleNavClick('contacts')} className='absolute left-12 w-14 hidden md:block' >
               <AvailabilityIndicator></AvailabilityIndicator>
             </button>
 
-            <div className="hidden sm:block"></div>
+            <div className="hidden md:block"></div>
             
-            <nav className="flex items-center flex-wrap justify-center gap-1 sm:gap-4 w-full sm:w-auto order-2 sm:order-1 mt-2 sm:mt-0">
+            <nav className="flex items-center flex-wrap justify-center gap-4 w-auto order-1 mt-0">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className="flex items-center text-xs py-1.5 sm:py-2 px-2 sm:px-3 rounded-full text-gray-300 hover:bg-teal-500 hover:text-gray-900 transition-colors duration-300 font-medium group"
+                  className="flex items-center text-xs py-2 px-3 rounded-full text-gray-300 hover:bg-teal-500 hover:text-gray-900 transition-colors duration-300 font-medium group"
                 >
-                  <span className="mr-0 sm:mr-2 group-hover:text-gray-900 text-teal-400 text-xs">{item.icon}</span>
-                  <span className="hidden sm:block uppercase tracking-wider text-xs sm:text-xs">{item.label}</span>
+                  <span className="mr-2 group-hover:text-gray-900 text-teal-400 text-xs">{item.icon}</span>
+                  <span className="uppercase tracking-wider text-xs">{item.label}</span>
                 </button>
               ))}
               <a 
                 href='/documents/cv_steve_non_confidentiel.pdf' 
                 download="Steve_Rasoafanirindraibe_CV.pdf" 
-                className="flex items-center py-1 sm:py-1.5 px-2 sm:px-3 bg-teal-500/20 text-teal-300 rounded-full text-xs font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
+                className="flex items-center py-1.5 px-3 bg-teal-500/20 text-teal-300 rounded-full text-xs font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
               > 
-                <Download className='mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4' /> 
-                <span className="text-xs sm:text-xs">{t("hero.download")}</span>
+                <Download className='mr-2 h-4 w-4' /> 
+                <span className="text-xs">{t("hero.download")}</span>
               </a>
             </nav>
 
-            <div className="hidden sm:flex items-center justify-center p-1 bg-gray-900 rounded-full shadow-inner border border-orange-500/50 w-24 sm:w-32 order-1 sm:order-2">
-              <Globe className="text-orange-400 mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-              <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
-                      language === 'en'  
+            <div className="hidden md:flex items-center justify-center p-1 bg-gray-900 rounded-full shadow-inner border border-orange-500/50 w-32 order-2">
+              <Globe className="text-orange-400 mr-2 h-4 w-4" />
+              <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
+                    language === 'en'  
                           ? 'bg-orange-500 text-white shadow-md transform scale-105' 
                           : 'text-gray-400 hover:text-white hover:bg-gray-800'
                   }`}
               >
                   EN
               </button>
-              <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
-                      language === 'fr'
+              <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
+                    language === 'fr'
                           ? 'bg-orange-500 text-white shadow-md transform scale-105' 
                           : 'text-gray-400 hover:text-white hover:bg-gray-600'
                   }`}
@@ -189,28 +201,40 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <div className='fixed bottom-5 right-4 z-50' >            
-          <div className="sm:hidden flex items-center justify-center p-1 bg-gray-900 rounded-full shadow-inner border border-orange-500/50 order-1 sm:order-2">
-            <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
-                    language === 'en'  
-                        ? 'bg-orange-500 text-white shadow-md transform scale-105' 
-                        : 'text-gray-400 hover:text-white hover:bg-gray-800'
-                }`}
-            >
-                EN
-            </button>
-            <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-2 sm:px-3 rounded-full transition-all duration-700 ${
-                    language === 'fr'
-                        ? 'bg-orange-500 text-white shadow-md transform scale-105' 
-                        : 'text-gray-400 hover:text-white hover:bg-gray-600'
-                }`}
-            >
-                FR
-            </button>
+        {/* ---------------------------------------------------------------------------------- */}
+        {/* NOUVEAU: Mobile & Tablet Navbar  */}
+        {/* ---------------------------------------------------------------------------------- */}
+        <div className="md:hidden fixed bottom-4 left-0 right-0 z-50 flex justify-center px-4">
+          <div className="bg-gray-900/90 backdrop-blur-xl border border-teal-500/30 rounded-2xl shadow-[0_0_20px_rgba(20,184,166,0.2)] p-2 flex items-center justify-between gap-1 max-w-sm w-full">
+            
+            {/* Navigation Icons */}
+            <div className="flex items-center justify-around flex-1 gap-1">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className="flex flex-col items-center justify-center p-2 rounded-xl text-gray-400 hover:text-teal-400 hover:bg-teal-500/10 transition-all duration-300 active:scale-95"
+                >
+                  {item.icon}
+                </button>
+              ))}
+            </div>
+
+            {/* Separator */}
+            <div className="h-8 w-[1px] bg-gray-700 mx-1"></div>
+
+            {/* Language Switcher Compact */}
+            <div className="flex flex-col gap-1">
+               <button onClick={() => changeLanguage('en')} className={`text-[10px] font-bold py-1 px-2 rounded-md transition-all ${
+                    language === 'en' ? 'bg-orange-500 text-white' : 'text-gray-500 bg-gray-800'
+                  }`}>EN</button>
+               <button onClick={() => changeLanguage('fr')} className={`text-[10px] font-bold py-1 px-2 rounded-md transition-all ${
+                    language === 'fr' ? 'bg-orange-500 text-white' : 'text-gray-500 bg-gray-800'
+                  }`}>FR</button>
+            </div>
+
           </div>
         </div>
-
-
 
       <main className="relative w-full max-w-full min-h-screen overflow-x-hidden">
         {/* Second block ----------------------------------------------------------------------------------------*/}

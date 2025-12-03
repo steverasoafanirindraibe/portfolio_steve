@@ -36,7 +36,7 @@ import {
   TbBrandKotlin,
 } from 'react-icons/tb';
 import AnimatedSection from '@/components/AnimatedSection';
-import { CertificationCard , shimmerStyle} from '@/components/CertificationCard';
+import { CertificationCard } from '@/components/CertificationCard';
 
 // Configuration des couleurs d'icônes par technologie (couleurs officielles)
 const techIconColors = {
@@ -201,8 +201,8 @@ export default function Skills() {
   ];
 
   return (
-    <div className='min-h-screen w-full px-4 sm:px-16 lg:px-48 pt-16 sm:pt-28 bg-gradient-to-b from-black via-gray-950 via-gray-950 via-gray-950 to-gray-950 text-white'>
-      <style jsx global>{shimmerStyle}</style>
+    <div className='min-h-screen w-full px-4 sm:px-16 lg:px-48 pt-20 sm:pt-28 bg-gradient-to-b from-black via-gray-950 via-gray-950 via-gray-950 to-gray-950 text-white'>
+      {/* <style jsx global>{shimmerStyle}</style> */}
       <section id='skills' className='absolute -top-20' />
       
         {/* Header Compact */}
