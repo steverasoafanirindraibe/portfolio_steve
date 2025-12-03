@@ -122,9 +122,8 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
               <FaGithub className='mr-2' ></FaGithub>
               Github
             </button>
-            <button 
-              onClick={() => showAlert(t('alerts.projectNotAvailable'), "info")}
-              className="flex items-center justify-center sm:flex-none px-4 py-2 sm:text-sm text-xs bg-teal-700 hover:bg-teal-600 text-white rounded-xl transition shadow-lg shadow-teal-900/20"
+            <button
+              className="flex items-center justify-center sm:flex-none px-4 py-2 sm:text-sm text-xs cursor-not-allowed bg-gray-500 text-white rounded-xl transition shadow-lg shadow-teal-900/20"
             >
               <FaEye size={16} className='mr-2'></FaEye>
               Demo
@@ -191,7 +190,7 @@ export default function Projects() {
   const { showAlert } = useModernAlert();
 
   const projectsData = useMemo(() => [
-    { id: 0, featured: true, images: ['/projects/ebh/EBH-8.png','/projects/ebh/EBH-7.png','/projects/ebh/EBH-9.png','/projects/ebh/EBH-2.png'], techs: ['NextJs', ,'PostgreSQL', 'TypeScript', 'Tailwind', 'Drizzle-ORM', 'ReactJs'] },
+    { id: 0, featured: true, images: ['/projects/ebh/EBH-8.png','/projects/ebh/EBH-7.png','/projects/ebh/EBH-9.png','/projects/ebh/EBH-10.png'], techs: ['NextJs', ,'PostgreSQL', 'TypeScript', 'Tailwind', 'Drizzle-ORM', 'ReactJs'] },
     { id: 1, featured: true, images: ['/projects/openService/cyber-1.png','/projects/openService/cyber-3.png','/projects/openService/cyber-4.png','/projects/openService/cyber-5.png'], techs: ['SpringBoot', 'NextJs', 'PostgreSQL' ,'REST API', 'Tailwind'], githubLink: 'https://github.com/steverasoafanirindraibe/CyberCafe_application_web' },
     { id: 2, featured: false, images: ['/projects/autoEcole/autoecole-1.png','/projects/autoEcole/autoecole-2.png','/projects/autoEcole/autoecole-4.png'], techs: ['Laravel', 'NextJs', 'PostgreSQL'], githubLink: 'https://github.com/neon-rah/application-web-auto-ecole-projet' },
     { id: 3, featured: true, images: ['/projects/impots/impots-1.png','/projects/impots/impots-4.png','/projects/impots/impots-5.png','/projects/impots/impots-7.png'], techs: ['ReactJs', 'ExpressJs', 'MySQL','Tailwind','CSS'], hasReport: true },
@@ -224,7 +223,7 @@ export default function Projects() {
         {/* SECTION 1: FEATURED (01, 02, 04) */}
         <div className="flex flex-col gap-6 sm:gap-0 mb-14">
           {featuredProjects.map((project, index) => (
-             <AnimatedSection key={project.id} direction="up" delay={0.1}>
+             <AnimatedSection key={project.id} direction="scale" delay={0.2} duration={0.4}>
                 <FeaturedProject project={project} index={index} t={t} showAlert={showAlert} />
              </AnimatedSection>
           ))}
@@ -232,7 +231,7 @@ export default function Projects() {
 
         {/* SECTION 2: THE LAB / ARCHIVE (03, 05, 06) - GRID */}
         {otherProjects.length > 0 && (
-            <AnimatedSection direction="up" delay={0.1}>
+            <AnimatedSection direction="scale" delay={0.2} duration={0.4} >
                 <div className="flex items-center gap-4 mb-6">
                     <h3 className="text-xl font-bold text-gray-300">Other Experiments</h3>
                     <div className="h-px bg-white/10 flex-grow"></div>
