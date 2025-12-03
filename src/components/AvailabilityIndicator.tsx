@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar, FaUserTie } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 import { BsLightningChargeFill } from 'react-icons/bs';
 
 const AvailabilityIndicator = () => {
+  const { t } = useTranslation();
   const [pulse, setPulse] = useState(false);
   const [glow, setGlow] = useState(false);
 
@@ -95,7 +97,7 @@ const AvailabilityIndicator = () => {
             <div className="flex items-center gap-2">
               <FaUserTie className="text-teal-400 text-xs" />
               <div className="text-xs font-medium whitespace-nowrap">
-                <span className="text-white">Disponible</span>
+                <span className="text-white">{t("hero.available")}</span>
               </div>
             </div>
 

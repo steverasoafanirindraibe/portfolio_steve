@@ -202,11 +202,11 @@ export default function Projects() {
   const otherProjects = projectsData.filter(p => !p.featured);
 
   return (
-    <div className="w-full h-full bg-gradient-to-b from-black via-gray-950 to-black text-gray-200 pt-16 sm:pt-28 px-4 sm:px-6">
+    <div className="w-full h-full bg-gradient-to-br from-gray-950 via-gray-950 to-teal-950 text-gray-200 pt-16 sm:pt-28 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Compact */}
-        <AnimatedSection direction='scale' duration={0.4} threshold={0.1}>
+        <AnimatedSection direction='scale' duration={0.5} threshold={0.1}>
           <div className='mb-2'>
             <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
               <span className="text-orange-500">&lt;</span>
@@ -223,7 +223,7 @@ export default function Projects() {
         {/* SECTION 1: FEATURED (01, 02, 04) */}
         <div className="flex flex-col gap-6 sm:gap-0 mb-14">
           {featuredProjects.map((project, index) => (
-             <AnimatedSection key={project.id} direction="scale" delay={0.2} duration={0.4}>
+             <AnimatedSection key={project.id} direction="scale" threshold={0.3} delay={0.1} duration={0.4}>
                 <FeaturedProject project={project} index={index} t={t} showAlert={showAlert} />
              </AnimatedSection>
           ))}
@@ -231,7 +231,7 @@ export default function Projects() {
 
         {/* SECTION 2: THE LAB / ARCHIVE (03, 05, 06) - GRID */}
         {otherProjects.length > 0 && (
-            <AnimatedSection direction="scale" delay={0.2} duration={0.4} >
+            <div>
                 <div className="flex items-center gap-4 mb-6">
                     <h3 className="text-xl font-bold text-gray-300">Other Experiments</h3>
                     <div className="h-px bg-white/10 flex-grow"></div>
@@ -242,7 +242,7 @@ export default function Projects() {
                         <CompactProject key={project.id} project={project} t={t} showAlert={showAlert} />
                     ))}
                 </div>
-            </AnimatedSection>
+            </div>
         )}
 
       </div>
