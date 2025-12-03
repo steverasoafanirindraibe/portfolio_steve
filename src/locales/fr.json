@@ -103,13 +103,12 @@
       "title": "Soft Skills",
       "subtitle": "Compétences professionnelles et interpersonnelles",
       "teamwork": "Collaboration d'équipe et coordination de projet",
-      "communication": "Communication technique et générale claire",
+      "communication": "Communication générale claire",
       "systemDesign": "Architecture système et conception évolutive",
-      "algorithms": "Pensée algorithmique et optimisation",
+      "algorithms": "Pensée algorithmique",
       "adaptability": "Adaptation rapide aux nouvelles technologies",
-      "problemSolving": "Approche analytique de résolution de problèmes",
-      "timeManagement": "Gestion efficace du temps et priorisation des tâches",
-      "leadership": "Leadership de projet et mentorat d'équipe"
+      "problemSolving": "Résolution de problèmes",
+      "timeManagement": "Gestion efficace du temps et priorisation des tâches"
     },
     
     "certifications": {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { TranslationProvider } from "@/hooks/useTranslation";
+import ModernAlert from '@/components/ModernAlert';
+
 
 export const metadata: Metadata = {
   title: "Steve Rasoafanirindraibe - Portfolio",
@@ -43,6 +45,8 @@ export default function RootLayout({
         <TranslationProvider>
           {/* <ClientLayout> */}
             {children}
+            <ModernAlert />
+
           {/* </ClientLayout> */}
         </TranslationProvider>
 

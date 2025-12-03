@@ -215,7 +215,7 @@ export default function Contact() {
                             {copySuccess ? (
                               <FaCheck className='text-gray-950' />
                             ) : (
-                              <FaCopy className='text-gray-900 hover:text-white' />
+                              <FaCopy className='text-gray-900 hover:text-gray-950' />
                             )}
                           </button>
                         )}

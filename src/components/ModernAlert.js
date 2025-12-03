@@ -39,14 +39,6 @@ const ModernAlert = () => {
     info: <Info className="w-6 h-6 text-blue-400" />,
   };
 
-  // Couleurs selon le type
-  const colors = {
-    success: 'from-teal-500/10 to-teal-600/5 border-teal-500/20',
-    error: 'from-rose-500/10 to-rose-600/5 border-rose-500/20',
-    warning: 'from-amber-500/10 to-amber-600/5 border-amber-500/20',
-    info: 'from-blue-500/10 to-blue-600/5 border-blue-500/20',
-  };
-
   // Pour utiliser depuis l'extérieur
   useEffect(() => {
     window.showModernAlert = showAlert;
@@ -56,7 +48,7 @@ const ModernAlert = () => {
     <AnimatePresence>
       {isVisible && alert && (
         <motion.div
-          className="fixed top-12 sm:top-16 left-6 z-50 max-w-sm w-64"
+          className="fixed top-4 sm:top-16 left-6 z-50 max-w-sm w-64"
           initial={{ 
             opacity: 0, 
             x: -300,
@@ -85,7 +77,7 @@ const ModernAlert = () => {
           }}
         >
           <motion.div
-            className={`relative text-[10px] sm:text-sm bg-gradient-to-br ${colors[alert.type]} backdrop-blur-xl border rounded-2xl p-2 w-42 sm:w-full sm:p-4 shadow-2xl overflow-hidden`}
+            className={`relative text-[10px] sm:text-sm bg-gradient-to-br from-teal-950 to-gray-950 rounded-2xl p-2 w-42 sm:w-full sm:p-3 shadow-2xl overflow-hidden`}
             whileHover={{ 
               scale: 1.02,
               y: -2,

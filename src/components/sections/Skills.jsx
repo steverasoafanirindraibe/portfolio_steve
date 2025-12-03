@@ -57,7 +57,7 @@ const techIconColors = {
   
   // Backend
   springboot: '#6DB33F', 
-  express: '#000000', 
+  express: '#ffffffff', 
   laravel: '#FF2D20', 
   
   // Databases

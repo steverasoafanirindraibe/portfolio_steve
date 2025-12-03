@@ -8,7 +8,7 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
 
   return (
     <motion.div 
-      className="group relative h-[220px] w-full rounded-2xl overflow-hidden cursor-pointer"
+      className="group relative h-[180px] w-full rounded-2xl overflow-hidden cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       initial={{ opacity: 0, y: 20 }}
@@ -34,30 +34,24 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 onLoad={() => setImageLoaded(true)}
               />
-              
-              {/* Skeleton loader */}
-              {!imageLoaded && (
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-700/10 via-gray-800 to-gray-900 animate-pulse" />
-              )}
+
             </>
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800" />
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-950 to-transparent" />
           )}
-          
-          {/* Overlay gradient */}
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-black/20 to-transparent hover:to-black" /> */}
+    
         </div>
       </div>
 
       {/* Contenu principal */}
       <div className="relative z-10 h-full flex flex-col justify-between ">
-        {/* En-tête avec icône */}
-        <div className='flex p-6' >
+        <div className='flex p-4' >
 
           {/* Titre et institution */}
           <motion.div
             animate={{ y: isHovered ? -10 : 0 }}
             transition={{ duration: 0.3 }}
+            className=''
           >
             <h3 className="text-md font-bold text-white mb-1 leading-tight drop-shadow-lg">
               {title}
@@ -69,14 +63,14 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
         </div>
 
         {/* Description qui apparaît au hover */}
-        <AnimatePresence>
+        <AnimatePresence >
           {isHovered && (
             <motion.div
 
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="mb-4"
+               className="h-2/3"
             >
-              <p className="px-3 py-3 text-sm text-gray-200 leading-relaxed group-hover:bg-gray-950/40 transition-colors duration-500">
+              <p className="h-full px-3 pt-3 pb-4 text-xs text-gray-200 leading-relaxed group-hover:bg-gray-950/50 transition-colors duration-500">
                 {description}
               </p>
             </motion.div>
@@ -85,12 +79,11 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
 
         {/* Footer avec lien et indicateur */}
         <motion.div 
-          className="flex items-center justify-between"
+          className="group-hover:hidden flex items-center justify-between"
           animate={{ y: isHovered ? 10 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          {/* Indicateur visuel */}
-          <div className="hidden md:block group-hover:hidden flex items-center gap-2 px-4 mb-6">
+          <div className="hidden w-full md:block md:flex items-center gap-2 px-4 mb-6">
             <div className={'w-2 h-2 rounded-full bg-teal-500'} />
             <span className="text-xs font-medium text-gray-300">
               {'Certification'}
@@ -130,21 +123,8 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
         }}
       />
 
-      {/* Lignes décoratives */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-teal-500/50 to-transparent" />
     </motion.div>
   );
 };
-
-// // Style CSS à ajouter globalement pour l'animation shimmer
-// const shimmerStyle = `
-// @keyframes shimmer {
-//   0% { transform: translateX(-100%); }
-//   100% { transform: translateX(100%); }
-// }
-// .animate-shimmer {
-//   animation: shimmer 2s infinite;
-// }
-// `;
 
 export { CertificationCard};
