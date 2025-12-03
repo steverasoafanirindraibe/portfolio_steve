@@ -38,7 +38,6 @@ import {
 import AnimatedSection from '@/components/AnimatedSection';
 import { CertificationCard } from '@/components/CertificationCard';
 
-// Configuration des couleurs d'icônes par technologie (couleurs officielles)
 const techIconColors = {
   // Langages
   typescript: '#3178C6', // TypeScript bleu
@@ -48,30 +47,30 @@ const techIconColors = {
   python: '#3776AB', // Python bleu
   
   // Frontend
-  nextjs: '#ffffffff', // Next.js noir
-  react: '#61DAFB', // React cyan
-  flutter: '#02569B', // Flutter bleu foncé
-  tailwindcss: '#06B6D4', // Tailwind teal
-  angular: '#DD0031', // Angular rouge
-  html5: '#E34F26', // HTML5 orange
-  css3: '#1572B6', // CSS3 bleu
+  nextjs: '#ffffffff', 
+  react: '#61DAFB', 
+  flutter: '#02569B', 
+  tailwindcss: '#06B6D4', 
+  angular: '#DD0031', 
+  html5: '#E34F26', 
+  css3: '#1572B6',
   
   // Backend
-  springboot: '#6DB33F', // Spring Boot vert
-  express: '#000000', // Express noir
-  laravel: '#FF2D20', // Laravel rouge
+  springboot: '#6DB33F', 
+  express: '#000000', 
+  laravel: '#FF2D20', 
   
   // Databases
-  postgresql: '#4169E1', // PostgreSQL bleu royal
-  mysql: '#4479A1', // MySQL bleu-gris
-  sqlite: '#003B57', // SQLite bleu marine
+  postgresql: '#4169E1', 
+  mysql: '#4479A1', 
+  sqlite: '#003B57', 
   
   // Tools
-  git: '#F05032', // Git orange
-  github: '#181717', // GitHub noir
-  vercel: '#ffffffff', // Vercel noir
-  docker: '#2496ED', // Docker bleu
-  huawei: '#FF0000', // Huawei rouge
+  git: '#F05032', 
+  github: '#181717', 
+  vercel: '#ffffffff', 
+  docker: '#2496ED', 
+  huawei: '#FF0000', 
 };
 
 // Composant SkillTag avec couleurs d'icônes personnalisées
@@ -91,7 +90,7 @@ const SkillTag = ({ Icon, name, techKey }) => {
 
 // Composant SoftSkillItem amélioré
 const SoftSkillItem = ({ text }) => (
-  <AnimatedSection direction='up'  duration={0.3}
+  <AnimatedSection direction='scale' threshold={0.5} duration={0.5}
  className="flex items-start text-xs sm:text-sm mb-3 group">
     <div className="mt-0.5 mr-3 text-orange-500 flex-shrink-0 group-hover:scale-110 transition-transform">
       <FaBrain className="text-sm" />
@@ -201,12 +200,12 @@ export default function Skills() {
   ];
 
   return (
-    <div className='min-h-screen w-full px-4 sm:px-16 lg:px-48 pt-20 sm:pt-28 bg-gradient-to-b from-black via-gray-950 via-gray-950 via-gray-950 to-gray-950 text-white'>
+    <div className='min-h-screen w-full px-4 sm:px-16 lg:px-48 pt-20 sm:pt-28 sm:pb-6 bg-gradient-to-r from-gray-950 via-gray-950 to-teal-950 text-white'>
       {/* <style jsx global>{shimmerStyle}</style> */}
       <section id='skills' className='absolute -top-20' />
       
         {/* Header Compact */}
-        <AnimatedSection direction='scale' duration={0.3} threshold={0.1}>
+        <AnimatedSection direction='scale' duration={0.5} threshold={0.1}  >
           <div className=' sm:mb-10'>
             <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
               <span className="text-orange-500">&lt;</span>
@@ -235,7 +234,7 @@ export default function Skills() {
             </div>
             
             {/* Langages */}
-            <AnimatedSection direction='up' duration={0.3}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.languages")}
                 icon={FaCode}
@@ -245,7 +244,7 @@ export default function Skills() {
             </AnimatedSection>
             
             {/* Frontend */}
-            <AnimatedSection direction='up' duration={0.3}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.frontend")}
                 icon={FaCode}
@@ -255,7 +254,7 @@ export default function Skills() {
             </AnimatedSection>
             
             {/* Backend */}
-            <AnimatedSection direction='up' duration={0.3}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.backend")}
                 icon={FaServer}
@@ -265,7 +264,7 @@ export default function Skills() {
             </AnimatedSection>
 
             {/* Bases de données */}
-            <AnimatedSection direction='up'  duration={0.3}>
+            <AnimatedSection direction='scale'  duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.databases")}
                 icon={FaDatabase}
@@ -275,7 +274,7 @@ export default function Skills() {
             </AnimatedSection>
             
             {/* Outils */}
-            <AnimatedSection direction='up' duration={0.3}>
+            <AnimatedSection direction='scale' duration={0.5}>
               <SkillGroup 
                 title={t("skills.categories.tools")}
                 icon={FaTools}

@@ -14,7 +14,7 @@ import AvailabilityIndicator from '@/components/AvailabilityIndicator';
 // Composant principal de la section Hero
 const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems, techStack, getTranslateY }) => {
     return (
-        <div className="w-full h-full font-inter bg-gray-950 text-white">
+        <div className="w-full h-full font-inter bg-gradient-to-br from-teal-950/90 via-gray-950 to-teal-950/90 text-white">
             
             {/* --- Hero Content Block --- */}
             <div className="min-h-[500px] h-auto xl:min-h-[600px] w-full flex flex-col sm:flex-row items-center pt-6 sm:pt-6 relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-0">
@@ -24,6 +24,17 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                     className="relative py-6 sm:py-0 overflow-visible z-10 w-full sm:w-5/12 h-full flex justify-center items-center duration-400 ease-out"
                 >
                     <div className="relative p-2 bg-teal-500/10 rounded-tr-full rounded-tl-full rounded-bl-full hover:scale-105 transition-scale duration-500 ease-in">
+                      
+                      {/* Badge Disponible */}
+                      <AnimatedSection delay={2} direction='scale' className="hidden sm:block h-full absolute top-6 left-4 z-20 px-2">
+                          <div className="flex items-center gap-1.5 px-2 py-1 border border-green-500 bg-black/50 rounded-full shadow-lg shadow-green-500/30 animate-pulse-subtle">
+                              <span className="sm:text-[10px] text-[9px] font-bold text-white tracking-wide">
+                                  {t('hero.available')}
+                              </span>
+                              <div className="w-1 h-1 bg-green-500 rounded-full animate-ping-slow"></div>
+
+                          </div>
+                      </AnimatedSection>
                       <div className="rounded-full rounded-br-xl bg-teal-500/10 p-1 sm:p-2">
                         <AnimatedSection direction='scale' delay={0.2} duration={0.7} className="bg-teal-500/10 rounded-full rounded-br-xl p-1 sm:p-2 w-40 h-40 sm:w-80 sm:h-96 overflow-hidden">
                             <img 
@@ -107,8 +118,9 @@ export default function Home() {
   const { t, language, changeLanguage } = useTranslation();
   const scrollProgress = useScroll();
 
+
     // Placeholder pour les fonctions de défilement
-    const getTranslateY = (offset) => 0; 
+  const getTranslateY = (offset) => 0; 
     
     const techStack = [
         "Next.js (App Router)", "React/Hooks", "TypeScript", "Node.js/Express",
@@ -136,7 +148,7 @@ export default function Home() {
 
 
   return (
-    <div key={language}  className="bg-gray-950 min-h-screen w-full sm:border-t-2 border-teal-500 pb-20 md:pb-0"> 
+    <div key={language}  className=" bg-gradient-to-l from-teal-950/90 to-gray-950/90 min-h-screen w-full sm:border-t-2 border-teal-500 pb-20 md:pb-0"> 
 
       <SideSocialLinks></SideSocialLinks>
       
@@ -150,7 +162,7 @@ export default function Home() {
 
 
         {/* 2. Sticky Navbar Desktop */}
-        <AnimatedSection direction='scale' delay={0.5} duration={0.5} className="hidden md:block sticky top-0 z-40 w-full bg-gray-950/50 backdrop-blur-md shadow-xl border- border-teal-500/30">
+        <AnimatedSection direction='scale' delay={0.5} duration={0.5} className="hidden md:block sticky bg-gradient-to-l from-teal-950 to-gray-950 top-0 z-40 w-full">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 flex flex-wrap justify-between items-center gap-4">
             <button onClick={() => handleNavClick('contacts')} className='absolute left-12 w-14 hidden md:block' >
               <AvailabilityIndicator></AvailabilityIndicator>
@@ -165,7 +177,7 @@ export default function Home() {
                   onClick={() => handleNavClick(item.id)}
                   className="flex items-center text-xs py-2 px-3 rounded-full text-gray-300 hover:bg-teal-500 hover:text-gray-900 transition-colors duration-300 font-medium group"
                 >
-                  <span className="mr-2 group-hover:text-gray-900 text-teal-400 text-xs">{item.icon}</span>
+                  <span className="mr-2 group-hover:text-gray-900 text-orange-500 text-xs">{item.icon}</span>
                   <span className="uppercase tracking-wider text-xs">{item.label}</span>
                 </button>
               ))}
@@ -179,12 +191,12 @@ export default function Home() {
               </a>
             </nav>
 
-            <div className="hidden md:flex items-center justify-center p-1 bg-gray-900 rounded-full shadow-inner border border-orange-500/50 w-32 order-2">
-              <Globe className="text-orange-400 mr-2 h-4 w-4" />
+            <div className="hidden md:flex items-center justify-center p-1 rounded-full shadow-inner bg-gray-950/30 w-28 order-2">
+              <Globe className="text-gray-200 mx-1 h-4 w-4" />
               <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
                     language === 'en'  
                           ? 'bg-orange-500 text-white shadow-md transform scale-105' 
-                          : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                          : 'text-gray-400 hover:text-white hover:bg-teal-950'
                   }`}
               >
                   EN
@@ -192,7 +204,7 @@ export default function Home() {
               <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
                     language === 'fr'
                           ? 'bg-orange-500 text-white shadow-md transform scale-105' 
-                          : 'text-gray-400 hover:text-white hover:bg-gray-600'
+                          : 'text-gray-400 hover:text-white hover:bg-teal-950'
                   }`}
               >
                   FR
@@ -239,7 +251,7 @@ export default function Home() {
       <main className="relative w-full max-w-full min-h-screen overflow-x-hidden">
         {/* Second block ----------------------------------------------------------------------------------------*/}
         <div 
-          className="bg-black mt-6 sm:mt-10 w-full rounded-t-[50px_15px] sm:rounded-t-[100px_30px] lg:rounded-t-[280px_80px] shadow-glow-teal transition-all duration-400 ease-out"          
+          className="bg-gray-950 mt-6 sm:mt-10 w-full rounded-t-[50px_15px] sm:rounded-t-[100px_30px] lg:rounded-t-[280px_80px] shadow-glow-teal transition-all duration-400 ease-out"          
         >
           <section id="about"></section>
           <About></About>

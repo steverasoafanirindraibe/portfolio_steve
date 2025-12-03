@@ -12,7 +12,9 @@
     "expertise": "FullStack Expertise",
     "greeting": "Hi, I'm",
     "headline": "I turn your ideas into high-performance software solutions.",
-    "tagline": "Senior Full Stack Developer | React & SpringBoot Ecosystem Expert | Freelancer"
+    "tagline": "Senior Full Stack Developer | React & SpringBoot Ecosystem Expert | Freelancer",
+    "available":"Available"
+
   },
   "welcome": {
     "title": "Welcome", 
@@ -166,13 +168,13 @@
   },
   "descriptions": {
     "uiuxTitle": "Interface Design & User Experience",
-    "uiux": "Design of intuitive and aesthetic interfaces centered on user experience. Mastery of design principles, prototyping and user testing to create digital products that combine beauty and functionality.",
+    "uiux": "In simple terms: I create websites so easy to use that even your grandmother could order online without calling for help!",
     "academicTitle": "Teaching & Research",
-    "academic": "In-depth training in computer science with a rigorous academic approach. Teaching fundamental concepts, research methodology and development of pedagogical skills to train the new generation of developers.",
+    "academic": "Graduated with a Bachelor's degree in Intranet and Internet Application Development (DAII) from EMIT, University of Fianarantsoa in Madagascar.",    
     "networksTitle": "Networks & Security",
-    "networks": "Expertise in network architecture, system administration and cybersecurity. Deployment of robust infrastructures, performance optimization and implementation of advanced security protocols.",
+    "networks": "Networks\nMastery of network fundamentals: Cisco configuration, routing (RIP, EIGRP), NAT and IP address management for infrastructures.",    
     "aiTitle": "Artificial Intelligence",
-    "ai": "Exploration of AI and machine learning technologies. Development of intelligent algorithms, processing of complex data and integration of automation solutions for innovative applications."
+    "ai": "Exploration of artificial intelligence technologies and their integration into innovative applications."
   },
   "copyright":{
     "text":" All rights reserved."

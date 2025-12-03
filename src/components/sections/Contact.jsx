@@ -174,7 +174,7 @@ export default function Contact() {
       </div>
 
       <div className='footer-section relative z-10 w-full h-auto items-center py-8 sm:pt-20 px-4'>
-        <AnimatedSection direction='scale' duration={0.4} threshold={0.1}>
+        <AnimatedSection direction='scale' duration={0.5} threshold={0.1}>
           <div className='mb-8 sm:mb-10'>
             <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
               <span className="text-orange-500">&lt;</span>
@@ -236,7 +236,7 @@ export default function Contact() {
             </AnimatedSection>
 
             {/* Social Links */}
-            <AnimatedSection direction='up' threshold={0.1} duration={0.4}>
+            <AnimatedSection direction='scale' threshold={0.1} duration={0.4}>
               <div className='mb'>
                 <h3 className='text-lg font-semibold text-white mb-4 flex items-center'>
                   <FaGlobe className='mr-2 text-teal-400' />

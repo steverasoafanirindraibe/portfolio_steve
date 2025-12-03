@@ -13,8 +13,8 @@
     "expertise": "Expertise FullStack",
     "greeting": "Salut, moi c'est",
     "headline": "Je transforme vos idées en solutions logicielles performantes.",
-    "tagline": "Développeur Full Stack Senior | Expert en écosystème React & SpringBoot | Freelance"
-    
+    "tagline": "Développeur Full Stack Senior | Expert en écosystème React & SpringBoot | Freelance",
+    "available":"Disponible"
   },
   "welcome": {
     "title": "Bienvenue",
@@ -167,13 +167,13 @@
   },
     "descriptions": {
     "uiuxTitle": "Design d'Interface & Expérience Utilisateur",
-    "uiux": "Conception d'interfaces intuitives et esthétiques centrées sur l'expérience utilisateur. Maîtrise des principes de design, prototypage et tests utilisateurs pour créer des produits digitaux qui combinent beauté et fonctionnalité.",
-    "academicTitle": "Enseignement & Recherche",
-    "academic": "Formation approfondie en informatique avec une approche académique rigoureuse. Enseignement des concepts fondamentaux, méthodologie de recherche et développement de compétences pédagogiques pour former la nouvelle génération de développeurs.",
+    "uiux": "En termes simples : Je crée des sites tellement faciles à utiliser que même votre grand-mère pourrait commander en ligne sans appeler à l'aide !",
+    "academicTitle": "Enseignement",
+    "academic": "Diplômé en Licence Développement d'Applications Intranet et Internet (DAII) de l'EMIT, Université de Fianarantsoa à Madagascar. ",    
     "networksTitle": "Réseaux & Sécurité",
-    "networks": "Expertise en architecture réseau, administration système et sécurité informatique. Déploiement d'infrastructures robustes, optimisation des performances et mise en place de protocoles de sécurité avancés.",
+    "networks": "Maîtrise des fondamentaux réseaux : configuration Cisco, routage (RIP, EIGRP), NAT et gestion d'adressage IP pour des infrastructures.",    
     "aiTitle": "Intelligence Artificielle",
-    "ai": "Exploration des technologies d'IA et machine learning. Développement d'algorithmes intelligents, traitement de données complexes et intégration de solutions d'automatisation pour des applications innovantes."
+    "ai": "Exploration des technologies d'intelligence artificielle et leur intégration dans des applications innovantes."
   },
   "copyright":{
     "text":"Tous droits réservés."
