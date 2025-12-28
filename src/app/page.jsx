@@ -36,7 +36,7 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                           </div>
                       </AnimatedSection>
                       <div className="rounded-full rounded-br-xl bg-teal-500/10 p-1 sm:p-2">
-                        <AnimatedSection direction='scale' delay={0.2} duration={0.7} className="bg-teal-500/10 rounded-full rounded-br-xl p-1 sm:p-2 w-40 h-40 sm:w-80 sm:h-96 overflow-hidden">
+                        <AnimatedSection direction='scale' duration={0.7} className="bg-teal-500/10 rounded-full rounded-br-xl p-1 sm:p-2 w-40 h-40 sm:w-80 sm:h-96 overflow-hidden">
                             <img 
                               className='w-full h-full object-cover rounded-br-xl rounded-full' 
                               src={"/images/steve_profil.jpg"} 
@@ -52,7 +52,7 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                   <div className="text-center sm:text-left">
                     <div>
                       {/* --- Ligne d'accroche et Nom (Style Terminal/Code) --- */}
-                      <AnimatedSection direction='left' duration={0.5} className='text-xs sm:text-lg font-mono mb-3 sm:mb-4'>
+                      <AnimatedSection direction='left' duration={0.3} className='text-xs sm:text-lg font-mono mb-3 sm:mb-4'>
                         <span className="text-gray-400">{t("hero.greeting")}</span>
                         
                         {/* Nom stylisé comme une balise ou un élément de code */}
@@ -61,17 +61,17 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                         </span>
                       </AnimatedSection>
                       {/* --- Headline Principal (Proposition de Valeur) --- */}
-                      <AnimatedSection direction='left' delay={0.2} duration={0.5} className="text-xl sm:text-5xl font-extrabold leading-tight mb-3 sm:mb-4">
+                      <AnimatedSection direction='left' delay={0.1} duration={0.3} className="text-xl sm:text-5xl font-extrabold leading-tight mb-3 sm:mb-4">
                         <span className="text-white">{t("hero.headline")}</span>
                       </AnimatedSection>
                     </div>
                         {/* Titre & Slogan */}
-                        <AnimatedSection direction='left' delay={0.3} duration={0.5} className="py-2 sm:py-3 text-base sm:text-3xl font-mono italic text-gray-300">
+                        <AnimatedSection direction='left' delay={0.2} duration={0.3} className="py-2 sm:py-3 text-base sm:text-3xl font-mono italic text-gray-300">
                             {t("hero.title")}
                             <span className="clignoter font-bold text-teal-400">_</span>
                         </AnimatedSection>
                         {/* Bloc "Tech Tag Cloud" */}
-                        <AnimatedSection direction='left' delay={0.4} duration={0.5} className="my-4 sm:my-8 sm:mr-16 p-3 sm:p-4 bg-teal-500/10 rounded-xl shadow-inner shadow-teal-500/20 max-w-lg">
+                        <AnimatedSection direction='left' delay={0.3} duration={0.3} className="my-4 sm:my-8 sm:mr-16 p-3 sm:p-4 bg-teal-500/10 rounded-xl shadow-inner shadow-teal-500/20 max-w-lg">
                             <h3 className='text-xs sm:text-sm font-semibold mb-2 text-teal-300 flex items-center justify-center sm:justify-start'>
                               <Code className='mr-2 h-3 w-3 sm:h-4 sm:w-4' />
                               {t('hero.expertise')}
@@ -85,14 +85,14 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                             </div>
                         </AnimatedSection>
                         {/* Bouton de contact */}
-                        <AnimatedSection direction='left' delay={0.5} duration={0.5} className='mt-6 sm:mt-10'>
+                        <AnimatedSection direction='left' delay={0.4} duration={0.3} className='mt-6 sm:mt-10'>
                           <button className='px-5 sm:px-6 py-2 bg-teal-500 text-black text-xs sm:text-sm font-bold rounded-lg transition-all duration-300 hover:bg-orange-500 hover:text-white transform hover:scale-105 shadow-lg'
                               onClick={() => handleNavClick('contacts')} >
                               {t("hero.contact")}
                           </button>
                       </AnimatedSection>
                       {/* Steve */}
-                      <AnimatedSection direction='left' delay={0.6} duration={0.5} className='sm:hidden w-full flex justify-center items-center' >
+                      <AnimatedSection direction='left' delay={0.5} duration={0.3} className='sm:hidden w-full flex justify-center items-center' >
                         <div>
                         <a 
                           href='/documents/cv_steve_non_confidentiel.pdf' 
@@ -162,7 +162,7 @@ export default function Home() {
 
 
         {/* 2. Sticky Navbar Desktop */}
-        <AnimatedSection direction='scale' delay={0.5} duration={0.5} className="hidden md:block sticky bg-gradient-to-l from-teal-950 to-gray-950 top-0 z-40 w-full">
+        <AnimatedSection direction='scale' delay={0.5} duration={0.3} className="hidden md:block sticky bg-gradient-to-l from-teal-950 to-gray-950 top-0 z-40 w-full">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 flex flex-wrap justify-between items-center gap-4">
             <button onClick={() => handleNavClick('contacts')} className='absolute left-12 w-14 hidden md:block' >
               <AvailabilityIndicator></AvailabilityIndicator>
