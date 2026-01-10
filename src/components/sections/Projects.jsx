@@ -12,24 +12,24 @@ import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiDrizzle, SiSpringboot, SiLa
 
 const getTechConfig = (name) => {
   const map = {
-    'NextJs': { icon: SiNextdotjs, color: '#fff', bg: 'bg-black/30' },
-    'PostgreSQL': { icon: SiPostgresql, color: '#336791', bg: 'bg-teal-500/15' },
-    'Tailwind': { icon: SiTailwindcss, color: '#38bdf8', bg: 'bg-teal-500/15' },
-    'SpringBoot': { icon: SiSpringboot, color: '#6db33f', bg: 'bg-teal-500/15' },
-    'Laravel': { icon: SiLaravel, color: '#ff2d20', bg: 'bg-teal-500/15' },
-    'ReactJs': { icon: FaReact, color: '#61dafb', bg: 'bg-teal-500/15' },
-    'PHP': { icon: FaPhp, color: '#777bb4', bg: 'bg-teal-500/15'},
-    'MySQL': { icon: SiMysql, color: '#ce650fff', bg: 'bg-teal-500/15'},
-    'ExpressJs': { icon: SiExpress, color: '#ffffffff', bg: 'bg-teal-500/15'},
-    'Drizzle-ORM': { icon: SiDrizzle, color: '#00caff', bg: 'bg-teal-500/15'},
-    'Java': { icon: FaCode, color: '#f89820', bg: 'bg-teal-500/15'},
-    'CSS': { icon: FaCss3Alt, color: '#264de4', bg: 'bg-teal-500/15'},
-    'Jquery': { icon: SiJquery, color: '#0769ad', bg: 'bg-teal-500/15'},
-    'Bootstrap': { icon: FaBootstrap, color: '#7952b3', bg: 'bg-teal-500/15' },
-    'JavaScript': { icon: SiJavascript, color: '#f0db4f', bg: 'bg-teal-500/15' },
-    'TypeScript': { icon: SiTypescript, color: '#3178c6', bg: 'bg-teal-500/15'},
+    'NextJs': { icon: SiNextdotjs, color: '#fff', bg: 'bg-gray-800/30' },
+    'PostgreSQL': { icon: SiPostgresql, color: '#336791', bg: 'bg-gray-800/30' },
+    'Tailwind': { icon: SiTailwindcss, color: '#38bdf8', bg: 'bg-gray-800/30' },
+    'SpringBoot': { icon: SiSpringboot, color: '#6db33f', bg: 'bg-gray-800/30' },
+    'Laravel': { icon: SiLaravel, color: '#ff2d20', bg: 'bg-gray-800/30' },
+    'ReactJs': { icon: FaReact, color: '#61dafb', bg: 'bg-gray-800/30' },
+    'PHP': { icon: FaPhp, color: '#777bb4', bg: 'bg-gray-800/30'},
+    'MySQL': { icon: SiMysql, color: '#ce650fff', bg: 'bg-gray-800/30'},
+    'ExpressJs': { icon: SiExpress, color: '#ffffffff', bg: 'bg-gray-800/30'},
+    'Drizzle-ORM': { icon: SiDrizzle, color: '#00caff', bg: 'bg-gray-800/30'},
+    'Java': { icon: FaCode, color: '#f89820', bg: 'bg-gray-800/30'},
+    'CSS': { icon: FaCss3Alt, color: '#264de4', bg: 'bg-gray-800/30'},
+    'Jquery': { icon: SiJquery, color: '#0769ad', bg: 'bg-gray-800/30'},
+    'Bootstrap': { icon: FaBootstrap, color: '#7952b3', bg: 'bg-gray-800/30'},
+    'JavaScript': { icon: SiJavascript, color: '#f0db4f', bg: 'bg-gray-800/30'},
+    'TypeScript': { icon: SiTypescript, color: '#3178c6', bg: 'bg-gray-800/30'},
   };
-  return map[name] || { icon: FaCode, color: '#999', bg: 'bg-teal-500/15'};
+  return map[name] || { icon: FaCode, color: '#999', bg: 'bg-gray-800/30'};
 };
 
 const TechBadge = ({ name, mini = false }) => {
@@ -59,8 +59,8 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto pt-10 sm:pt-12 border-b border-white/5 last:border-0">
-      <div className={`flex flex-col ${isRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-6 md:gap-10`}>
+    <div className="w-full max-w-5xl mx-auto pt-10 sm:pt-20 border-b border-white/5 last:border-0">
+      <div className={`flex flex-col ${isRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-6 md:gap-14`}>
         
         {/* IMAGE SLIDER (Compact) */}
         <div className="relative w-full md:w-1/2 h-[185px] sm:h-[280px] rounded-lg overflow-hidden border border-white/10 bg-[#0a0a0a] group">
@@ -84,19 +84,20 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
         </div>
 
         {/* INFO (Compact) */}
-        <div className="w-full md:w-1/2 flex flex-col items-start text-left space-y-3">
-          <div className="flex items-center gap-2 text-teal-500/60 text-sm uppercase tracking-widest font-mono">
-            <span>0{project.id + 1}</span>
-            <span className="w-3 h-px bg-teal-500/30"></span>
-            <FaClock size={10} />
-            <span>{t(`projects.list.${project.id}.date`)}</span>
+        <div className={`w-full md:w-1/2 flex flex-col items-start ${isRight ? 'sm:items-end':'items-start'} space-y-5`}>
+          <div className='' >
+            <div className={`flex items-center sm:justify-end gap-2 text-teal-500/60 text-sm uppercase tracking-widest font-mono`}>
+              <FaClock size={10} />
+              <span>{t(`projects.list.${project.id}.date`)}</span>
+            </div>
+
+            <h3 className="sm:mt-1 mt-2 text-xl sm:text-2xl font-bold text-white leading-none">
+              <span className='text-white' >{t(`projects.list.${project.id}.title`)}</span>
+            </h3>
+
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-bold text-white leading-none">
-            <span className='text-white' >{t(`projects.list.${project.id}.title`)}</span>
-          </h3>
-
-          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-none text-justify">
+          <p className={`text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-none  ${isRight ? 'sm:text-right':'text-left'}`}>
             {t(`projects.list.${project.id}.description`)}
           </p>
 
@@ -107,26 +108,27 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
               </a>
            )}
 
-          <div className="flex flex-wrap gap-3 pt-1">
+          <div className={`flex flex-wrap gap-3 pt-1  ${isRight ? 'sm:justify-end':' justify-start'} `}>
             {project.techs.map((tech, i) => (
               <TechBadge key={i} name={tech} />
             ))}
           </div>
 
-          <div className="flex gap-3 pt-2 w-full sm:w-auto">
+          <div className="flex w-full sm:w-auto">
             <button 
+              title='GitHub'
               onClick={() => project.githubLink ? window.open(project.githubLink) : showAlert(t('alerts.codeSecured'), "error")}
-              className="flex items-center justify-center sm:flex-none px-4 py-2 sm:text-sm text-xs border border-white/20 rounded-xl hover:bg-white/10 text-gray-300 transition"
+              className="h-full flex sm:text-sm text-xs justify-center"
             >
-              <FaGithub className='mr-2' ></FaGithub>
-              Github
+              <FaGithub className='mr-2' size={20}></FaGithub>
+              <span className=' text-blue-700 hover:underline' >github</span>
             </button>
-            <button
+            {/* <button
               className="flex items-center justify-center sm:flex-none px-4 py-2 sm:text-sm text-xs cursor-not-allowed bg-gray-500 text-white rounded-xl transition shadow-lg shadow-teal-900/20"
             >
               <FaEye size={16} className='mr-2'></FaEye>
               Demo
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -145,25 +147,25 @@ const CompactProject = ({ project, t, showAlert }) => {
     }
 
     return (
-        <div className="group relative bg-gray-950 border border-white/5 rounded-lg overflow-hidden hover:border-teal-500/30 transition-all duration-300 flex flex-col h-full">
+        <div className=" group relative bg-gray-950 border border-white/5 rounded-lg overflow-hidden hover:border-teal-500/30 transition-all duration-300 flex flex-col h-full">
             {/* Image Header */}
             <div className="relative w-full h-32 sm:h-40 bg-gray-900 overflow-hidden cursor-pointer" onClick={next}>
                 <Image src={project.images[imgIndex]} alt="Project" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 to-gray-950/10" />
                 <div className="absolute bottom-2 left-3">
                     <div className="text-white text-sm font-bold truncate">{t(`projects.list.${project.id}.type`)}</div>
                     <div className="text-sm text-teal-400 font-mono">{t(`projects.list.${project.id}.date`)}</div>
                 </div>
                 {/* Mini Clicker */}
-                <button onClick={next} className="absolute top-2 right-2 p-1 bg-black/50 rounded text-white opacity-0 group-hover:opacity-100 transition"><FaChevronRight size={8}/></button>
+                <button onClick={next} className="absolute top-2 right-2 p-1 bg-black/50 rounded text-white opacity-0 group-hover:opacity-100 transition"><FaChevronRight size={18}/></button>
             </div>
 
             {/* Content Body */}
             <div className="p-3 flex flex-col flex-grow">
-                <p className="text-sm text-gray-400 line-clamp-3 leading-6 mb-3 flex-grow">
+                {/* <p className="text-sm text-gray-400 line-clamp-3 leading-6 mb-3 flex-grow">
                     {t(`projects.list.${project.id}.description`)}
                 </p>
-                
+                 */}
                 {/* Footer: Techs + Link */}
                 <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
                     <div className="h-8 flex space-x-2">
@@ -175,7 +177,7 @@ const CompactProject = ({ project, t, showAlert }) => {
                         onClick={() => project.githubLink ? window.open(project.githubLink) : showAlert(t('alerts.projectNotAvailable'), "info")}
                         className=" text-gray-400 hover:text-white transition"
                     >
-                        <FaGithub size={24} />
+                        <FaGithub size={18} />
                     </button>
                 </div>
             </div>
@@ -220,7 +222,7 @@ export default function Projects() {
 
 
         {/* SECTION 1: FEATURED (01, 02, 04) */}
-        <div className="flex flex-col gap-6 sm:gap-0 mb-14">
+        <div className="flex flex-col gap-6 sm:gap-0 sm:mb-14 sm:pb-0 pb-12">
           {featuredProjects.map((project, index) => (
              <AnimatedSection key={project.id} direction="scale" threshold={0.3} delay={0.1} duration={0.4}>
                 <FeaturedProject project={project} index={index} t={t} showAlert={showAlert} />
@@ -230,13 +232,13 @@ export default function Projects() {
 
         {/* SECTION 2: THE LAB / ARCHIVE (03, 05, 06) - GRID */}
         {otherProjects.length > 0 && (
-            <div>
+            <div className='sm:block hidden' >
                 <div className="flex items-center gap-4 mb-6">
                     <h3 className="text-xl font-bold text-gray-300">Other Experiments</h3>
                     <div className="h-px bg-white/10 flex-grow"></div>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                     {otherProjects.map((project) => (
                         <CompactProject key={project.id} project={project} t={t} showAlert={showAlert} />
                     ))}
