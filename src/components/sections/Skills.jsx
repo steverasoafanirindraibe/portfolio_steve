@@ -78,7 +78,7 @@ const SkillTag = ({ Icon, name, techKey }) => {
   const iconColor = techIconColors[techKey] || '#9CA3AF'; // Gris par défaut
 
   return (
-    <div className='group flex items-center px-2 py-1 sm:px-4 sm:py-3 rounded-full bg-gray-800/80 hover:bg-gray-700/80 transition-all duration-300 text-white hover:border-gray-600 cursor-default'>
+    <div className='group flex items-center px-2.5 py-1.5 sm:px-4 sm:py-3 rounded-full bg-gray-800/80 hover:bg-gray-700/80 transition-all duration-300 text-white hover:border-gray-600 cursor-default'>
       <Icon 
         className='text-lg sm:text-2xl mr-2 group-hover:scale-110 transition-transform'
         style={{ color: iconColor }}
@@ -200,7 +200,7 @@ export default function Skills() {
   ];
 
   return (
-    <div className='min-h-screen w-full px-4 sm:px-16 lg:px-48 pt-20 sm:pt-28 sm:pb-6 bg-gradient-to-r from-gray-950 via-gray-950 to-teal-950 text-white'>
+    <div className='min-h-screen w-full px-4 sm:px-16 lg:px-48 pt-12 sm:pt-28 sm:pb-6 bg-gradient-to-r from-gray-950 via-gray-950 to-teal-950 text-white'>
       {/* <style jsx global>{shimmerStyle}</style> */}
       <section id='skills' className='absolute -top-20' />
       
@@ -306,7 +306,7 @@ export default function Skills() {
 
               {/* Section Certifications */}
               <div>
-                <div className=" mt-8">
+                <div className=" mt-12">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-lg">
                       <FaGraduationCap className="text-xl text-orange-500" />
