@@ -12,25 +12,24 @@ import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiDrizzle, SiSpringboot, SiLa
 
 const getTechConfig = (name) => {
   const map = {
-    'NextJs': { icon: SiNextdotjs, color: '#fff', bg: 'bg-white/10' },
-    'PostgreSQL': { icon: SiPostgresql, color: '#336791', bg: 'bg-blue-500/10' },
-    'Tailwind': { icon: SiTailwindcss, color: '#38bdf8', bg: 'bg-cyan-500/10' },
-    'SpringBoot': { icon: SiSpringboot, color: '#6db33f', bg: 'bg-green-500/10' },
-    'Laravel': { icon: SiLaravel, color: '#ff2d20', bg: 'bg-red-500/10' },
-    'ReactJs': { icon: FaReact, color: '#61dafb', bg: 'bg-blue-400/10' },
-    'PHP': { icon: FaPhp, color: '#777bb4', bg: 'bg-indigo-500/10' },
-    'MySQL': { icon: SiMysql, color: '#ce650fff', bg: 'bg-blue-600/10' },
-    'ExpressJs': { icon: SiExpress, color: '#ffffffff', bg: 'bg-gray-800/10' },
-    'Drizzle-ORM': { icon: SiDrizzle, color: '#00caff', bg: 'bg-cyan-400/10' },
-    'Java': { icon: FaCode, color: '#f89820', bg: 'bg-orange-400/10' },
-    'CSS': { icon: FaCss3Alt, color: '#264de4', bg: 'bg-blue-500/10' },
-    'Jquery': { icon: SiJquery, color: '#0769ad', bg: 'bg-blue-600/10' },
-    'Bootstrap': { icon: FaBootstrap, color: '#7952b3', bg: 'bg-purple-500/10' },
-    'JavaScript': { icon: SiJavascript, color: '#f0db4f', bg: 'bg-yellow-400/10' },
-    'TypeScript': { icon: SiTypescript, color: '#3178c6', bg: 'bg-blue-500/10' },
-    // ... autres mappings par défaut
+    'NextJs': { icon: SiNextdotjs, color: '#fff', bg: 'bg-black/30' },
+    'PostgreSQL': { icon: SiPostgresql, color: '#336791', bg: 'bg-teal-500/15' },
+    'Tailwind': { icon: SiTailwindcss, color: '#38bdf8', bg: 'bg-teal-500/15' },
+    'SpringBoot': { icon: SiSpringboot, color: '#6db33f', bg: 'bg-teal-500/15' },
+    'Laravel': { icon: SiLaravel, color: '#ff2d20', bg: 'bg-teal-500/15' },
+    'ReactJs': { icon: FaReact, color: '#61dafb', bg: 'bg-teal-500/15' },
+    'PHP': { icon: FaPhp, color: '#777bb4', bg: 'bg-teal-500/15'},
+    'MySQL': { icon: SiMysql, color: '#ce650fff', bg: 'bg-teal-500/15'},
+    'ExpressJs': { icon: SiExpress, color: '#ffffffff', bg: 'bg-teal-500/15'},
+    'Drizzle-ORM': { icon: SiDrizzle, color: '#00caff', bg: 'bg-teal-500/15'},
+    'Java': { icon: FaCode, color: '#f89820', bg: 'bg-teal-500/15'},
+    'CSS': { icon: FaCss3Alt, color: '#264de4', bg: 'bg-teal-500/15'},
+    'Jquery': { icon: SiJquery, color: '#0769ad', bg: 'bg-teal-500/15'},
+    'Bootstrap': { icon: FaBootstrap, color: '#7952b3', bg: 'bg-teal-500/15' },
+    'JavaScript': { icon: SiJavascript, color: '#f0db4f', bg: 'bg-teal-500/15' },
+    'TypeScript': { icon: SiTypescript, color: '#3178c6', bg: 'bg-teal-500/15'},
   };
-  return map[name] || { icon: FaCode, color: '#999', bg: 'bg-gray-800/20' };
+  return map[name] || { icon: FaCode, color: '#999', bg: 'bg-teal-500/15'};
 };
 
 const TechBadge = ({ name, mini = false }) => {

@@ -57,11 +57,11 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                         
                         {/* Nom stylisé comme une balise ou un élément de code */}
                         <span className="text-lg sm:text-2xl font-bold ml-1 sm:ml-2">
-                          &lt;<span className="text-teal-400">Steve Rasoafanirindrai</span><span className="text-orange-500">be</span>/&gt;
+                          &lt;<span className="text-teal-400">Steve </span><span className="text-orange-500">Ras</span>/&gt;
                         </span>
                       </AnimatedSection>
                       {/* --- Headline Principal (Proposition de Valeur) --- */}
-                      <AnimatedSection direction='left' delay={0.1} duration={0.3} className="text-xl sm:text-5xl font-extrabold leading-tight mb-3 sm:mb-4">
+                      <AnimatedSection direction='left' delay={0.1} duration={0.3} className="text-xl sm:text-4xl font-extrabold leading-tight mb-3 sm:mb-4">
                         <span className="text-white">{t("hero.headline")}</span>
                       </AnimatedSection>
                     </div>
@@ -123,8 +123,8 @@ export default function Home() {
   const getTranslateY = (offset) => 0; 
     
     const techStack = [
-        "Next.js (App Router)", "React/Hooks", "TypeScript", "Node.js/Express",
-        "PostgreSQL/MySQL", "SpringBoot", "REST API", "Tailwind CSS"
+        "Next.js", "React","PostgreSQL", "TypeScript", "Node.js",
+         "SpringBoot", "REST API", "Tailwind CSS"
     ];
 
     const navItems = [
