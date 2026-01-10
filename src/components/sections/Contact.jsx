@@ -368,7 +368,7 @@ export default function Contact() {
         <div className='max-w-6xl mx-auto px-4'>
           <div className='text-center'>
             <p className='text-gray-400 text-[11px] sm:text-xs'>
-              &copy; 2024 <strong className='text-white'>Steve Rasoafanirindraibe</strong>. {t('copyright.text')}
+              &copy; 2026 <strong className='text-white'>Steve Rasoafanirindraibe</strong>. {t('copyright.text')}
             </p>
           </div>
         </div>
