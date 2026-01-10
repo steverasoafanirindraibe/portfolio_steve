@@ -78,7 +78,7 @@ const SkillTag = ({ Icon, name, techKey }) => {
   const iconColor = techIconColors[techKey] || '#9CA3AF'; // Gris par défaut
 
   return (
-    <div className='group flex items-center px-2 py-1 sm:px-4 sm:py-3 rounded-full bg-gray-800/80 hover:bg-gray-700/80 transition-all duration-300 text-white border border-gray-700 hover:border-gray-600 cursor-default'>
+    <div className='group flex items-center px-2 py-1 sm:px-4 sm:py-3 rounded-full bg-gray-800/80 hover:bg-gray-700/80 transition-all duration-300 text-white hover:border-gray-600 cursor-default'>
       <Icon 
         className='text-lg sm:text-2xl mr-2 group-hover:scale-110 transition-transform'
         style={{ color: iconColor }}

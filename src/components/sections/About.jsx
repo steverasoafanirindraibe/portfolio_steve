@@ -30,19 +30,23 @@ const educationDomains = [
   { 
     key: 'academic', 
     icon: FaUniversity, 
-    color: 'from-teal-500 to-cyan-500',
+    // color: 'from-teal-500 to-cyan-500',
+    color: 'from-orange-500 to-red-500',
+
     accentColor: 'teal'
   },
   { 
     key: 'networks', 
     icon: FaGlobeAmericas, 
-    color: 'from-blue-500 to-indigo-500',
+    // color: 'from-blue-500 to-indigo-500',
+    color: 'from-orange-500 to-red-500',
     accentColor: 'blue'
   },
   { 
     key: 'ai', 
     icon: FaBrain, 
-    color: 'from-purple-500 to-pink-500',
+    // color: 'from-purple-500 to-pink-500',
+    color: 'from-orange-500 to-red-500',
     accentColor: 'orange'
   },
 ];
@@ -186,7 +190,7 @@ export default function About() {
   };
 
   return (
-    <div className="flex w-full justify-center text-white pt-10 sm:pt-20 md:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="flex w-full justify-center text-white pt-14 sm:pt-20 md:pt-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       
       
       <div className=" sm:w-[85%] max-w-6xl mx-auto">
@@ -213,7 +217,7 @@ export default function About() {
             threshold={0.2}
             duration={0.4}
           >
-            <div className="relative p-4 sm:p-6 border-t border-b border-teal-500 rounded-2xl h-full">
+            <div className="relative p-4 sm:p-6 sm:border-t sm:border-b border-teal-500 rounded-2xl h-full">
               {/* Carte avec effet verre */}
               <div className="absolute inset-0 bg-gradient-to-br from-gray-950 to-gray-950 
                 backdrop-blur-xl rounded-l-2xl shadow-2xl" />
