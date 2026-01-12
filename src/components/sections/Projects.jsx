@@ -136,9 +136,9 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
   );
 };
 
-// --- COMPOSANT 2 : MINIMALIST GRID CARD (Ultra Compact) ---
+// --- COMPOSANT 2 : MINIMALIST GRID CARD ---
 const CompactProject = ({ project, t, showAlert }) => {
-    // Simple hover to switch image or manual click
+    // Simple hover to switch image or 
     const [imgIndex, setImgIndex] = useState(0);
 
     const next = (e) => {
@@ -166,7 +166,7 @@ const CompactProject = ({ project, t, showAlert }) => {
                     {t(`projects.list.${project.id}.description`)}
                 </p>
                  */}
-                {/* Footer: Techs + Link */}
+                {/* Footer */}
                 <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
                     <div className="h-8 flex space-x-2">
                          {project.techs.slice(0, 4).map((tech, i) => (
