@@ -161,7 +161,7 @@ const ModernAlert = () => {
   );
 };
 
-// Hook personnalisé
+// Hook personnalisé ...
 export const useModernAlert = () => {
   const showAlert = useCallback((message, type = 'info', duration = 4000) => {
     if (typeof window !== 'undefined' && window.showModernAlert) {
