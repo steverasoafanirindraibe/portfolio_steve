@@ -70,7 +70,7 @@ export default function Contact() {
       id: 2,
       icon: <FaLinkedin />,
       label: 'LinkedIn',
-      url: 'https://fr.linkedin.com/steverasoafanirindraibe',
+      url: 'https://www.linkedin.com/in/steve-rasoafanirindraibe-b8baa33a7',
       delay: 0.5
     },
     {

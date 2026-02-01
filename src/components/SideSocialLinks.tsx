@@ -6,7 +6,7 @@ const SideSocialLinks = () => {
   const socialLinks = [
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/steverasoafanirindraibe",
+      href: "https://www.linkedin.com/in/steve-rasoafanirindraibe-b8baa33a7",
       label: "LinkedIn",
       color: "hover:text-blue-500"
     },
