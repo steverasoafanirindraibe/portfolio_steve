@@ -62,12 +62,12 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                       </AnimatedSection>
                       {/* --- Headline Principal (Proposition de Valeur) --- */}
                       <AnimatedSection direction='left' delay={0.1} duration={0.3} className="text-xl sm:text-4xl font-extrabold leading-tight mb-3 sm:mb-4">
-                        <span className="text-white">{t("hero.headline")}</span>
+                        <span className="text-gray-300">{t("hero.headline")}</span>
                       </AnimatedSection>
                     </div>
                         {/* Titre & Slogan */}
                         <AnimatedSection direction='left' delay={0.2} duration={0.3} className="py-2 sm:py-3 text-base sm:text-3xl font-mono italic text-gray-300">
-                            {t("hero.title")}
+                            <span className="text-gray-300">{t("hero.title")}</span>
                             <span className="clignoter font-bold text-teal-400">_</span>
                         </AnimatedSection>
                         {/* Bloc "Tech Tag Cloud" */}
