@@ -177,12 +177,12 @@ export default function Contact() {
         <AnimatedSection direction='scale' duration={0.5} threshold={0.1}>
           <div className='mb-8 sm:mb-10'>
             <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
-              <span className="text-orange-500">&lt;</span>
-              <span>Contact</span>
-              <span className="text-orange-500">/&gt;</span>
+              <span className="text-theme2">&lt;</span>
+              <span className='text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500' >Contact</span>
+              <span className="text-theme2">/&gt;</span>
             </h2>
             <div className="w-12 h-1 bg-teal-500 rounded mx-auto mt-2"></div>
-            <p className="text-xs text-gray-500 mt-3 text-center">{t("contact.subtitle")}</p>
+            <p className="text-gray-400 mt-3 text-center">{t("contact.subtitle")}</p>
 
           </div>
         </AnimatedSection>
@@ -199,17 +199,17 @@ export default function Contact() {
                   >
                     <AnimatedSection direction='scale' threshold={0.1} delay={item.delay} duration={0.3} >
                       <div className='flex items-start space-x-3'>
-                        <div className='p-2 rounded-xl bg-orange-500/20 backdrop-blur-sm'>
+                        <div className='p-2 rounded-xl bg-orange-500/30 backdrop-blur-sm'>
                           <div className='text-xl text-white'>{item.icon}</div>
                         </div>
                         <div className='flex-1 min-w-0'>
                           <p className='text-xs text-gray-300 mb-1 truncate'>{item.label}</p>
-                          <p className='text-sm font-medium text-white truncate'>{item.value}</p>
+                          <p className='text-sm font-medium text-gray-300 truncate'>{item.value}</p>
                         </div>
                         {item.action === 'copy' && (
                           <button
                             onClick={() => handleCopy(item.value)}
-                            className='p-2 rounded-lg bg-white transition-color '
+                            className='p-2 rounded-lg bg-gray-300 hover:bg-white transition-color '
                             title={t('contact.copy')}
                           >
                             {copySuccess ? (
@@ -240,7 +240,7 @@ export default function Contact() {
               <div className='mb'>
                 <h3 className='text-lg font-semibold text-white mb-4 flex items-center'>
                   <FaGlobe className='mr-2 text-teal-400' />
-                  {t('contact.connect')}
+                  <span className='text-gray-300' >{t('contact.connect')}</span>
                 </h3>
                 <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-3'>
                   {socialLinks.map((social) => (
@@ -251,10 +251,10 @@ export default function Contact() {
                       rel='noopener noreferrer'
                       className='flex flex-col items-center justify-center p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 hover:border-teal-500/50 transition-all duration-500 group hover:bg-black/60'
                     >
-                      <div className='text-2xl mb-2 group-hover:scale-110 transition-transform text-white'>
+                      <div className='text-2xl mb-2 group-hover:scale-110 transition-transform text-gray-300'>
                         {social.icon}
                       </div>
-                      <span className='text-xs font-medium text-white'>{social.label}</span>
+                      <span className='text-sm font-medium text-gray-300'>{social.label}</span>
                       <FaExternalLinkAlt className='absolute top-2 right-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity text-teal-400' />
                     </a>
                   ))}
@@ -269,7 +269,7 @@ export default function Contact() {
             <AnimatedSection direction='scale' threshold={0.1} duration={0.4}>
               <div className='bg-black/40 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl'>
                 <div className='mb-6'>
-                  <h3 className='text-md sm:text-xl font-bold text-white mb-2 text-center'>
+                  <h3 className='text-md sm:text-xl font-bold text-gray-300 mb-2 text-center'>
                     {t('contact.formTitle')}
                   </h3>
                   <p className='text-gray-400 text-sm text-center'>

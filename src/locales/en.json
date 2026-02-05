@@ -26,7 +26,7 @@
   "about": {
     "title": "About Me",
     "subtitle": "About me and my education",
-    "description": "I'm not just a developer - I'm a digital architect, a passionate soul obsessed with the magic behind every line of code. My kingdom? The intersection between the relentless logic of algorithms and the boundless creativity of the modern web.I firmly believe that the best applications aren't those that work perfectly, but those that solve real problems with discreet elegance. My approach? Transforming technical complexity into user simplicity.",
+    "description": "I'm a digital architect, a passionate soul obsessed with the magic behind every line of code. My kingdom? The intersection between the relentless logic of algorithms and the boundless creativity of the modern web.I firmly believe that the best applications aren't those that work perfectly, but those that solve real problems with discreet elegance. My approach? Transforming technical complexity into user simplicity.",
     "badge": "Who I am",
     "role": "Web Developer",
     "solver": "Problem Solver",
@@ -118,7 +118,7 @@
       "pix": {
         "title": "Digital Skills",
         "institution": "PIX - Official Certification",
-        "description": "Certification measuring digital proficiency (data management, communication, content creation, security)."
+        "description": "Certification measuring digital proficiency (communication, content creation, security)."
       },
       "huawei": {
         "title": "AI Overview",

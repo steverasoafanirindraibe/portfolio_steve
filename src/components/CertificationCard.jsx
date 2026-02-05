@@ -56,7 +56,7 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
             <h3 className="text-md font-bold text-white mb-1 leading-tight drop-shadow-lg">
               {title}
             </h3>
-            <p className="text-xs text-gray-300 font-medium mb-1">
+            <p className="text-sm text-gray-300 font-medium mb-1">
               {institution}
             </p>
           </motion.div>
@@ -70,7 +70,7 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
               transition={{ duration: 0.3, delay: 0.1 }}
                className="h-2/3"
             >
-              <p className="h-full px-3 pt-3 pb-4 text-xs text-gray-200 leading-relaxed group-hover:bg-gray-950/50 transition-colors duration-500">
+              <p className="h-full px-3 pt-3 pb-4 text-sm text-gray-200 leading-relaxed group-hover:bg-gray-950/70 transition-colors duration-500">
                 {description}
               </p>
             </motion.div>
@@ -85,7 +85,7 @@ const CertificationCard = ({ title, institution, description, icon: Icon, imageU
         >
           <div className="hidden w-full md:block md:flex items-center gap-2 px-4 mb-6">
             <div className={'w-2 h-2 rounded-full bg-teal-500'} />
-            <span className="text-xs font-medium text-gray-300">
+            <span className="text-sm font-medium text-gray-300">
               {'Certification'}
             </span>
           </div>

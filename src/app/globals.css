@@ -5,6 +5,7 @@
 :root {
   --background: #000000;
   --foreground: #ffffffcb;
+  --theme2: #da5b29;
 }
 
 @font-face {
@@ -19,6 +20,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --theme2: #da5b29;
+
   }
 }
 

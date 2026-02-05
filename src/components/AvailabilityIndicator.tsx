@@ -32,9 +32,9 @@ const AvailabilityIndicator = () => {
         {/* Circuit électronique en arrière-plan */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1 left-1 w-1 h-1 rounded-full bg-teal-400 animate-pulse"></div>
-          <div className="absolute top-1 right-1 w-1 h-1 rounded-full bg-orange-400 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-1 right-1 w-1 h-1 rounded-full bg-theme2-400 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
           <div className="absolute bottom-1 left-1 w-1 h-1 rounded-full bg-teal-400 animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1 right-1 w-1 h-1 rounded-full bg-orange-400 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute bottom-1 right-1 w-1 h-1 rounded-full bg-theme2-400 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
         {/* Cœur de l'animation - Avatar avec halo */}
