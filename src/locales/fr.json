@@ -26,7 +26,7 @@
   "about": {
     "title": "À Propos",
     "subtitle": "À Propos de moi et mon parcours",
-    "description": "Je ne suis pas qu'un simple développeur - je suis un architecte du numérique, un passionné obsédé par la magie qui se cache derrière chaque ligne de code. Mon royaume? L'intersection entre la logique implacable des algorithmes et la créativité sans limites du web moderne. Je crois fermement que les meilleures applications ne sont pas celles qui fonctionnent parfaitement, mais celles qui résolvent des problèmes réels avec une élégance discrète. Mon approche? Transformer la complexité technique en simplicité utilisateur." ,
+    "description": "Je suis un architecte du numérique, un passionné obsédé par la magie qui se cache derrière chaque ligne de code. Mon royaume? L'intersection entre la logique implacable des algorithmes et la créativité sans limites du web moderne. Je crois fermement que les meilleures applications ne sont pas celles qui fonctionnent parfaitement, mais celles qui résolvent des problèmes réels avec une élégance discrète. Mon approche? Transformer la complexité technique en simplicité utilisateur." ,
     "badge": "Qui je suis",
     "role": "Développeur Web",
     "solver": "Résolveur de problèmes",
@@ -117,7 +117,7 @@
       "pix": {
         "title": "Compétences Numériques",
         "institution": "PIX - Certification Officielle",
-        "description": "Certification mesurant la maîtrise du numérique (gestion des données, création de contenu, sécurité). "
+        "description": "Certification mesurant la maîtrise du numérique (création de contenu, sécurité). "
       },
       "huawei": {
         "title": "Overview IA",

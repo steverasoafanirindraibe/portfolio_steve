@@ -17,9 +17,9 @@ import {
   SiSqlite, 
   SiGit,
   SiHuawei,
-  SiFlutter,
   SiVercel,
   SiDocker,
+  SiNestjs,
 } from 'react-icons/si';
 import { 
   FaCode, 
@@ -49,7 +49,6 @@ const techIconColors = {
   // Frontend
   nextjs: '#ffffffff', 
   react: '#61DAFB', 
-  flutter: '#02569B', 
   tailwindcss: '#06B6D4', 
   angular: '#DD0031', 
   html5: '#E34F26', 
@@ -58,7 +57,7 @@ const techIconColors = {
   // Backend
   springboot: '#6DB33F', 
   express: '#ffffffff', 
-  laravel: '#FF2D20', 
+  nestjs: '#b10900', 
   
   // Databases
   postgresql: '#4169E1', 
@@ -91,8 +90,8 @@ const SkillTag = ({ Icon, name, techKey }) => {
 // Composant SoftSkillItem amélioré
 const SoftSkillItem = ({ text }) => (
   <AnimatedSection direction='scale' threshold={0.5} duration={0.5}
- className="flex items-start text-xs sm:text-sm mb-3 group">
-    <div className="mt-0.5 mr-3 text-orange-500 flex-shrink-0 group-hover:scale-110 transition-transform">
+ className="flex items-start text-sm mb-3 group">
+    <div className="mt-0.5 mr-3 text-theme2 flex-shrink-0 group-hover:scale-110 transition-transform">
       <FaBrain className="text-sm" />
     </div>
     <span className='text-gray-300 group-hover:text-white transition-colors'>{text}</span>
@@ -105,9 +104,9 @@ const SkillGroup = ({ title, icon: Icon, skills, category }) => (
     <div className='w-full flex items-center justify-between mb-4 pb-3 border-b border-teal-700/50 '>
       <div className='w-full flex items-center'>
         <div className='w-full text-center' >
-          <h3 className='text-sm sm:text-base font-semibold text-white'>{title}</h3>
+          <h3 className='text-sm sm:text-base font-semibold text-gray-300'>{title}</h3>
           {category && (
-            <span className='text-xs text-gray-400 font-medium'>{category}</span>
+            <span className='text-sm text-gray-400 font-medium'>{category}</span>
           )}
         </div>
       </div>
@@ -142,7 +141,7 @@ export default function Skills() {
     frontend: [
       { Icon: SiNextdotjs, name: 'Next.js', techKey: 'nextjs' },
       { Icon: SiReact, name: 'React', techKey: 'react' },
-      { Icon: SiFlutter, name: 'Flutter', techKey: 'flutter' },
+      { Icon: SiHtml5, name: 'Html5', techKey: 'html5' },
       { Icon: SiTailwindcss, name: 'Tailwind CSS', techKey: 'tailwindcss' },
     ],
     
@@ -151,7 +150,7 @@ export default function Skills() {
       { Icon: SiNextdotjs, name: 'Next.js', techKey: 'nextjs' },
       { Icon: SiSpringboot, name: 'Spring Boot', techKey: 'springboot' },
       { Icon: SiExpress, name: 'Express.js', techKey: 'express' },
-      { Icon: SiLaravel, name: 'Laravel', techKey: 'laravel' },
+      { Icon: SiNestjs, name: 'Nest.js', techKey: 'nestjs' },
     ],
     
     // Bases de données
@@ -177,7 +176,6 @@ export default function Skills() {
     t("skills.softSkills.adaptability"),
     t("skills.softSkills.problemSolving"),
     t("skills.softSkills.timeManagement"),
-    t("skills.softSkills.leadership"),
   ];
 
   const certifications = [
@@ -208,12 +206,12 @@ export default function Skills() {
         <AnimatedSection direction='scale' duration={0.5} threshold={0.1}  >
           <div className=' sm:mb-10'>
             <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
-              <span className="text-orange-500">&lt;</span>
-              <span>{t("skills.title")}</span>
-              <span className="text-orange-500">/&gt;</span>
+              <span className="text-theme2">&lt;</span>
+              <span className='text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500' >{t("skills.title")}</span>
+              <span className="text-theme2">/&gt;</span>
             </h2>
             <div className="w-12 h-1 bg-teal-500 rounded mx-auto mt-2"></div>
-            <p className="text-xs text-gray-500 mt-3 text-center">{t("skills.subtitle")}</p>
+            <p className=" text-gray-500 mt-3 text-center">{t("skills.subtitle")}</p>
           </div>
         </AnimatedSection>
 
@@ -228,8 +226,8 @@ export default function Skills() {
                 <FaCode className="text-lg text-teal-500" />
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white">{t("skills.hardSkills.title")}</h3>
-                <p className="text-xs text-gray-400">{t("skills.hardSkills.subtitle")}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-300">{t("skills.hardSkills.title")}</h3>
+                <p className="text-sm text-gray-400">{t("skills.hardSkills.subtitle")}</p>
               </div>
             </div>
             
@@ -290,11 +288,11 @@ export default function Skills() {
             <div className="px-4 sm:pl-10 h-full sm:border-l border-gray-700/50 transition-colors duration-300">
               <div className="flex items-center mb-6">
                 <div className="p-2.5 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-lg mr-3">
-                  <FaBrain className="text-lg text-orange-500" />
+                  <FaBrain className="text-lg text-theme2" />
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-white">{t("skills.softSkills.title")}</h3>
-                  <p className="text-xs text-gray-400">{t("skills.softSkills.subtitle")}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-300">{t("skills.softSkills.title")}</h3>
+                  <p className="text-sm text-gray-400">{t("skills.softSkills.subtitle")}</p>
                 </div>
               </div>
               
@@ -309,11 +307,11 @@ export default function Skills() {
                 <div className=" mt-12">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-lg">
-                      <FaGraduationCap className="text-xl text-orange-500" />
+                      <FaGraduationCap className="text-xl text-theme2" />
                     </div>
                     <div>
-                      <h2 className="text-lg sm:text-xl font-semibold text-white">{t("skills.certifications.title")}</h2>
-                      <p className="text-xs text-gray-400">{t("skills.certifications.subtitle")}</p>
+                      <h2 className="text-lg sm:text-xl font-semibold text-gray-300">{t("skills.certifications.title")}</h2>
+                      <p className="text-sm text-gray-400">{t("skills.certifications.subtitle")}</p>
                     </div>
                   </div>
                 </div>

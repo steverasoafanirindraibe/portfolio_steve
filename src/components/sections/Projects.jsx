@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/AnimatedSection';
 
 // Icons
 import { FaClock, FaGithub, FaEye, FaCode, FaReact, FaPhp, FaBootstrap, FaCss3Alt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiDrizzle, SiSpringboot, SiLaravel, SiExpress, SiMysql, SiJquery, SiJavascript, SiTypescript } from 'react-icons/si';
+import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiDrizzle, SiSpringboot, SiLaravel, SiExpress, SiMysql, SiJquery, SiJavascript, SiTypescript, SiNestjs } from 'react-icons/si';
 
 // --- UTILS ---
 
@@ -28,6 +28,7 @@ const getTechConfig = (name) => {
     'Bootstrap': { icon: FaBootstrap, color: '#7952b3', bg: 'bg-gray-800/30'},
     'JavaScript': { icon: SiJavascript, color: '#f0db4f', bg: 'bg-gray-800/30'},
     'TypeScript': { icon: SiTypescript, color: '#3178c6', bg: 'bg-gray-800/30'},
+    'NestJs': { icon: SiNestjs, color: '#ffffffff', bg: 'bg-red-400' }
   };
   return map[name] || { icon: FaCode, color: '#999', bg: 'bg-gray-800/30'};
 };
@@ -70,7 +71,7 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
               <div className="absolute inset-0 bg-black/20" />
             </div>
           ))}
-          
+            
           {/* Controls */}
           <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
             <button onClick={prevImg} className="p-2 rounded-full bg-black/50 hover:bg-teal-500 text-white transition"><FaChevronLeft size={12}/></button>
@@ -92,12 +93,12 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
             </div>
 
             <h3 className="sm:mt-1 mt-2 text-xl sm:text-2xl font-bold text-white leading-none">
-              <span className='text-white' >{t(`projects.list.${project.id}.title`)}</span>
+              <span className='text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500' >{t(`projects.list.${project.id}.title`)}</span>
             </h3>
 
           </div>
 
-          <p className={`text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-none  ${isRight ? 'sm:text-right':'text-left'}`}>
+          <p className={`text-gray-400 leading-relaxed line-clamp-3 sm:line-clamp-none  ${isRight ? 'sm:text-right':'text-left'}`}>
             {t(`projects.list.${project.id}.description`)}
           </p>
 
@@ -118,7 +119,7 @@ const FeaturedProject = ({ project, index, t, showAlert }) => {
             <button 
               title='GitHub'
               onClick={() => project.githubLink ? window.open(project.githubLink) : showAlert(t('alerts.codeSecured'), "error")}
-              className="h-full flex sm:text-sm text-xs justify-center"
+              className="h-full flex text-sm justify-center"
             >
               <FaGithub className='mr-2' size={20}></FaGithub>
               <span className=' text-blue-700 hover:underline' >github</span>
@@ -153,7 +154,7 @@ const CompactProject = ({ project, t, showAlert }) => {
                 <Image src={project.images[imgIndex]} alt="Project" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950 to-gray-950/10" />
                 <div className="absolute bottom-2 left-3">
-                    <div className="text-white text-sm font-bold truncate">{t(`projects.list.${project.id}.type`)}</div>
+                    <div className="text-white font-bold truncate">{t(`projects.list.${project.id}.type`)}</div>
                     <div className="text-sm text-teal-400 font-mono">{t(`projects.list.${project.id}.date`)}</div>
                 </div>
                 {/* Mini Clicker */}
@@ -209,13 +210,13 @@ export default function Projects() {
         {/* Header Compact */}
         <AnimatedSection direction='scale' duration={0.5} threshold={0.1}>
           <div className='mb-2'>
-            <h2 className='text-2xl sm:text-4xl font-extrabold text-center'>
-              <span className="text-orange-500">&lt;</span>
-              <span>{t("projects.title")}</span>
-              <span className="text-orange-500">/&gt;</span>
+            <h2 className='text-2xl sm:text-4xl font-extrabold text-center text-gray-300'>
+              <span className="text-theme2">&lt;</span>
+              <span className='text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500' >{t("projects.title")}</span>
+              <span className="text-theme2">/&gt;</span>
             </h2>
             <div className="w-12 h-1 bg-teal-500 rounded mx-auto mt-2"></div>
-            <p className="text-xs text-gray-500 mt-3 text-center">{t("projects.subtitle")}</p>
+            <p className="text-gray-500 mt-3 text-center">{t("projects.subtitle")}</p>
 
           </div>
         </AnimatedSection>
@@ -234,7 +235,7 @@ export default function Projects() {
         {otherProjects.length > 0 && (
             <div className='sm:block hidden' >
                 <div className="flex items-center gap-4 mb-6">
-                    <h3 className="text-xl font-bold text-gray-300">Other Experiments</h3>
+                    <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500">Other Experiments</h3>
                     <div className="h-px bg-white/10 flex-grow"></div>
                 </div>
                 

@@ -57,12 +57,12 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                         
                         {/* Nom stylisé comme une balise ou un élément de code */}
                         <span className="text-lg sm:text-2xl font-bold ml-1 sm:ml-2">
-                          &lt;<span className="text-teal-400">Steve </span><span className="text-orange-500">Ras</span>/&gt;
+                          &lt;<span className="text-teal-400">Steve </span><span className="text-theme2">Ras</span>/&gt;
                         </span>
                       </AnimatedSection>
                       {/* --- Headline Principal (Proposition de Valeur) --- */}
                       <AnimatedSection direction='left' delay={0.1} duration={0.3} className="text-xl sm:text-4xl font-extrabold leading-tight mb-3 sm:mb-4">
-                        <span className="text-gray-300">{t("hero.headline")}</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500">{t("hero.headline")}</span>
                       </AnimatedSection>
                     </div>
                         {/* Titre & Slogan */}
@@ -71,14 +71,14 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                             <span className="clignoter font-bold text-teal-400">_</span>
                         </AnimatedSection>
                         {/* Bloc "Tech Tag Cloud" */}
-                        <AnimatedSection direction='left' delay={0.3} duration={0.3} className="my-4 sm:my-8 sm:mr-16 p-3 sm:p-4 bg-teal-500/10 rounded-xl shadow-inner shadow-teal-500/20 max-w-lg">
-                            <h3 className='text-xs sm:text-sm font-semibold mb-2 text-teal-300 flex items-center justify-center sm:justify-start'>
+                        <AnimatedSection direction='left' delay={0.3} duration={0.3} className="my-4 sm:my-8 sm:mr-16 p-3 sm:p-4 bg-teal-700/10 rounded-xl shadow-inner shadow-teal-500/20 max-w-lg">
+                            <h3 className='text-sm font-semibold mb-2 text-teal-300 flex items-center justify-center sm:justify-start'>
                               <Code className='mr-2 h-3 w-3 sm:h-4 sm:w-4' />
                               {t('hero.expertise')}
                             </h3>
                             <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center sm:justify-start">
                                 {techStack.map((tech, index) => (
-                                    <span key={index} className="px-2 sm:px-3 py-1 text-xs font-medium text-teal-100 bg-teal-600/50 rounded-full border border-teal-500/50 hover:bg-teal-500 transition duration-300 cursor-default">
+                                    <span key={index} className="px-2 sm:px-3 py-1 text-sm font-medium text-teal-100 bg-gray-900 rounded-full border border-teal-500/50 hover:bg-gray-950 transition duration-300 cursor-default">
                                         {tech}
                                     </span>
                                 ))}
@@ -86,7 +86,7 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                         </AnimatedSection>
                         {/* Bouton de contact */}
                         <AnimatedSection direction='left' delay={0.4} duration={0.3} className='mt-6 sm:mt-10'>
-                          <button className='px-5 sm:px-6 py-2 bg-teal-500 text-black text-xs sm:text-sm font-bold rounded-lg transition-all duration-300 hover:bg-orange-500 hover:text-white transform hover:scale-105 shadow-lg'
+                          <button className='px-5 sm:px-6 py-2 bg-teal-500/90 text-black text-xs sm:text-sm font-bold rounded-lg transition-all duration-300 hover:bg-theme2 hover:text-white transform hover:scale-105 shadow-lg'
                               onClick={() => handleNavClick('contacts')} >
                               {t("hero.contact")}
                           </button>
@@ -97,7 +97,7 @@ const HeroContent = ({ handleNavClick, currentLang, setCurrentLang, t, navItems,
                         <a 
                           href='/documents/cv_steve_non_confidentiel.pdf' 
                           download="Steve_Rasoafanirindraibe_CV.pdf" 
-                          className="flex items-center justify-center w-48 py-2 my-4 px-3 bg-teal-500/20 text-teal-300 rounded-lg text-xs font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
+                          className="flex items-center justify-center w-48 py-2 my-4 px-3 bg-gray-950 text-teal-300 rounded-lg text-xs font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
                         > 
                           <Download className='mr-2 h-4 w-4' /> 
                           <span className="text-xs">{t("hero.download")}</span>
@@ -123,7 +123,7 @@ export default function Home() {
   const getTranslateY = (offset) => 0; 
     
     const techStack = [
-        "Next.js", "React","PostgreSQL", "TypeScript", "Node.js",
+        "Next.js", "React", "Nest.js", "PostgreSQL", "JavaScript",
          "SpringBoot", "REST API", "Tailwind CSS"
     ];
 
@@ -184,7 +184,7 @@ export default function Home() {
               <a 
                 href='/documents/cv_steve_non_confidentiel.pdf' 
                 download="Steve_Rasoafanirindraibe_CV.pdf" 
-                className="flex items-center py-1.5 px-3 bg-teal-500/20 text-teal-300 rounded-full text-xs font-semibold border border-teal-500/50 hover:bg-teal-500/40 transition duration-300"
+                className="flex items-center py-1.5 px-3 bg-teal-500 text-gray-900 rounded-full text-xs font-semibold hover:bg-theme2 transition duration-300"
               > 
                 <Download className='mr-2 h-4 w-4' /> 
                 <span className="text-xs">{t("hero.download")}</span>
@@ -195,7 +195,7 @@ export default function Home() {
               <Globe className="text-gray-200 mx-1 h-4 w-4" />
               <button onClick={() => changeLanguage('en')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
                     language === 'en'  
-                          ? 'bg-orange-500 text-white shadow-md transform scale-105' 
+                          ? 'bg-theme2 text-white shadow-md transform scale-105' 
                           : 'text-gray-400 hover:text-white hover:bg-teal-950'
                   }`}
               >
@@ -203,7 +203,7 @@ export default function Home() {
               </button>
               <button onClick={() => changeLanguage('fr')} className={`text-xs font-bold py-1 px-3 rounded-full transition-all duration-700 ${
                     language === 'fr'
-                          ? 'bg-orange-500 text-white shadow-md transform scale-105' 
+                          ? 'bg-theme2 text-white shadow-md transform scale-105' 
                           : 'text-gray-400 hover:text-white hover:bg-teal-950'
                   }`}
               >
@@ -238,10 +238,10 @@ export default function Home() {
             {/* Language Switcher Compact */}
             <div className="flex flex-col gap-1">
                <button onClick={() => changeLanguage('en')} className={`text-[10px] font-bold py-1 px-2 rounded-md transition-all ${
-                    language === 'en' ? 'bg-orange-500 text-white' : 'text-gray-500 bg-gray-800'
+                    language === 'en' ? 'bg-theme2 text-white' : 'text-gray-500 bg-gray-800'
                   }`}>EN</button>
                <button onClick={() => changeLanguage('fr')} className={`text-[10px] font-bold py-1 px-2 rounded-md transition-all ${
-                    language === 'fr' ? 'bg-orange-500 text-white' : 'text-gray-500 bg-gray-800'
+                    language === 'fr' ? 'bg-theme2 text-white' : 'text-gray-500 bg-gray-800'
                   }`}>FR</button>
             </div>
 

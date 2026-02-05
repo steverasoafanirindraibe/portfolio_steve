@@ -23,6 +23,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        theme2: "var(--theme2)",
       },
       transitionDuration: {
         '1500': '1500ms',
