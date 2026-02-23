@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { TranslationProvider } from "@/hooks/useTranslation";
 import ModernAlert from '@/components/ModernAlert';
+import ClientLayout from "./ClientLayout";
 
 
 export const metadata: Metadata = {
@@ -43,11 +44,11 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <TranslationProvider>
-          {/* <ClientLayout> */}
+          <ClientLayout>
             {children}
             <ModernAlert />
 
-          {/* </ClientLayout> */}
+          </ClientLayout>
         </TranslationProvider>
 
       </body>
